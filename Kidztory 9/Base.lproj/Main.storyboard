@@ -1,24 +1,242 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad10_5" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Opening Animation-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Opening Animation" customClass="ViewController" customModule="Kidztory_9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo0" translatesAutoresizingMaskIntoConstraints="NO" id="l4p-Vx-K86" userLabel="Opening Animation Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="l4p-Vx-K86" secondAttribute="trailing" id="ilB-1G-TTw"/>
+                            <constraint firstAttribute="bottom" secondItem="l4p-Vx-K86" secondAttribute="bottom" id="n3F-LU-xc7"/>
+                            <constraint firstItem="l4p-Vx-K86" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="u7I-wL-sO7"/>
+                            <constraint firstItem="l4p-Vx-K86" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uF7-5X-eM4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="openingAnimationOutlet" destination="l4p-Vx-K86" id="pZh-BW-Dgo"/>
+                        <segue destination="fQS-jC-QGn" kind="presentation" identifier="openingAnimationToTitleSegue" modalTransitionStyle="crossDissolve" id="35h-6T-ahb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="59" y="-360"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="Rrg-q2-QDU">
+            <objects>
+                <viewController id="fQS-jC-QGn" userLabel="Title" customClass="ViewController" customModule="Kidztory_9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fX5-Kg-oBv">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb_opening_bg" translatesAutoresizingMaskIntoConstraints="NO" id="fjq-ds-ahL">
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb_opening_eye01" translatesAutoresizingMaskIntoConstraints="NO" id="GUz-L0-83R">
+                                <rect key="frame" x="368.5" y="325.5" width="142" height="100"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bO-B4-m31" userLabel="readToMe">
+                                <rect key="frame" x="632.5" y="298" width="336" height="113"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES" causesPageTurn="YES"/>
+                                </accessibility>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="gtb_opening_readtome"/>
+                                <state key="highlighted" image="gtb_opening_readtome_on.png"/>
+                                <connections>
+                                    <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="ylt-KF-Lcd"/>
+                                    <segue destination="cFk-P6-eWw" kind="custom" identifier="readToMeSegue" customClass="pageFlip" customModule="Kidztory_9" customModuleProvider="target" id="2Zu-fx-Ni0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-ck-PRu" userLabel="myself">
+                                <rect key="frame" x="642.5" y="427" width="427" height="113"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES" causesPageTurn="YES"/>
+                                </accessibility>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="gtb_opening_myself">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" image="gtb_opening_myself_on.png"/>
+                                <connections>
+                                    <action selector="myselfButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="wsh-wo-n5w"/>
+                                    <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="DJB-TC-2TW"/>
+                                    <segue destination="cFk-P6-eWw" kind="custom" identifier="myselfSegue" customClass="pageFlip" customModule="Kidztory_9" customModuleProvider="target" id="mh6-D5-14A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-2Z-JPj" userLabel="more">
+                                <rect key="frame" x="640.5" y="548" width="365" height="113"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES" causesPageTurn="YES"/>
+                                </accessibility>
+                                <state key="normal" image="gtb_opening_more"/>
+                                <state key="highlighted" image="gtb_opening_more_on.png"/>
+                                <connections>
+                                    <action selector="moreButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="bCk-7x-l0U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fjq-ds-ahL" firstAttribute="top" secondItem="fX5-Kg-oBv" secondAttribute="top" id="CxQ-uK-EoH"/>
+                            <constraint firstItem="GUz-L0-83R" firstAttribute="centerY" secondItem="fX5-Kg-oBv" secondAttribute="centerY" multiplier="0.9" id="GOf-Oz-SN0"/>
+                            <constraint firstItem="NEs-2Z-JPj" firstAttribute="height" secondItem="4bO-B4-m31" secondAttribute="height" id="Ga7-4j-IDr"/>
+                            <constraint firstItem="GUz-L0-83R" firstAttribute="centerX" secondItem="fX5-Kg-oBv" secondAttribute="centerX" multiplier="0.79" id="M0k-RF-fdx"/>
+                            <constraint firstItem="fjq-ds-ahL" firstAttribute="leading" secondItem="fX5-Kg-oBv" secondAttribute="leading" id="MIf-gS-7Og"/>
+                            <constraint firstAttribute="bottom" secondItem="fjq-ds-ahL" secondAttribute="bottom" id="QMc-An-Jc3"/>
+                            <constraint firstItem="GUz-L0-83R" firstAttribute="width" secondItem="fX5-Kg-oBv" secondAttribute="width" multiplier="0.12" id="VlI-83-eKE"/>
+                            <constraint firstItem="TXf-ck-PRu" firstAttribute="height" secondItem="4bO-B4-m31" secondAttribute="height" id="Xul-xd-sR5"/>
+                            <constraint firstItem="TXf-ck-PRu" firstAttribute="centerY" secondItem="fX5-Kg-oBv" secondAttribute="centerY" multiplier="1.16" id="cWl-jn-jor"/>
+                            <constraint firstItem="4bO-B4-m31" firstAttribute="centerY" secondItem="fX5-Kg-oBv" secondAttribute="centerY" multiplier="0.85" id="cZD-ue-uuE"/>
+                            <constraint firstAttribute="trailing" secondItem="fjq-ds-ahL" secondAttribute="trailing" id="eNV-e8-SnE"/>
+                            <constraint firstItem="NEs-2Z-JPj" firstAttribute="centerX" secondItem="fX5-Kg-oBv" secondAttribute="centerX" multiplier="1.48" id="hL0-6N-Dh4"/>
+                            <constraint firstItem="GUz-L0-83R" firstAttribute="height" secondItem="fX5-Kg-oBv" secondAttribute="height" multiplier="0.12" id="sK9-ui-z7J"/>
+                            <constraint firstItem="4bO-B4-m31" firstAttribute="centerX" secondItem="fX5-Kg-oBv" secondAttribute="centerX" multiplier="1.44" id="tSF-kg-A18"/>
+                            <constraint firstItem="TXf-ck-PRu" firstAttribute="centerX" secondItem="fX5-Kg-oBv" secondAttribute="centerX" multiplier="1.54" id="uwW-Tf-DJQ"/>
+                            <constraint firstItem="NEs-2Z-JPj" firstAttribute="centerY" secondItem="fX5-Kg-oBv" secondAttribute="centerY" multiplier="1.45" id="yCi-Zn-IAb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cv7-Fs-cKj"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cZD-ue-uuE"/>
+                                <exclude reference="tSF-kg-A18"/>
+                                <exclude reference="Xul-xd-sR5"/>
+                                <exclude reference="cWl-jn-jor"/>
+                                <exclude reference="uwW-Tf-DJQ"/>
+                                <exclude reference="Ga7-4j-IDr"/>
+                                <exclude reference="hL0-6N-Dh4"/>
+                                <exclude reference="yCi-Zn-IAb"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="GOf-Oz-SN0"/>
+                                <exclude reference="M0k-RF-fdx"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="VlI-83-eKE"/>
+                                <include reference="cZD-ue-uuE"/>
+                                <include reference="tSF-kg-A18"/>
+                                <include reference="Xul-xd-sR5"/>
+                                <include reference="cWl-jn-jor"/>
+                                <include reference="uwW-Tf-DJQ"/>
+                                <include reference="Ga7-4j-IDr"/>
+                                <include reference="hL0-6N-Dh4"/>
+                                <include reference="yCi-Zn-IAb"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3uk-rm-pEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886.69950738916259" y="708"/>
+        </scene>
+        <!--Page 1-->
+        <scene sceneID="o5m-y5-KOP">
+            <objects>
+                <viewController title="Page 1" id="cFk-P6-eWw" customClass="PageViewController" customModule="Kidztory_9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eDD-hV-SHQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb01_bg" translatesAutoresizingMaskIntoConstraints="NO" id="TwV-9P-mXA">
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZH-a1-Uy6">
+                                <rect key="frame" x="1061" y="790" width="51" height="44"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
+                                </accessibility>
+                                <state key="normal" image="arrowright"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="forward" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="arrowRightButton:" destination="cFk-P6-eWw" eventType="touchUpInside" id="7Je-n8-bmU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y4-LI-EFi">
+                                <rect key="frame" x="0.0" y="790" width="51" height="44"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
+                                </accessibility>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <state key="normal" image="arrowleft"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="forward" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="arrowLeftButton:" destination="t7b-us-0Yi" eventType="touchUpInside" id="FIn-g1-K9k"/>
+                                    <action selector="arrowLeftButton:" destination="cFk-P6-eWw" eventType="touchUpInside" id="uyc-tX-Ar1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-IN-ckL">
+                                <rect key="frame" x="50" y="70" width="723" height="196"/>
+                                <state key="normal" image="gtb01_text"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2k4-eb-If6" firstAttribute="bottom" secondItem="2Y4-LI-EFi" secondAttribute="bottom" id="BQZ-4K-cX9"/>
+                            <constraint firstItem="2k4-eb-If6" firstAttribute="bottom" secondItem="2ZH-a1-Uy6" secondAttribute="bottom" id="H6j-xr-ScD"/>
+                            <constraint firstAttribute="bottom" secondItem="TwV-9P-mXA" secondAttribute="bottom" id="JeX-9t-Ft7"/>
+                            <constraint firstItem="2k4-eb-If6" firstAttribute="trailing" secondItem="2ZH-a1-Uy6" secondAttribute="trailing" id="NQn-9Y-kBK"/>
+                            <constraint firstItem="TwV-9P-mXA" firstAttribute="top" secondItem="eDD-hV-SHQ" secondAttribute="top" id="j7m-q4-ALe"/>
+                            <constraint firstItem="4ZZ-IN-ckL" firstAttribute="leading" secondItem="2k4-eb-If6" secondAttribute="leading" constant="50" id="nKo-Yb-JUq"/>
+                            <constraint firstItem="TwV-9P-mXA" firstAttribute="leading" secondItem="eDD-hV-SHQ" secondAttribute="leading" id="nro-XN-Dh9"/>
+                            <constraint firstAttribute="trailing" secondItem="TwV-9P-mXA" secondAttribute="trailing" id="pwz-OH-3z9"/>
+                            <constraint firstItem="2Y4-LI-EFi" firstAttribute="leading" secondItem="2k4-eb-If6" secondAttribute="leading" id="sg7-Pz-Eds"/>
+                            <constraint firstItem="4ZZ-IN-ckL" firstAttribute="top" secondItem="2k4-eb-If6" secondAttribute="top" constant="50" id="zhm-sA-McD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2k4-eb-If6"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="TwV-9P-mXA" id="HvP-l8-GGP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Wb-CJ-C0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="t7b-us-0Yi" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1688" y="177"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowleft" width="51" height="44"/>
+        <image name="arrowright" width="51" height="44"/>
+        <image name="gtb01_bg" width="1024" height="768"/>
+        <image name="gtb01_text" width="723" height="196"/>
+        <image name="gtb_opening_bg" width="1024" height="768"/>
+        <image name="gtb_opening_eye01" width="142" height="91"/>
+        <image name="gtb_opening_more" width="365" height="113"/>
+        <image name="gtb_opening_more_on.png" width="365" height="113"/>
+        <image name="gtb_opening_myself" width="427" height="95"/>
+        <image name="gtb_opening_myself_on.png" width="427" height="95"/>
+        <image name="gtb_opening_readtome" width="336" height="96"/>
+        <image name="gtb_opening_readtome_on.png" width="336" height="96"/>
+        <image name="logo0" width="1024" height="768"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2Zu-fx-Ni0"/>
+    </inferredMetricsTieBreakers>
 </document>
