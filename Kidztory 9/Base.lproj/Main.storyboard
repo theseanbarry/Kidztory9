@@ -33,7 +33,7 @@
                     </view>
                     <connections>
                         <outlet property="openingAnimationOutlet" destination="l4p-Vx-K86" id="pZh-BW-Dgo"/>
-                        <segue destination="fQS-jC-QGn" kind="presentation" identifier="openingAnimationToTitleSegue" modalTransitionStyle="crossDissolve" id="35h-6T-ahb"/>
+                        <segue destination="fQS-jC-QGn" kind="show" identifier="openingAnimationToTitleSegue" id="XEQ-tA-iLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

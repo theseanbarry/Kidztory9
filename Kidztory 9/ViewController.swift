@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         playVOSound(99)
-        /* var openingAnimationList = [UIImage]()
+        var openingAnimationList = [UIImage]()
         for i in 0...3  {
             let imageName = "logo\(i)"
             if let image = UIImage(named: imageName) {
@@ -25,8 +25,7 @@ class ViewController: UIViewController {
         self.openingAnimationOutlet.animationImages = openingAnimationList
         self.openingAnimationOutlet.animationDuration = 2
         self.openingAnimationOutlet.startAnimating()
- */
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 6) {
             self.performSegue(withIdentifier: "openingAnimationToTitleSegue", sender: nil)
             playVOSound(0)
         }
