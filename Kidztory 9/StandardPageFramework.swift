@@ -20,9 +20,6 @@ func playVOSound(_ soundID:Int) {
         return
     }
     do {
-        try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-        try AVAudioSession.sharedInstance().setActive(true)
-        
         voSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.m4a.rawValue)
         guard let voSound = voSound else {
             return
@@ -39,9 +36,6 @@ func playSoundFX(_ soundFXName:String) {
         return
     }
     do {
-        try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-        try AVAudioSession.sharedInstance().setActive(true)
-        
         soundFX = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
         guard let soundFX = soundFX else {
             return
