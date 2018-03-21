@@ -144,17 +144,17 @@ class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
 // text vo
 // object sound fx(sound)
 // blinking eyes(imageview, images)
-class blinkingEyesImageView : UIImageView {
-}
-func blinkingEyes(eyeImageView: UIImageView, openEyes:String, closedEyes:String) {
+    // class blinkingEyesImageView : UIImageView {}
+func blinkingEyes(_ eyeImageView: UIImageView, open:String, closed:String) {
     let b = true
     while b == true {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 6) {
-            eyeImageView.image = UIImage(named: closedEyes)
+            eyeImageView.image = UIImage(named: closed)
             usleep(15000)
-            eyeImageView.image = UIImage(named: openEyes)
+            eyeImageView.image = UIImage(named: open)
         }
     }
+
     // timer
     /*
     class BlinkScene:SKScene {

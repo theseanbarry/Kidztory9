@@ -10,15 +10,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Opening Animation-->
+        <!--Opening-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Opening Animation" customClass="ViewController" customModule="Kidztory_9" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Opening" customClass="OpeningViewController" customModule="Kidztory_9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo0" translatesAutoresizingMaskIntoConstraints="NO" id="l4p-Vx-K86" userLabel="Opening Animation Image View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo0" translatesAutoresizingMaskIntoConstraints="NO" id="l4p-Vx-K86" userLabel="Opening Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                             </imageView>
                         </subviews>
@@ -32,13 +32,30 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="openingAnimationOutlet" destination="l4p-Vx-K86" id="pZh-BW-Dgo"/>
-                        <segue destination="fQS-jC-QGn" kind="presentation" identifier="openingAnimationToTitleSegue" modalTransitionStyle="crossDissolve" id="XEQ-tA-iLp"/>
+                        <outlet property="openingOutlet" destination="l4p-Vx-K86" id="ycA-sK-T2u"/>
+                        <segue destination="MN4-BM-XDp" kind="presentation" identifier="openingToTitleSegue" modalTransitionStyle="crossDissolve" id="cte-y2-A0g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="59" y="-360"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jyi-9s-F9e">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="MN4-BM-XDp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Icn-8y-77a">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <outlet property="delegate" destination="2vq-7P-ZJ9" id="loi-fs-tIh"/>
+                        <segue destination="fQS-jC-QGn" kind="relationship" relationship="rootViewController" id="quh-nB-ACT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QAf-8l-LfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="2vq-7P-ZJ9" customClass="NavigationControllerDelegate" customModule="Kidztory_9" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="708"/>
         </scene>
         <!--Title-->
         <scene sceneID="Rrg-q2-QDU">
@@ -64,7 +81,7 @@
                                 <state key="highlighted" image="gtb_opening_readtome_on.png"/>
                                 <connections>
                                     <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="ylt-KF-Lcd"/>
-                                    <segue destination="cFk-P6-eWw" kind="custom" identifier="readToMeSegue" customClass="pageFlip" customModule="Kidztory_9" customModuleProvider="target" id="2Zu-fx-Ni0"/>
+                                    <segue destination="cFk-P6-eWw" kind="show" identifier="readToMeSegue" id="2Zu-fx-Ni0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-ck-PRu" userLabel="myself">
@@ -80,7 +97,7 @@
                                 <connections>
                                     <action selector="myselfButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="wsh-wo-n5w"/>
                                     <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="DJB-TC-2TW"/>
-                                    <segue destination="cFk-P6-eWw" kind="custom" identifier="myselfSegue" customClass="pageFlip" customModule="Kidztory_9" customModuleProvider="target" id="mh6-D5-14A"/>
+                                    <segue destination="cFk-P6-eWw" kind="show" identifier="myselfSegue" id="mh6-D5-14A"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-2Z-JPj" userLabel="more">
@@ -147,6 +164,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="titleEyesImageView" destination="GUz-L0-83R" id="NPg-iQ-QmQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uk-rm-pEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,7 +175,7 @@
         <!--Page 1-->
         <scene sceneID="o5m-y5-KOP">
             <objects>
-                <viewController title="Page 1" id="cFk-P6-eWw" customClass="PageViewController" customModule="Kidztory_9" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Page 1" id="cFk-P6-eWw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eDD-hV-SHQ">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +184,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZH-a1-Uy6">
-                                <rect key="frame" x="1061" y="790" width="51" height="44"/>
+                                <rect key="frame" x="1041" y="770" width="51" height="44"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
                                 </accessibility>
@@ -177,7 +197,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y4-LI-EFi">
-                                <rect key="frame" x="0.0" y="790" width="51" height="44"/>
+                                <rect key="frame" x="20" y="770" width="51" height="44"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
                                 </accessibility>
@@ -188,7 +208,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="arrowLeftButton:" destination="t7b-us-0Yi" eventType="touchUpInside" id="FIn-g1-K9k"/>
-                                    <action selector="arrowLeftButton:" destination="cFk-P6-eWw" eventType="touchUpInside" id="uyc-tX-Ar1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-IN-ckL">
@@ -198,15 +217,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2k4-eb-If6" firstAttribute="bottom" secondItem="2Y4-LI-EFi" secondAttribute="bottom" id="BQZ-4K-cX9"/>
-                            <constraint firstItem="2k4-eb-If6" firstAttribute="bottom" secondItem="2ZH-a1-Uy6" secondAttribute="bottom" id="H6j-xr-ScD"/>
+                            <constraint firstAttribute="bottom" secondItem="2Y4-LI-EFi" secondAttribute="bottom" constant="20" id="6CO-1d-rkU"/>
+                            <constraint firstItem="2k4-eb-If6" firstAttribute="bottom" secondItem="2ZH-a1-Uy6" secondAttribute="bottom" constant="20" id="H6j-xr-ScD"/>
                             <constraint firstAttribute="bottom" secondItem="TwV-9P-mXA" secondAttribute="bottom" id="JeX-9t-Ft7"/>
-                            <constraint firstItem="2k4-eb-If6" firstAttribute="trailing" secondItem="2ZH-a1-Uy6" secondAttribute="trailing" id="NQn-9Y-kBK"/>
+                            <constraint firstItem="2k4-eb-If6" firstAttribute="trailing" secondItem="2ZH-a1-Uy6" secondAttribute="trailing" constant="20" id="NQn-9Y-kBK"/>
+                            <constraint firstItem="2Y4-LI-EFi" firstAttribute="leading" secondItem="2k4-eb-If6" secondAttribute="leading" constant="20" id="VqZ-b2-Bnw"/>
                             <constraint firstItem="TwV-9P-mXA" firstAttribute="top" secondItem="eDD-hV-SHQ" secondAttribute="top" id="j7m-q4-ALe"/>
                             <constraint firstItem="4ZZ-IN-ckL" firstAttribute="leading" secondItem="2k4-eb-If6" secondAttribute="leading" constant="50" id="nKo-Yb-JUq"/>
                             <constraint firstItem="TwV-9P-mXA" firstAttribute="leading" secondItem="eDD-hV-SHQ" secondAttribute="leading" id="nro-XN-Dh9"/>
                             <constraint firstAttribute="trailing" secondItem="TwV-9P-mXA" secondAttribute="trailing" id="pwz-OH-3z9"/>
-                            <constraint firstItem="2Y4-LI-EFi" firstAttribute="leading" secondItem="2k4-eb-If6" secondAttribute="leading" id="sg7-Pz-Eds"/>
                             <constraint firstItem="4ZZ-IN-ckL" firstAttribute="top" secondItem="2k4-eb-If6" secondAttribute="top" constant="50" id="zhm-sA-McD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2k4-eb-If6"/>
@@ -237,6 +256,6 @@
         <image name="logo0" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Zu-fx-Ni0"/>
+        <segue reference="mh6-D5-14A"/>
     </inferredMetricsTieBreakers>
 </document>
