@@ -137,46 +137,28 @@ class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
 
 // text vo
 // object sound fx(sound)
-// blinking eyes(imageview, images)
-    // class blinkingEyesImageView : UIImageView {}
-func blinkingEyes(_ eyeImageView: UIImageView, open:String, closed:String) {
-    let b = true
-    while b == true {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 6) {
-            eyeImageView.image = UIImage(named: closed)
-            usleep(15000)
-            eyeImageView.image = UIImage(named: open)
-        }
-    }
-
-    // timer
-    /*
-    class BlinkScene:SKScene {
-        // Time of last update(currentTime:) call
-        var lastUpdateTime = TimeInterval(0)
-        // Seconds elapsed since last action
-        var timeSinceLastAction = TimeInterval(0)
-        // Seconds before performing next action. Choose a default value
-        var timeUntilNextAction = TimeInterval(12)
-     
-        override func update(_ currentTime: TimeInterval) {
-            let delta = currentTime - lastUpdateTime
-            lastUpdateTime = currentTime
-            timeSinceLastAction += delta
-     
-            if timeSinceLastAction >= timeUntilNextAction {
-                // perform your action (blink)
-                eyeImageView.image = UIImage(named: closedEyes.String)
-                usleep(45000)
-                eyeImageView.image = UIImage(named: openEyes.String)
-                // reset
-                timeSinceLastAction = TimeInterval(0)
-                // Randomize seconds until next action
-                timeUntilNextAction = CDouble(arc4random_uniform(12))
+// blink eyes
+func blinkEyes(_ outlet:UIImageView!, open:String, half:String, closed:String) {
+    var list = [UIImage]()
+    for _ in 0..<100 {
+        switch arc4random_uniform(10) {
+        case 0..<9:
+            for _ in 0..<10 {
+                if let image = UIImage(named: open) {
+                    list.append(image)} else {return}
             }
+        default:
+            if let image = UIImage(named: half) {
+                list.append(image)} else {return}
+            if let image = UIImage(named: closed) {
+                list.append(image)} else {return}
+            if let image = UIImage(named: half) {
+                list.append(image)} else {return}
         }
     }
- */
+    outlet.animationImages = list
+    outlet.animationDuration = 50
+    outlet.startAnimating()
 }
 
 // stop motion back and forth movement(objects, custom translation?, custom rotation?, duration, custom iterations?)
