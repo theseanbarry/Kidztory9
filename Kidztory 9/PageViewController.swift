@@ -13,6 +13,16 @@ import SpriteKit
 
 class PageViewController: UIViewController {
     
+    @IBAction func readToMeButton(_ sender: Any) {
+        readToMe = true
+        performSegue(withIdentifier: "readToMeSegue", sender: nil)
+    }
+    @IBAction func myselfButton(_ sender: Any) {
+        readToMe = false
+        performSegue(withIdentifier: "readToMeSegue", sender: nil)
+    }
+    @IBAction func moreButton(_ sender: Any) {
+    }
     
     /*
     @IBOutlet weak var backgroundImageView: UIImageView! {

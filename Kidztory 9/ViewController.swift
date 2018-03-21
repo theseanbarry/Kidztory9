@@ -25,12 +25,18 @@ class ViewController: UIViewController {
         self.openingAnimationOutlet.animationImages = openingAnimationList
         self.openingAnimationOutlet.animationDuration = 2
         self.openingAnimationOutlet.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 6) {
-            self.performSegue(withIdentifier: "openingAnimationToTitleSegue", sender: nil)
+        // let timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(launchFunc), userInfo:nil, repeats: false)
+         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            self.performSegue(withIdentifier: "openingAnimationToTitleSegue", sender: self)
             playVOSound(0)
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    /* @objc func launchFunc() {
+        self.performSegue(withIdentifier: "openingAnimationToTitleSegue", sender: self)
+        playVOSound(0)
+    } */
     
     @IBAction func readToMeButton(_ sender: Any) {
         readToMe = true

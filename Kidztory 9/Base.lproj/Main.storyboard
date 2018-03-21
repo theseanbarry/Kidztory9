@@ -33,7 +33,7 @@
                     </view>
                     <connections>
                         <outlet property="openingAnimationOutlet" destination="l4p-Vx-K86" id="pZh-BW-Dgo"/>
-                        <segue destination="fQS-jC-QGn" kind="show" identifier="openingAnimationToTitleSegue" id="XEQ-tA-iLp"/>
+                        <segue destination="fQS-jC-QGn" kind="presentation" identifier="openingAnimationToTitleSegue" id="XEQ-tA-iLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -43,7 +43,7 @@
         <!--Title-->
         <scene sceneID="Rrg-q2-QDU">
             <objects>
-                <viewController id="fQS-jC-QGn" userLabel="Title" customClass="ViewController" customModule="Kidztory_9" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fQS-jC-QGn" userLabel="Title" customClass="PageViewController" customModule="Kidztory_9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fX5-Kg-oBv">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

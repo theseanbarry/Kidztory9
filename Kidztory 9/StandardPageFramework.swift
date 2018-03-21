@@ -51,27 +51,95 @@ func playSoundFX(_ soundFXName:String) {
 }
 
 // page flip
-class pageFlip : UIStoryboardSegue {
-    var forward = true
-    func flip() {
-        playSoundFX("ArrowVoice")
-        playSoundFX("SwapPage")
-        UIView.animate(withDuration: 1.0, animations: {
+class PageFlipAnimator : NSObject, UIViewControllerAnimatedTransitioning {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 1.2
+    }
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let containerView = transitionContext.containerView
+        // let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
+        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+        
+        containerView.addSubview(toVC!.view)
+        toVC!.view.alpha = 0.0
+        
+        let duration = transitionDuration(using: transitionContext)
+        UIView.animate(withDuration: duration, animations: {
             let animation = CATransition()
-            animation.duration = 1.2
             animation.startProgress = 0.0
-            animation.endProgress = 0.6
+            animation.endProgress = (Float(duration / 2))
             animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
             animation.type = "pageCurl"
-            animation.subtype = (self.forward == true ? "fromRight" : "fromLeft")
+            animation.subtype = "fromRight"
             animation.isRemovedOnCompletion = false
             animation.fillMode = "extended"
-            /* (self. used to be below instead of UIView.)
-            layer.add(animation, forKey: "pageFlipAnimation")
-            animatedUIView.addSubview(tempUIView) */
+        }, completion: { finished in
+            let cancelled = transitionContext.transitionWasCancelled
+            transitionContext.completeTransition(!cancelled)
         })
     }
 }
+
+class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PageFlipAnimator()
+    }
+}
+
+
+
+/* page flip v2
+ func flipSounds() {
+ playSoundFX("ArrowVoice")
+ DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+ playSoundFX("SwapPage")
+ }
+ 
+ class PageFlip : UIStoryboardSegue {
+ override func perform() {
+ self.source.navigationController?.pushViewController(self.destination, animated: true)
+ var forward = true
+ UIView.animate(withDuration: 1.0, animations: {
+ let animation = CATransition()
+ animation.duration = 1.2
+ animation.startProgress = 0.0
+ animation.endProgress = 0.6
+ animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+ animation.type = "pageCurl"
+ animation.subtype = (self.forward == true ? "fromRight" : "fromLeft")
+ animation.isRemovedOnCompletion = false
+ animation.fillMode = "extended"
+ self.source.layer.add(animation, forKey: "pageFlipAnimation")
+ self.source.addSubview(destination)
+ })
+ }
+ } */
+
+/* page flip v1
+ 
+ class pageFlip : UIStoryboardSegue {
+ override func perform() {
+ self.source.navigationController?.pushViewController(self.destination, animated: true)
+ var forward = true
+ func flip() {
+ playSoundFX("ArrowVoice")
+ playSoundFX("SwapPage")
+ UIView.animate(withDuration: 1.0, animations: {
+ let animation = CATransition()
+ animation.duration = 1.2
+ animation.startProgress = 0.0
+ animation.endProgress = 0.6
+ animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+ animation.type = "pageCurl"
+ animation.subtype = (self.forward == true ? "fromRight" : "fromLeft")
+ animation.isRemovedOnCompletion = false
+ animation.fillMode = "extended"
+ self.source.layer.add(animation, forKey: "pageFlipAnimation")
+ self.source.addSubview(destination)
+ })
+ }
+ }
+ } */
 
 // text vo
 // object sound fx(sound)
@@ -96,12 +164,12 @@ func blinkingEyes(eyeImageView: UIImageView, openEyes:String, closedEyes:String)
         var timeSinceLastAction = TimeInterval(0)
         // Seconds before performing next action. Choose a default value
         var timeUntilNextAction = TimeInterval(12)
-        
+     
         override func update(_ currentTime: TimeInterval) {
             let delta = currentTime - lastUpdateTime
             lastUpdateTime = currentTime
             timeSinceLastAction += delta
-            
+     
             if timeSinceLastAction >= timeUntilNextAction {
                 // perform your action (blink)
                 eyeImageView.image = UIImage(named: closedEyes.String)
@@ -149,3 +217,4 @@ func singleMovement(duration: Double, x: Int, y: Int, rotation: Double) {
 }
 
  // fluid movement(object, curve equation, duration) */
+
