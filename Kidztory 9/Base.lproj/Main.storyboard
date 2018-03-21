@@ -165,7 +165,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="titleEyesImageView" destination="GUz-L0-83R" id="NPg-iQ-QmQ"/>
+                        <outlet property="titleEyesOutlet" destination="GUz-L0-83R" id="G23-Lt-eOz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uk-rm-pEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
