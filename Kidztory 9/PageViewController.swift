@@ -12,25 +12,46 @@ import AVFoundation
 import SpriteKit
 
 class PageViewController: UIViewController {
-    @IBOutlet weak var titleEyesOutlet: UIImageView!
-    override func viewDidAppear(_ animated:Bool) {
-        super.viewDidAppear(animated)
-        blinkEyes(titleEyesOutlet, open: "gtb_opening_eye01", half: "gtb_opening_eye02", closed: "gtb_opening_eye03")
-    }
+    // title
+    @IBOutlet weak var titleEyesOutlet: UIImageView?
     @IBAction func readToMeButton(_ sender: Any) {
         readToMe = true
-        performSegue(withIdentifier: "readToMeSegue", sender: nil)
+        performSegue(withIdentifier: "titleSegue", sender: nil)
+        //page flip sound function
+        playSoundFX("ArrowVoice")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
+            playSoundFX("SwapPage")
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
+                playVOSound(1)
+            }
+        }
     }
     @IBAction func myselfButton(_ sender: Any) {
         readToMe = false
-        performSegue(withIdentifier: "readToMeSegue", sender: nil)
+        performSegue(withIdentifier: "titleSegue", sender: nil)
     }
     @IBAction func moreButton(_ sender: Any) {
     }
+    // page 01
+    @IBOutlet weak var page01EyesOutlet: UIImageView?
+    @IBAction func page01VO(_ sender: Any) {
+        playVOSound(1)
+    }
+    @IBAction func page01GirlButton(_ sender: Any) {
+        playSoundFX("09_Goldilocks_humming")
+    }
+    @IBAction func page01BugButton(_ sender: Any) {
+        playSoundFX("23_Ladybird_flying")
+    }
     
-    //blinkingEyes(titleEyesImageView, open: "gtb_opening_eye01", closed: "gtb_opening_eye03")
-    
-    
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(animated)
+        // title
+        blinkEyes(titleEyesOutlet, open: "gtb_opening_eye01", half: "gtb_opening_eye02", closed: "gtb_opening_eye03")
+        // page 01
+        blinkEyes(page01EyesOutlet, open: "gtb01_eye01", half: "gtb01_eye02", closed: "gtb01_eye03")
+    }
+
     /*
     @IBOutlet weak var backgroundImageView: UIImageView! {
     }
@@ -40,7 +61,5 @@ class PageViewController: UIViewController {
     @IBAction func arrowRightButton(_ sender: Any) {
         forward = false)
     } */
-    
-    
     
 }

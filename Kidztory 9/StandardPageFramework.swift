@@ -138,11 +138,12 @@ class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
 // text vo
 // object sound fx(sound)
 // blink eyes
-func blinkEyes(_ outlet:UIImageView!, open:String, half:String, closed:String) {
+func blinkEyes(_ outlet:UIImageView?, open:String, half:String, closed:String) {
+    guard let outlet = outlet else {return}
     var list = [UIImage]()
-    for _ in 0..<100 {
-        switch arc4random_uniform(10) {
-        case 0..<9:
+    for _ in 0..<200 {
+        switch arc4random_uniform(20) {
+        case 0..<19:
             for _ in 0..<10 {
                 if let image = UIImage(named: open) {
                     list.append(image)} else {return}
@@ -157,7 +158,7 @@ func blinkEyes(_ outlet:UIImageView!, open:String, half:String, closed:String) {
         }
     }
     outlet.animationImages = list
-    outlet.animationDuration = 50
+    outlet.animationDuration = 100
     outlet.startAnimating()
 }
 

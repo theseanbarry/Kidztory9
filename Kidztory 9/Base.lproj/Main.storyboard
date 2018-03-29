@@ -33,7 +33,7 @@
                     </view>
                     <connections>
                         <outlet property="openingOutlet" destination="l4p-Vx-K86" id="ycA-sK-T2u"/>
-                        <segue destination="MN4-BM-XDp" kind="presentation" identifier="openingToTitleSegue" modalTransitionStyle="crossDissolve" id="cte-y2-A0g"/>
+                        <segue destination="MN4-BM-XDp" kind="presentation" identifier="openingSegue" modalTransitionStyle="crossDissolve" id="cte-y2-A0g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -81,7 +81,7 @@
                                 <state key="highlighted" image="gtb_opening_readtome_on.png"/>
                                 <connections>
                                     <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="ylt-KF-Lcd"/>
-                                    <segue destination="cFk-P6-eWw" kind="show" identifier="readToMeSegue" id="2Zu-fx-Ni0"/>
+                                    <segue destination="cFk-P6-eWw" kind="presentation" identifier="titleSegue" id="2Zu-fx-Ni0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-ck-PRu" userLabel="myself">
@@ -97,7 +97,6 @@
                                 <connections>
                                     <action selector="myselfButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="wsh-wo-n5w"/>
                                     <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="DJB-TC-2TW"/>
-                                    <segue destination="cFk-P6-eWw" kind="show" identifier="myselfSegue" id="mh6-D5-14A"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-2Z-JPj" userLabel="more">
@@ -175,7 +174,7 @@
         <!--Page 1-->
         <scene sceneID="o5m-y5-KOP">
             <objects>
-                <viewController title="Page 1" id="cFk-P6-eWw" sceneMemberID="viewController">
+                <viewController title="Page 1" id="cFk-P6-eWw" customClass="PageViewController" customModule="Kidztory_9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eDD-hV-SHQ">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,44 +182,64 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb01_bg" translatesAutoresizingMaskIntoConstraints="NO" id="TwV-9P-mXA">
                                 <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZH-a1-Uy6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZH-a1-Uy6" userLabel="arrowRight">
                                 <rect key="frame" x="1041" y="770" width="51" height="44"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
                                 </accessibility>
                                 <state key="normal" image="arrowright"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="forward" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="arrowRightButton:" destination="cFk-P6-eWw" eventType="touchUpInside" id="7Je-n8-bmU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y4-LI-EFi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y4-LI-EFi" userLabel="arrowLeft">
                                 <rect key="frame" x="20" y="770" width="51" height="44"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
                                 </accessibility>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <state key="normal" image="arrowleft"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="forward" value="NO"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="arrowLeftButton:" destination="t7b-us-0Yi" eventType="touchUpInside" id="FIn-g1-K9k"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-IN-ckL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-IN-ckL" userLabel="page01Text">
                                 <rect key="frame" x="50" y="70" width="723" height="196"/>
                                 <state key="normal" image="gtb01_text"/>
+                                <connections>
+                                    <action selector="page01VO:" destination="cFk-P6-eWw" eventType="touchUpInside" id="0uV-R6-Pps"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJU-Ld-qe1" userLabel="page01Girl">
+                                <rect key="frame" x="532" y="208" width="462" height="626"/>
+                                <state key="normal" image="gtb01_girl01"/>
+                                <connections>
+                                    <action selector="page01GirlButton:" destination="cFk-P6-eWw" eventType="touchUpInside" id="ttL-rd-00S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxk-XF-Ifc" userLabel="page01bug">
+                                <rect key="frame" x="188" y="436" width="64" height="66"/>
+                                <state key="normal" image="gtb01_bug01"/>
+                                <connections>
+                                    <action selector="page01BugButton:" destination="cFk-P6-eWw" eventType="touchUpInside" id="MqR-aN-Z8G"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb01_eye01" translatesAutoresizingMaskIntoConstraints="NO" id="vYA-2d-Npc" userLabel="page01Eyes">
+                                <rect key="frame" x="649" y="385" width="252" height="109"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="tJU-Ld-qe1" firstAttribute="centerX" secondItem="eDD-hV-SHQ" secondAttribute="centerX" multiplier="1.374" id="4Wa-ha-Svv"/>
+                            <constraint firstItem="mxk-XF-Ifc" firstAttribute="centerX" secondItem="eDD-hV-SHQ" secondAttribute="centerX" multiplier="0.395" id="5Jr-Rg-RlE"/>
                             <constraint firstAttribute="bottom" secondItem="2Y4-LI-EFi" secondAttribute="bottom" constant="20" id="6CO-1d-rkU"/>
+                            <constraint firstItem="tJU-Ld-qe1" firstAttribute="centerY" secondItem="eDD-hV-SHQ" secondAttribute="centerY" multiplier="1.25" id="Bbc-zM-FYI"/>
+                            <constraint firstItem="mxk-XF-Ifc" firstAttribute="centerY" secondItem="eDD-hV-SHQ" secondAttribute="centerY" multiplier="1.125" id="Fbp-0d-wXc"/>
                             <constraint firstItem="2k4-eb-If6" firstAttribute="bottom" secondItem="2ZH-a1-Uy6" secondAttribute="bottom" constant="20" id="H6j-xr-ScD"/>
                             <constraint firstAttribute="bottom" secondItem="TwV-9P-mXA" secondAttribute="bottom" id="JeX-9t-Ft7"/>
                             <constraint firstItem="2k4-eb-If6" firstAttribute="trailing" secondItem="2ZH-a1-Uy6" secondAttribute="trailing" constant="20" id="NQn-9Y-kBK"/>
+                            <constraint firstItem="vYA-2d-Npc" firstAttribute="centerX" secondItem="eDD-hV-SHQ" secondAttribute="centerX" multiplier="1.395" id="PfS-Vt-34Q"/>
+                            <constraint firstItem="vYA-2d-Npc" firstAttribute="centerY" secondItem="eDD-hV-SHQ" secondAttribute="centerY" multiplier="1.055" id="Q7Y-hh-ifH"/>
                             <constraint firstItem="2Y4-LI-EFi" firstAttribute="leading" secondItem="2k4-eb-If6" secondAttribute="leading" constant="20" id="VqZ-b2-Bnw"/>
                             <constraint firstItem="TwV-9P-mXA" firstAttribute="top" secondItem="eDD-hV-SHQ" secondAttribute="top" id="j7m-q4-ALe"/>
                             <constraint firstItem="4ZZ-IN-ckL" firstAttribute="leading" secondItem="2k4-eb-If6" secondAttribute="leading" constant="50" id="nKo-Yb-JUq"/>
@@ -231,19 +250,22 @@
                         <viewLayoutGuide key="safeArea" id="2k4-eb-If6"/>
                     </view>
                     <connections>
-                        <outlet property="backgroundImageView" destination="TwV-9P-mXA" id="HvP-l8-GGP"/>
+                        <outlet property="page01EyesOutlet" destination="vYA-2d-Npc" id="icf-Ag-phy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Wb-CJ-C0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="t7b-us-0Yi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1688" y="177"/>
+            <point key="canvasLocation" x="1687.769784172662" y="176.97841726618705"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrowleft" width="51" height="44"/>
         <image name="arrowright" width="51" height="44"/>
         <image name="gtb01_bg" width="1024" height="768"/>
+        <image name="gtb01_bug01" width="64" height="66"/>
+        <image name="gtb01_eye01" width="252" height="109"/>
+        <image name="gtb01_girl01" width="462" height="626"/>
         <image name="gtb01_text" width="723" height="196"/>
         <image name="gtb_opening_bg" width="1024" height="768"/>
         <image name="gtb_opening_eye01" width="142" height="91"/>
@@ -255,7 +277,4 @@
         <image name="gtb_opening_readtome_on.png" width="336" height="96"/>
         <image name="logo0" width="1024" height="768"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="mh6-D5-14A"/>
-    </inferredMetricsTieBreakers>
 </document>
