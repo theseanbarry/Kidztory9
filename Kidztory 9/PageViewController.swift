@@ -16,7 +16,6 @@ class PageViewController: UIViewController {
     @IBOutlet weak var titleEyesOutlet: UIImageView?
     @IBAction func readToMeButton(_ sender: Any) {
         readToMe = true
-        performSegue(withIdentifier: "titleSegue", sender: nil)
         //page flip sound function
         playSoundFX("ArrowVoice")
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
@@ -28,7 +27,6 @@ class PageViewController: UIViewController {
     }
     @IBAction func myselfButton(_ sender: Any) {
         readToMe = false
-        performSegue(withIdentifier: "titleSegue", sender: nil)
     }
     @IBAction func moreButton(_ sender: Any) {
     }

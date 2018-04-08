@@ -80,8 +80,8 @@
                                 <state key="normal" image="gtb_opening_readtome"/>
                                 <state key="highlighted" image="gtb_opening_readtome_on.png"/>
                                 <connections>
-                                    <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="ylt-KF-Lcd"/>
-                                    <segue destination="cFk-P6-eWw" kind="presentation" identifier="titleSegue" id="2Zu-fx-Ni0"/>
+                                    <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="kVM-NF-COl"/>
+                                    <segue destination="cFk-P6-eWw" kind="showDetail" identifier="titleSegue" id="GBu-zN-Fby"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-ck-PRu" userLabel="myself">
@@ -96,7 +96,6 @@
                                 <state key="highlighted" image="gtb_opening_myself_on.png"/>
                                 <connections>
                                     <action selector="myselfButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="wsh-wo-n5w"/>
-                                    <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="DJB-TC-2TW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-2Z-JPj" userLabel="more">
@@ -211,21 +210,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJU-Ld-qe1" userLabel="page01Girl">
-                                <rect key="frame" x="532" y="208" width="462" height="626"/>
+                                <rect key="frame" x="533" y="208.5" width="462" height="626"/>
                                 <state key="normal" image="gtb01_girl01"/>
                                 <connections>
                                     <action selector="page01GirlButton:" destination="cFk-P6-eWw" eventType="touchUpInside" id="ttL-rd-00S"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxk-XF-Ifc" userLabel="page01bug">
-                                <rect key="frame" x="188" y="436" width="64" height="66"/>
+                                <rect key="frame" x="187.5" y="436" width="64" height="66"/>
                                 <state key="normal" image="gtb01_bug01"/>
                                 <connections>
                                     <action selector="page01BugButton:" destination="cFk-P6-eWw" eventType="touchUpInside" id="MqR-aN-Z8G"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb01_eye01" translatesAutoresizingMaskIntoConstraints="NO" id="vYA-2d-Npc" userLabel="page01Eyes">
-                                <rect key="frame" x="649" y="385" width="252" height="109"/>
+                                <rect key="frame" x="649.5" y="385.5" width="252" height="109"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import AVFoundation
-import SpriteKit
 
 var readToMe = true
 
@@ -44,10 +43,12 @@ func playSoundFX(_ soundFXName:String) {
     } catch let error {print(error.localizedDescription)}
 }
 
-// page flip
+
+
+/* page flip v3
 class PageFlipAnimator : NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 1.2
+        return 0.8
     }
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
@@ -78,9 +79,7 @@ class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PageFlipAnimator()
     }
-}
-
-
+} */
 
 /* page flip v2
  func flipSounds() {
@@ -142,8 +141,8 @@ func blinkEyes(_ outlet:UIImageView?, open:String, half:String, closed:String) {
     guard let outlet = outlet else {return}
     var list = [UIImage]()
     for _ in 0..<200 {
-        switch arc4random_uniform(20) {
-        case 0..<19:
+        switch arc4random_uniform(10) {
+        case 0..<9:
             for _ in 0..<10 {
                 if let image = UIImage(named: open) {
                     list.append(image)} else {return}
