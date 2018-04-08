@@ -43,7 +43,16 @@ func playSoundFX(_ soundFXName:String) {
     } catch let error {print(error.localizedDescription)}
 }
 
-
+//page flip sound function
+func pageFlipSounds() {
+    playSoundFX("ArrowVoice")
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
+        playSoundFX("SwapPage")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
+            playVOSound(1)
+        }
+    }
+}
 
 /* page flip v3
 class PageFlipAnimator : NSObject, UIViewControllerAnimatedTransitioning {

@@ -48,12 +48,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <outlet property="delegate" destination="2vq-7P-ZJ9" id="loi-fs-tIh"/>
                         <segue destination="fQS-jC-QGn" kind="relationship" relationship="rootViewController" id="quh-nB-ACT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAf-8l-LfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="2vq-7P-ZJ9" customClass="NavigationControllerDelegate" customModule="Kidztory_9" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="21" y="708"/>
         </scene>
@@ -81,7 +79,7 @@
                                 <state key="highlighted" image="gtb_opening_readtome_on.png"/>
                                 <connections>
                                     <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="kVM-NF-COl"/>
-                                    <segue destination="cFk-P6-eWw" kind="showDetail" identifier="titleSegue" id="GBu-zN-Fby"/>
+                                    <segue destination="cFk-P6-eWw" kind="show" identifier="titleSegue" action="showDetailViewController:sender:" id="GBu-zN-Fby"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-ck-PRu" userLabel="myself">
@@ -200,6 +198,8 @@
                                 <state key="normal" image="arrowleft"/>
                                 <connections>
                                     <action selector="arrowLeftButton:" destination="t7b-us-0Yi" eventType="touchUpInside" id="FIn-g1-K9k"/>
+                                    <action selector="page01ArrowLeft:" destination="cFk-P6-eWw" eventType="touchUpInside" id="MCf-FD-jMA"/>
+                                    <action selector="page01ArrowLeftWithUnwindSegue:" destination="cFk-P6-eWw" eventType="touchUpInside" id="QIU-1i-fsK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-IN-ckL" userLabel="page01Text">

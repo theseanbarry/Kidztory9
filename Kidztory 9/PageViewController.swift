@@ -16,14 +16,7 @@ class PageViewController: UIViewController {
     @IBOutlet weak var titleEyesOutlet: UIImageView?
     @IBAction func readToMeButton(_ sender: Any) {
         readToMe = true
-        //page flip sound function
-        playSoundFX("ArrowVoice")
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
-            playSoundFX("SwapPage")
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
-                playVOSound(1)
-            }
-        }
+        pageFlipSounds()
     }
     @IBAction func myselfButton(_ sender: Any) {
         readToMe = false
@@ -40,6 +33,9 @@ class PageViewController: UIViewController {
     }
     @IBAction func page01BugButton(_ sender: Any) {
         playSoundFX("23_Ladybird_flying")
+    }
+    @IBAction func page01ArrowLeft(unwindSegue: UIStoryboardSegue) {
+        pageFlipSounds()
     }
     
     override func viewDidAppear(_ animated:Bool) {
