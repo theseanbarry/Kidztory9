@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,27 +34,12 @@
                     </view>
                     <connections>
                         <outlet property="openingOutlet" destination="l4p-Vx-K86" id="ycA-sK-T2u"/>
-                        <segue destination="MN4-BM-XDp" kind="presentation" identifier="openingSegue" modalTransitionStyle="crossDissolve" id="cte-y2-A0g"/>
+                        <segue destination="6Gq-h2-VRV" kind="presentation" identifier="openingSegue" modalTransitionStyle="crossDissolve" id="LvN-Cv-hUB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59" y="-360"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="jyi-9s-F9e">
-            <objects>
-                <navigationController navigationBarHidden="YES" id="MN4-BM-XDp" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Icn-8y-77a">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="fQS-jC-QGn" kind="relationship" relationship="rootViewController" id="quh-nB-ACT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QAf-8l-LfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="21" y="708"/>
+            <point key="canvasLocation" x="21" y="-360"/>
         </scene>
         <!--Title-->
         <scene sceneID="Rrg-q2-QDU">
@@ -67,7 +53,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb_opening_eye01" translatesAutoresizingMaskIntoConstraints="NO" id="GUz-L0-83R">
-                                <rect key="frame" x="368.5" y="325.5" width="142" height="100"/>
+                                <rect key="frame" x="368" y="325.5" width="142" height="100"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bO-B4-m31" userLabel="readToMe">
                                 <rect key="frame" x="632.5" y="298" width="336" height="113"/>
@@ -79,7 +65,7 @@
                                 <state key="highlighted" image="gtb_opening_readtome_on.png"/>
                                 <connections>
                                     <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="kVM-NF-COl"/>
-                                    <segue destination="cFk-P6-eWw" kind="show" identifier="titleSegue" action="showDetailViewController:sender:" id="GBu-zN-Fby"/>
+                                    <segue destination="cFk-P6-eWw" kind="push" identifier="titleSegue" id="GBu-zN-Fby"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-ck-PRu" userLabel="myself">
@@ -94,6 +80,7 @@
                                 <state key="highlighted" image="gtb_opening_myself_on.png"/>
                                 <connections>
                                     <action selector="myselfButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="wsh-wo-n5w"/>
+                                    <segue destination="cFk-P6-eWw" kind="push" identifier="titleSegue" id="N3v-0c-40Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-2Z-JPj" userLabel="more">
@@ -160,13 +147,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="ePw-sJ-5jy"/>
                     <connections>
                         <outlet property="titleEyesOutlet" destination="GUz-L0-83R" id="G23-Lt-eOz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uk-rm-pEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886.69950738916259" y="708"/>
+            <point key="canvasLocation" x="897" y="707"/>
         </scene>
         <!--Page 1-->
         <scene sceneID="o5m-y5-KOP">
@@ -187,6 +175,7 @@
                                 <state key="normal" image="arrowright"/>
                                 <connections>
                                     <action selector="arrowRightButton:" destination="cFk-P6-eWw" eventType="touchUpInside" id="7Je-n8-bmU"/>
+                                    <segue destination="nY7-3h-G49" kind="push" identifier="page01Segue" id="FSg-bB-2rD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y4-LI-EFi" userLabel="arrowLeft">
@@ -197,9 +186,8 @@
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <state key="normal" image="arrowleft"/>
                                 <connections>
-                                    <action selector="arrowLeftButton:" destination="t7b-us-0Yi" eventType="touchUpInside" id="FIn-g1-K9k"/>
-                                    <action selector="page01ArrowLeft:" destination="cFk-P6-eWw" eventType="touchUpInside" id="MCf-FD-jMA"/>
-                                    <action selector="page01ArrowLeftWithUnwindSegue:" destination="cFk-P6-eWw" eventType="touchUpInside" id="QIU-1i-fsK"/>
+                                    <action selector="unwindToBeginningWithUnwindSegue:" destination="cFk-P6-eWw" eventType="touchUpInside" id="xtV-AI-hul"/>
+                                    <segue destination="t7b-us-0Yi" kind="unwind" unwindAction="unwindToBeginningWithUnwindSegue:" id="CXj-wt-ICf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-IN-ckL" userLabel="page01Text">
@@ -248,6 +236,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2k4-eb-If6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="uLh-Qj-44f"/>
                     <connections>
                         <outlet property="page01EyesOutlet" destination="vYA-2d-Npc" id="icf-Ag-phy"/>
                     </connections>
@@ -255,7 +244,152 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Wb-CJ-C0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="t7b-us-0Yi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1687.769784172662" y="176.97841726618705"/>
+            <point key="canvasLocation" x="1789.2086330935251" y="707.91366906474821"/>
+        </scene>
+        <!--Page 2-->
+        <scene sceneID="NSF-3D-d1m">
+            <objects>
+                <viewController title="Page 2" id="nY7-3h-G49" customClass="PageViewController" customModule="Kidztory_9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kU4-UU-ZeN">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb02_bg" translatesAutoresizingMaskIntoConstraints="NO" id="O9v-MN-Dt1">
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="gtb02_house" translatesAutoresizingMaskIntoConstraints="NO" id="oz8-c9-Jd7">
+                                <rect key="frame" x="0.0" y="167" width="1112" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oz8-c9-Jd7" secondAttribute="height" multiplier="5:3" id="wxO-q7-G8W"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMH-fy-kU0" userLabel="arrowRight">
+                                <rect key="frame" x="1041" y="770" width="51" height="44"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
+                                </accessibility>
+                                <state key="normal" image="arrowright"/>
+                                <connections>
+                                    <action selector="arrowRightButton:" destination="cFk-P6-eWw" eventType="touchUpInside" id="3gB-RX-Iw2"/>
+                                    <action selector="arrowRightButton:" destination="nY7-3h-G49" eventType="touchUpInside" id="5ZF-CI-3Bc"/>
+                                    <segue destination="dir-Bn-D9f" kind="push" id="k49-Wf-Wvg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUs-Gb-MlG" userLabel="arrowLeft">
+                                <rect key="frame" x="20" y="770" width="51" height="44"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
+                                </accessibility>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <state key="normal" image="arrowleft"/>
+                                <connections>
+                                    <action selector="arrowLeftButton:" destination="nY7-3h-G49" eventType="touchUpInside" id="pUK-Qc-Z7M"/>
+                                    <segue destination="b6f-a1-qc3" kind="unwind" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="dmH-wd-EpS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkD-HR-gZT" userLabel="page02Text">
+                                <rect key="frame" x="121" y="68.5" width="942" height="187"/>
+                                <state key="normal" image="gtb02_text"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="O9v-MN-Dt1" firstAttribute="leading" secondItem="kU4-UU-ZeN" secondAttribute="leading" id="1cd-Du-Iqp"/>
+                            <constraint firstItem="rKs-WL-eLf" firstAttribute="bottom" secondItem="iMH-fy-kU0" secondAttribute="bottom" constant="20" id="OcD-ii-Rlu"/>
+                            <constraint firstItem="oz8-c9-Jd7" firstAttribute="leading" secondItem="kU4-UU-ZeN" secondAttribute="leading" id="TE3-KE-SBe"/>
+                            <constraint firstItem="oz8-c9-Jd7" firstAttribute="centerY" secondItem="kU4-UU-ZeN" secondAttribute="centerY" multiplier="1.2" id="THc-ma-g9a"/>
+                            <constraint firstAttribute="trailing" secondItem="oz8-c9-Jd7" secondAttribute="trailing" id="UKr-gL-CW3"/>
+                            <constraint firstItem="rKs-WL-eLf" firstAttribute="trailing" secondItem="iMH-fy-kU0" secondAttribute="trailing" constant="20" id="VWl-NN-avq"/>
+                            <constraint firstItem="rKs-WL-eLf" firstAttribute="bottom" secondItem="pUs-Gb-MlG" secondAttribute="bottom" constant="20" id="YId-Nm-rX4"/>
+                            <constraint firstItem="lkD-HR-gZT" firstAttribute="centerX" secondItem="kU4-UU-ZeN" secondAttribute="centerX" multiplier="1.065" id="aLZ-75-iG9"/>
+                            <constraint firstAttribute="trailing" secondItem="O9v-MN-Dt1" secondAttribute="trailing" id="dZ7-IC-gyZ"/>
+                            <constraint firstItem="pUs-Gb-MlG" firstAttribute="leading" secondItem="rKs-WL-eLf" secondAttribute="leading" constant="20" id="elu-xA-X4H"/>
+                            <constraint firstItem="O9v-MN-Dt1" firstAttribute="top" secondItem="kU4-UU-ZeN" secondAttribute="top" id="heE-hE-Gp8"/>
+                            <constraint firstItem="O9v-MN-Dt1" firstAttribute="bottom" secondItem="kU4-UU-ZeN" secondAttribute="bottom" id="lzG-cM-o43"/>
+                            <constraint firstItem="lkD-HR-gZT" firstAttribute="centerY" secondItem="kU4-UU-ZeN" secondAttribute="centerY" multiplier="0.39" id="tSX-jW-Ka4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rKs-WL-eLf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tCS-lV-rUW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KaR-KQ-nVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="b6f-a1-qc3" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2599.6402877697842" y="706.47482014388493"/>
+        </scene>
+        <!--Page 3-->
+        <scene sceneID="qIw-m4-BtV">
+            <objects>
+                <viewController title="Page 3" id="dir-Bn-D9f" customClass="PageViewController" customModule="Kidztory_9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eWB-qS-v83">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb03_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Nlu-j7-48s">
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jfv-Bi-4d7" userLabel="arrowRight">
+                                <rect key="frame" x="1041" y="770" width="51" height="44"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
+                                </accessibility>
+                                <state key="normal" image="arrowright"/>
+                                <connections>
+                                    <action selector="arrowRightButton:" destination="cFk-P6-eWw" eventType="touchUpInside" id="DJP-I8-blc"/>
+                                    <action selector="arrowRightButton:" destination="dir-Bn-D9f" eventType="touchUpInside" id="Vg7-SU-IJj"/>
+                                    <action selector="arrowRightButton:" destination="nY7-3h-G49" eventType="touchUpInside" id="fDE-8t-kFh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25i-g5-z6Q" userLabel="arrowLeft">
+                                <rect key="frame" x="20" y="770" width="51" height="44"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
+                                </accessibility>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <state key="normal" image="arrowleft"/>
+                                <connections>
+                                    <action selector="arrowLeftButton:" destination="nY7-3h-G49" eventType="touchUpInside" id="1EC-dc-DUS"/>
+                                    <action selector="arrowLeftButton:" destination="dir-Bn-D9f" eventType="touchUpInside" id="GD7-Qi-6RL"/>
+                                    <segue destination="psy-gw-m6a" kind="unwind" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="9ic-Xb-JTs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f2D-mR-Yyc" firstAttribute="bottom" secondItem="25i-g5-z6Q" secondAttribute="bottom" constant="20" id="2sh-eg-AJ2"/>
+                            <constraint firstItem="f2D-mR-Yyc" firstAttribute="bottom" secondItem="Jfv-Bi-4d7" secondAttribute="bottom" constant="20" id="5Zo-D9-WF1"/>
+                            <constraint firstItem="f2D-mR-Yyc" firstAttribute="trailing" secondItem="Jfv-Bi-4d7" secondAttribute="trailing" constant="20" id="CCb-hH-Ubb"/>
+                            <constraint firstAttribute="bottom" secondItem="Nlu-j7-48s" secondAttribute="bottom" id="RW4-dC-XUQ"/>
+                            <constraint firstItem="Nlu-j7-48s" firstAttribute="top" secondItem="eWB-qS-v83" secondAttribute="top" id="Vk8-52-yZQ"/>
+                            <constraint firstItem="Nlu-j7-48s" firstAttribute="leading" secondItem="eWB-qS-v83" secondAttribute="leading" id="cC7-ze-4rc"/>
+                            <constraint firstAttribute="trailing" secondItem="Nlu-j7-48s" secondAttribute="trailing" id="fNZ-2n-UeL"/>
+                            <constraint firstItem="25i-g5-z6Q" firstAttribute="leading" secondItem="f2D-mR-Yyc" secondAttribute="leading" constant="20" id="g2Q-Ws-wMO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f2D-mR-Yyc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nf5-Rt-T2x"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEN-Rz-Nly" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="psy-gw-m6a" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3383" y="707"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7qf-oT-Kje">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="6Gq-h2-VRV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qe5-A0-Ybg">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fQS-jC-QGn" kind="relationship" relationship="rootViewController" id="Mdu-a8-K0x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnI-a6-n6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="707"/>
         </scene>
     </scenes>
     <resources>
@@ -266,6 +400,10 @@
         <image name="gtb01_eye01" width="252" height="109"/>
         <image name="gtb01_girl01" width="462" height="626"/>
         <image name="gtb01_text" width="723" height="196"/>
+        <image name="gtb02_bg" width="1024" height="768"/>
+        <image name="gtb02_house" width="1024" height="554"/>
+        <image name="gtb02_text" width="942" height="187"/>
+        <image name="gtb03_bg" width="1024" height="768"/>
         <image name="gtb_opening_bg" width="1024" height="768"/>
         <image name="gtb_opening_eye01" width="142" height="91"/>
         <image name="gtb_opening_more" width="365" height="113"/>
@@ -276,4 +414,7 @@
         <image name="gtb_opening_readtome_on.png" width="336" height="96"/>
         <image name="logo0" width="1024" height="768"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="N3v-0c-40Q"/>
+    </inferredMetricsTieBreakers>
 </document>

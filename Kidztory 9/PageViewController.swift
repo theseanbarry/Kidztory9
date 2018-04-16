@@ -9,20 +9,21 @@
 import Foundation
 import UIKit
 import AVFoundation
-import SpriteKit
 
 class PageViewController: UIViewController {
     // title
     @IBOutlet weak var titleEyesOutlet: UIImageView?
     @IBAction func readToMeButton(_ sender: Any) {
         readToMe = true
-        pageFlipSounds()
+        playPageFlipSounds(true)
     }
     @IBAction func myselfButton(_ sender: Any) {
         readToMe = false
+        playPageFlipSounds(true)
     }
     @IBAction func moreButton(_ sender: Any) {
     }
+    
     // page 01
     @IBOutlet weak var page01EyesOutlet: UIImageView?
     @IBAction func page01VO(_ sender: Any) {
@@ -34,8 +35,22 @@ class PageViewController: UIViewController {
     @IBAction func page01BugButton(_ sender: Any) {
         playSoundFX("23_Ladybird_flying")
     }
-    @IBAction func page01ArrowLeft(unwindSegue: UIStoryboardSegue) {
-        pageFlipSounds()
+    @IBAction func unwindToBeginning(unwindSegue: UIStoryboardSegue) {
+        playPageFlipSounds(true, beginning: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 8) {
+            guard pageCounter.number == 0 else {return}
+            playVOSound(0)
+        }
+    }
+    // page 02
+    
+    // all
+    @IBAction func unwindToPreviousPage(unwindSegue: UIStoryboardSegue) {}
+    @IBAction func arrowLeftButton(_ sender: Any) {
+        playPageFlipSounds(false)
+    }
+    @IBAction func arrowRightButton(_ sender: Any) {
+        playPageFlipSounds(true)
     }
     
     override func viewDidAppear(_ animated:Bool) {
@@ -45,6 +60,8 @@ class PageViewController: UIViewController {
         // page 01
         blinkEyes(page01EyesOutlet, open: "gtb01_eye01", half: "gtb01_eye02", closed: "gtb01_eye03")
     }
+    
+}
 
     /*
     @IBOutlet weak var backgroundImageView: UIImageView! {
@@ -55,5 +72,3 @@ class PageViewController: UIViewController {
     @IBAction func arrowRightButton(_ sender: Any) {
         forward = false)
     } */
-    
-}
