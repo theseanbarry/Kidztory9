@@ -20,6 +20,7 @@ class PageViewController: UIViewController {
     @IBAction func myselfButton(_ sender: Any) {
         readToMe = false
         playPageFlipSounds(true)
+        voSound?.stop()
     }
     @IBAction func moreButton(_ sender: Any) {
     }
@@ -37,12 +38,30 @@ class PageViewController: UIViewController {
     }
     @IBAction func unwindToBeginning(unwindSegue: UIStoryboardSegue) {
         playPageFlipSounds(true, beginning: true)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 8) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
             guard pageCounter.number == 0 else {return}
-            playVOSound(0)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
+                        guard pageCounter.number == 0 else {return}
+                        playVOSound(0)
+            }
         }
     }
+    
     // page 02
+    @IBAction func page02VO(_ sender: Any) {
+        playVOSound(2)
+    }
+    @IBAction func page02GirlButton(_ sender: Any) {
+        playSoundFX("24_Door_Knock")
+    }
+    @IBAction func page02BugButton(_ sender: Any) {
+        playSoundFX("23_Ladybird_flying")
+    }
+    
+    // page 03
+    @IBAction func page03VO(_ sender: Any) {
+        playVOSound(3)
+    }
     
     // all
     @IBAction func unwindToPreviousPage(unwindSegue: UIStoryboardSegue) {}
@@ -62,13 +81,3 @@ class PageViewController: UIViewController {
     }
     
 }
-
-    /*
-    @IBOutlet weak var backgroundImageView: UIImageView! {
-    }
-    @IBAction func arrowLeftButton(_ sender: Any) {
-       forward = true}
-    
-    @IBAction func arrowRightButton(_ sender: Any) {
-        forward = false)
-    } */
