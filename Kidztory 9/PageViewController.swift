@@ -62,6 +62,19 @@ class PageViewController: UIViewController {
     @IBAction func page03VO(_ sender: Any) {
         playVOSound(3)
     }
+    @IBAction func page03GirlButton(_ sender: Any) {
+        playSoundFX("02_Goldilocks_Wondering")
+    }
+    @IBAction func page03PaBowlButton(_ sender: Any) {
+        playSoundFX("25_papa_Bowl")
+    }
+    @IBAction func page03MaBowlButton(_ sender: Any) {
+        playSoundFX("26_mama_Bowl")
+    }
+    @IBAction func page03BabyBowlButton(_ sender: Any) {
+        playSoundFX("27_baby_Bowl")
+    }
+    
     
     // all
     @IBAction func unwindToPreviousPage(unwindSegue: UIStoryboardSegue) {}

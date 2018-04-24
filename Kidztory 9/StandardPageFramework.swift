@@ -55,6 +55,7 @@ struct PageCounter {
 var pageCounter = PageCounter()
 func playPageFlipSounds(_ right: Bool = true, beginning: Bool = false) {
     right == true ? pageCounter.increment() : pageCounter.decrement()
+    voSound?.stop()
     playSoundFX("ArrowVoice")
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
         playSoundFX("SwapPage")
