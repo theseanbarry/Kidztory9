@@ -15,14 +15,11 @@ var readToMe = true
 // vo sound
 var voSound: AVAudioPlayer?
 func playVOSound(_ soundID:Int) {
-    guard let url = Bundle.main.url(forResource: "\(soundID)", withExtension:"m4a", subdirectory:"EnglishVO") else {
-        return
-    }
+    guard readToMe == true else {return}
+    guard let url = Bundle.main.url(forResource: "\(soundID)", withExtension:"m4a", subdirectory:"EnglishVO") else {return}
     do {
         voSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.m4a.rawValue)
-        guard let voSound = voSound else {
-            return
-        }
+        guard let voSound = voSound else {return}
         voSound.play()
     } catch let error {print(error.localizedDescription)}
 }
@@ -31,14 +28,10 @@ func playVOSound(_ soundID:Int) {
 // sound fx
 var soundFX: AVAudioPlayer?
 func playSoundFX(_ soundFXName:String) {
-    guard let url = Bundle.main.url(forResource: "\(soundFXName)", withExtension:"wav", subdirectory:"SoundFX") else {
-        return
-    }
+    guard let url = Bundle.main.url(forResource: "\(soundFXName)", withExtension:"wav", subdirectory:"SoundFX") else {return}
     do {
         soundFX = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
-        guard let soundFX = soundFX else {
-            return
-        }
+        guard let soundFX = soundFX else {return}
         soundFX.play()
     } catch let error {print(error.localizedDescription)}
 }
