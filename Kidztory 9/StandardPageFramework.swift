@@ -12,11 +12,44 @@ import AVFoundation
 
 var readToMe = true
 
+//page flip sound function
+struct PageCounter {
+    var number = Int()
+    var changed = Bool()
+    
+    mutating func decrement() {number -= 1; changed = true}
+    mutating func increment() {number += 1; changed = true}
+    mutating func resetNumber() {number = 0; changed = true}
+    mutating func resetChanged() {changed = false}
+}
+
+var pageCounter = PageCounter()
+func playPageFlipSounds(_ right: Bool = true, beginning: Bool = false) {
+    right == true ? pageCounter.increment() : pageCounter.decrement()
+    voSound?.stop()
+    playSoundFX("ArrowVoice")
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
+        playSoundFX("SwapPage")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
+            if beginning == true {
+                pageCounter.number = 99
+                playVOSound()
+                pageCounter.resetNumber()
+            } else {
+                if readToMe == true {playVOSound()}
+                else {return}
+            }
+        }
+    }
+}
+
 // vo sound
 var voSound: AVAudioPlayer?
-func playVOSound(_ soundID:Int) {
+func playVOSound() {
     guard readToMe == true else {return}
-    guard let url = Bundle.main.url(forResource: "\(soundID)", withExtension:"m4a", subdirectory:"EnglishVO") else {return}
+    guard (pageCounter.changed == false) && (voSound!.isPlaying == false) else {return}
+    pageCounter.resetChanged()
+    guard let url = Bundle.main.url(forResource: "\(pageCounter.number)", withExtension:"m4a", subdirectory:"EnglishVO") else {return}
     do {
         voSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.m4a.rawValue)
         guard let voSound = voSound else {return}
@@ -34,35 +67,6 @@ func playSoundFX(_ soundFXName:String) {
         guard let soundFX = soundFX else {return}
         soundFX.play()
     } catch let error {print(error.localizedDescription)}
-}
-
-//page flip sound function
-struct PageCounter {
-    var number = Int()
-    
-    mutating func decrement() {number -= 1}
-    mutating func increment() {number += 1}
-    mutating func reset() {number = 0}
-}
-
-var pageCounter = PageCounter()
-func playPageFlipSounds(_ right: Bool = true, beginning: Bool = false) {
-    right == true ? pageCounter.increment() : pageCounter.decrement()
-    voSound?.stop()
-    playSoundFX("ArrowVoice")
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
-        playSoundFX("SwapPage")
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
-            if beginning == true {
-                pageCounter.number = 99
-                playVOSound(pageCounter.number)
-                pageCounter.reset()
-            } else {
-                if readToMe == true {playVOSound(pageCounter.number)}
-                else {return}
-            }
-        }
-    }
 }
 
 // blink eyes
@@ -90,36 +94,33 @@ func blinkEyes(_ outlet:UIImageView?, open:String, half:String, closed:String) {
     outlet.startAnimating()
 }
 
-// stop motion back and forth movement(objects, custom translation?, custom rotation?, duration, custom iterations?)
-/* func backAndForthMovement(duration: Double, x: Int, y: Int, rotation: Double) {
-    var animating = false
-    while animating == false {
-        animating = true
-        // forward animation
-        UIView.animate(withDuration: duration, delay: 0, options: .curveLinear, animations: {
-            self.animatedUIView.center.x +=  x
-            self.animatedUIView.center.y +=  y
-            self.animatedUIView.transform = CGAffineTransform(rotationAngle: CGFloat(rotation))
-        }, completion: nil)
-        // reverse animation
-        UIView.animate(withDuration: duration, delay: 0, options: .curveLinear, animations: {
-            self.animatedUIView.center.x -=  x
-            self.animatedUIView.center.y -=  y
-            self.animatedUIView.transform = CGAffineTransform(rotationAngle: CGFloat(rotation))
-        }, completion: nil)
-        animating = false
+// stop motion single
+func stopMotionSingle(_ outlet:UIImageView?, imageArray:[String], timeInterval:Double = 0.3) {
+    guard let outlet = outlet else {return}
+    let imageArrayCount = imageArray.count
+    var list = [UIImage]()
+    for i in imageArray {
+        if let image = UIImage(named: i) {
+            list.append(image)} else {return}
     }
+    outlet.animationImages = list
+    outlet.animationDuration = Double(imageArrayCount) * timeInterval
+    outlet.animationRepeatCount = 1
+    outlet.startAnimating()
 }
 
-// stop motion looping movement(objects, custom translation?, custom rotation?, duration)
-// stop motion single movement(objects, custom translation?, custom rotation?)
-func singleMovement(duration: Double, x: Int, y: Int, rotation: Double) {
-    UIView.animate(withDuration: duration, delay: 0, options: .curveLinear, animations: {
-        self.animatedUIView.center.x +=  x
-        self.animatedUIView.center.y +=  y
-        self.animatedUIView.transform = CGAffineTransform(rotationAngle: CGFloat(rotation))
-    }, completion: nil)
+// stop motion loop
+func stopMotionLoop(_ outlet:UIImageView?, imageArray:[String], timeInterval:Double = 0.3) {
+    guard let outlet = outlet else {return}
+    let imageArrayCount = imageArray.count
+    var list = [UIImage]()
+    for i in imageArray {
+        if let image = UIImage(named: i) {
+            list.append(image)} else {return}
+    }
+    outlet.animationImages = list
+    outlet.animationDuration = Double(imageArrayCount) * timeInterval
+    outlet.startAnimating()
 }
 
- // fluid movement(object, curve equation, duration) */
-
+ // fluid movement(object, curve equation, duration)
