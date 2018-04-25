@@ -45,15 +45,16 @@ func playPageFlipSounds(_ right: Bool = true, beginning: Bool = false) {
 
 // vo sound
 var voSound: AVAudioPlayer?
+var voSoundPlaying = false
 func playVOSound() {
     guard readToMe == true else {return}
-    guard (pageCounter.changed == false) && (voSound!.isPlaying == false) else {return}
+    guard (pageCounter.changed == false) && (voSoundPlaying == false) else {return}
     pageCounter.resetChanged()
     guard let url = Bundle.main.url(forResource: "\(pageCounter.number)", withExtension:"m4a", subdirectory:"EnglishVO") else {return}
     do {
         voSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.m4a.rawValue)
-        guard let voSound = voSound else {return}
         voSound.play()
+        voSoundPlaying = true
     } catch let error {print(error.localizedDescription)}
 }
 

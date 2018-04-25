@@ -54,11 +54,13 @@ class PageViewController: UIViewController {
     }
     
     // page 03
+    @IBOutlet weak var page03PaBowlOutlet: UIImageView!
     @IBAction func page03GirlButton(_ sender: Any) {
         playSoundFX("02_Goldilocks_Wondering")
     }
-    @IBAction func page03PaBowlButton(_ sender: Any) {
+    @IBAction func page03PaBowlInvisibleButton(_ sender: Any) {
         playSoundFX("25_papa_Bowl")
+        stopMotionSingle(page03PaBowlOutlet, imageArray: ["gtb03_paBowl01", "gtb03_paBowl02", "gtb03_paBowl03", "gtb03_paBowl04"], timeInterval: 0.3)
     }
     @IBAction func page03MaBowlButton(_ sender: Any) {
         playSoundFX("26_mama_Bowl")
@@ -139,5 +141,9 @@ class PageViewController: UIViewController {
         blinkEyes(titleEyesOutlet, open: "gtb_opening_eye01", half: "gtb_opening_eye02", closed: "gtb_opening_eye03")
         // page 01
         blinkEyes(page01EyesOutlet, open: "gtb01_eye01", half: "gtb01_eye02", closed: "gtb01_eye03")
+        // page 02
+        
+        // page 03
+        
     }
 }
