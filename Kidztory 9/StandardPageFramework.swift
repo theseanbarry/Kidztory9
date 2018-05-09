@@ -45,19 +45,21 @@ func playPageFlipSounds(_ right: Bool = true, beginning: Bool = false) {
 
 // vo sound
 var voSound: AVAudioPlayer?
-var voSoundPlaying = false
+// var voSoundPlaying = false
 func playVOSound() {
     guard readToMe == true else {return}
-    guard (pageCounter.changed == false) && (voSoundPlaying == false) else {return}
+/*    print(pageCounter.changed)
+    print(voSoundPlaying)
+    guard (pageCounter.changed == true) && (voSoundPlaying == false) else {return}*/
     pageCounter.resetChanged()
     guard let url = Bundle.main.url(forResource: "\(pageCounter.number)", withExtension:"m4a", subdirectory:"EnglishVO") else {return}
     do {
         voSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.m4a.rawValue)
+        guard let voSound = voSound else {return}
         voSound.play()
-        voSoundPlaying = true
+        // voSoundPlaying = true
     } catch let error {print(error.localizedDescription)}
 }
-
 
 // sound fx
 var soundFX: AVAudioPlayer?
@@ -71,23 +73,17 @@ func playSoundFX(_ soundFXName:String) {
 }
 
 // blink eyes
-func blinkEyes(_ outlet:UIImageView?, open:String, half:String, closed:String) {
+func blinkEyes(_ outlet:UIImageView?, open:UIImage, half:UIImage, closed:UIImage) {
     guard let outlet = outlet else {return}
     var list = [UIImage]()
     for _ in 0..<200 {
         switch arc4random_uniform(10) {
         case 0..<9:
-            for _ in 0..<10 {
-                if let image = UIImage(named: open) {
-                    list.append(image)} else {return}
-            }
+            for _ in 0..<10 {list.append(open)}
         default:
-            if let image = UIImage(named: half) {
-                list.append(image)} else {return}
-            if let image = UIImage(named: closed) {
-                list.append(image)} else {return}
-            if let image = UIImage(named: half) {
-                list.append(image)} else {return}
+            list.append(half)
+            list.append(closed)
+            list.append(half)
         }
     }
     outlet.animationImages = list
@@ -95,30 +91,38 @@ func blinkEyes(_ outlet:UIImageView?, open:String, half:String, closed:String) {
     outlet.startAnimating()
 }
 
-// stop motion single
-func stopMotionSingle(_ outlet:UIImageView?, imageArray:[String], timeInterval:Double = 0.3) {
+// insect buzz
+func insectBuzz(_ outlet:UIImageView?, open:UIImage, closed:UIImage) {
     guard let outlet = outlet else {return}
-    let imageArrayCount = imageArray.count
     var list = [UIImage]()
-    for i in imageArray {
-        if let image = UIImage(named: i) {
-            list.append(image)} else {return}
+    for _ in 0..<3 {
+        for _ in 0..<4 {list.append(closed); list.append(open)}
+        for _ in 0..<14 {list.append(open)}
     }
     outlet.animationImages = list
-    outlet.animationDuration = Double(imageArrayCount) * timeInterval
+    outlet.animationDuration = 6
     outlet.animationRepeatCount = 1
     outlet.startAnimating()
 }
 
-// stop motion loop
-func stopMotionLoop(_ outlet:UIImageView?, imageArray:[String], timeInterval:Double = 0.3) {
+// stop motion finite
+func stopMotionFinite(_ outlet:UIImageView?, imageArray:[UIImage], timeInterval:Double = 0.3, count:Int = 1) {
     guard let outlet = outlet else {return}
     let imageArrayCount = imageArray.count
     var list = [UIImage]()
-    for i in imageArray {
-        if let image = UIImage(named: i) {
-            list.append(image)} else {return}
-    }
+    for i in imageArray {list.append(i)}
+    outlet.animationImages = list
+    outlet.animationDuration = Double(imageArrayCount) * timeInterval
+    outlet.animationRepeatCount = count
+    outlet.startAnimating()
+}
+
+// stop motion loop
+func stopMotionLoop(_ outlet:UIImageView?, imageArray:[UIImage], timeInterval:Double = 0.3) {
+    guard let outlet = outlet else {return}
+    let imageArrayCount = imageArray.count
+    var list = [UIImage]()
+    for i in imageArray {list.append(i)}
     outlet.animationImages = list
     outlet.animationDuration = Double(imageArrayCount) * timeInterval
     outlet.startAnimating()

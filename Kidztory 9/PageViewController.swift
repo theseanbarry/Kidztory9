@@ -26,12 +26,18 @@ class PageViewController: UIViewController {
     }
     
     // page 01
+    @IBOutlet weak var page01GirlOutlet: UIImageView!
     @IBOutlet weak var page01EyesOutlet: UIImageView?
-    @IBAction func page01GirlButton(_ sender: Any) {
+    @IBOutlet weak var page01EyesConstraint: NSLayoutConstraint!
+    
+    @IBAction func page01GirlInvisibleButton(_ sender: Any) {
         playSoundFX("09_Goldilocks_humming")
+        // page01EyesConstraint.view removeConstraint:installed
+        // stopMotionSingle(page01EyesOutlet, imageArray: [])
     }
-    @IBAction func page01BugButton(_ sender: Any) {
+    @IBAction func page01BugInvisibleButton(_ sender: Any) {
         playSoundFX("23_Ladybird_flying")
+        insectBuzz(bugOutlet, open: #imageLiteral(resourceName: "gtb01_bug01"), closed: #imageLiteral(resourceName: "gtb01_bug02"))
     }
     @IBAction func unwindToBeginning(unwindSegue: UIStoryboardSegue) {
         readToMe = true
@@ -49,23 +55,31 @@ class PageViewController: UIViewController {
     @IBAction func page02GirlButton(_ sender: Any) {
         playSoundFX("24_Door_Knock")
     }
-    @IBAction func page02BugButton(_ sender: Any) {
+    @IBAction func page02BugInvisibleButton(_ sender: Any) {
         playSoundFX("23_Ladybird_flying")
+        insectBuzz(bugOutlet, open: #imageLiteral(resourceName: "gtb01_bug01"), closed: #imageLiteral(resourceName: "gtb01_bug02"))
     }
     
     // page 03
+    @IBOutlet weak var page03GirlOutlet: UIImageView!
     @IBOutlet weak var page03PaBowlOutlet: UIImageView!
-    @IBAction func page03GirlButton(_ sender: Any) {
+    @IBOutlet weak var page03MaBowlOutlet: UIImageView!
+    @IBOutlet weak var page03BabyBowlOutlet: UIImageView!
+    
+    @IBAction func page03GirlInvisibleButton(_ sender: Any) {
+        stopMotionFinite(page03GirlOutlet, imageArray: [ #imageLiteral(resourceName: "gtb03_girl04"), #imageLiteral(resourceName: "gtb03_girl01")], timeInterval: 1)
         playSoundFX("02_Goldilocks_Wondering")
     }
     @IBAction func page03PaBowlInvisibleButton(_ sender: Any) {
+        stopMotionFinite(page03PaBowlOutlet, imageArray: [ #imageLiteral(resourceName: "gtb03_paBowl02"), #imageLiteral(resourceName: "gtb03_paBowl03"), #imageLiteral(resourceName: "gtb03_paBowl04"), #imageLiteral(resourceName: "gtb03_paBowl01")], timeInterval: 0.2)
         playSoundFX("25_papa_Bowl")
-        stopMotionSingle(page03PaBowlOutlet, imageArray: ["gtb03_paBowl01", "gtb03_paBowl02", "gtb03_paBowl03", "gtb03_paBowl04"], timeInterval: 0.3)
     }
-    @IBAction func page03MaBowlButton(_ sender: Any) {
+    @IBAction func page03MaBowlInvisibleButton(_ sender: Any) {
+        stopMotionFinite(page03MaBowlOutlet, imageArray: [ #imageLiteral(resourceName: "gtb03_maBowl02"), #imageLiteral(resourceName: "gtb03_maBowl03"), #imageLiteral(resourceName: "gtb03_maBowl04"), #imageLiteral(resourceName: "gtb03_maBowl01")], timeInterval: 0.2)
         playSoundFX("26_mama_Bowl")
     }
-    @IBAction func page03BabyBowlButton(_ sender: Any) {
+    @IBAction func page03BabyBowlInvisibleButton(_ sender: Any) {
+        stopMotionFinite(page03BabyBowlOutlet, imageArray: [ #imageLiteral(resourceName: "gtb03_babyBowl02"), #imageLiteral(resourceName: "gtb03_babyBowl03"), #imageLiteral(resourceName: "gtb03_babyBowl04"), #imageLiteral(resourceName: "gtb03_babyBowl01")], timeInterval: 0.2)
         playSoundFX("27_baby_Bowl")
     }
     
@@ -124,6 +138,8 @@ class PageViewController: UIViewController {
     // last
     
     // all
+    @IBOutlet weak var bugOutlet: UIImageView?
+    
     @IBAction func unwindToPreviousPage(unwindSegue: UIStoryboardSegue) {}
     @IBAction func voButton(_ sender: Any) {
         playVOSound()
@@ -138,12 +154,12 @@ class PageViewController: UIViewController {
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
         // title
-        blinkEyes(titleEyesOutlet, open: "gtb_opening_eye01", half: "gtb_opening_eye02", closed: "gtb_opening_eye03")
+        blinkEyes(titleEyesOutlet, open: #imageLiteral(resourceName: "gtb_opening_eye01"), half: #imageLiteral(resourceName: "gtb_opening_eye02"), closed: #imageLiteral(resourceName: "gtb_opening_eye03"))
         // page 01
-        blinkEyes(page01EyesOutlet, open: "gtb01_eye01", half: "gtb01_eye02", closed: "gtb01_eye03")
+        blinkEyes(page01EyesOutlet, open: #imageLiteral(resourceName: "gtb01_eye01"), half: #imageLiteral(resourceName: "gtb01_eye02"), closed: #imageLiteral(resourceName: "gtb01_eye03"))
         // page 02
         
         // page 03
-        
+        blinkEyes(page03GirlOutlet, open: #imageLiteral(resourceName: "gtb03_girl01"), half: #imageLiteral(resourceName: "gtb03_girl02"), closed: #imageLiteral(resourceName: "gtb03_girl03"))
     }
 }
