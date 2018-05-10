@@ -2747,21 +2747,53 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb26_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Xnw-UO-dJC">
                                 <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                             </imageView>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZT-tY-3qb" userLabel="page21Ma">
-                                <rect key="frame" x="55" y="10" width="433.5" height="433.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb26_hand01" translatesAutoresizingMaskIntoConstraints="NO" id="97G-Gj-WdY" userLabel="page26Hand">
+                                <rect key="frame" x="32" y="667" width="581" height="167"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="97G-Gj-WdY" secondAttribute="height" multiplier="275:79" id="l4b-Qs-Gq3"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb26_dropL" translatesAutoresizingMaskIntoConstraints="NO" id="TyB-2M-0SG" userLabel="page26TearL">
+                                <rect key="frame" x="74.5" y="671.5" width="73" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TyB-2M-0SG" secondAttribute="height" multiplier="63:65" id="yeo-uJ-rD6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb26_dropR" translatesAutoresizingMaskIntoConstraints="NO" id="Qvm-Df-HqK" userLabel="page26TearR">
+                                <rect key="frame" x="447.5" y="640" width="84" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qvm-Df-HqK" secondAttribute="height" multiplier="19:18" id="wCa-kA-Jsj"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb26_girl01" translatesAutoresizingMaskIntoConstraints="NO" id="pfU-Bo-ELb" userLabel="page26Girl">
+                                <rect key="frame" x="135.5" y="175.5" width="224" height="183"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pfU-Bo-ELb" secondAttribute="height" multiplier="215:176" id="P6v-t1-tbb"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb26_lightOff" translatesAutoresizingMaskIntoConstraints="NO" id="HLT-nf-7gp" userLabel="page26Light">
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZT-tY-3qb" userLabel="page26Girl">
+                                <rect key="frame" x="41" y="158" width="334" height="208.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5ZT-tY-3qb" secondAttribute="height" multiplier="8:5" id="DIc-xt-OVI"/>
+                                </constraints>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gtb21_hand01" translatesAutoresizingMaskIntoConstraints="NO" id="97G-Gj-WdY" userLabel="page21Hand">
-                                <rect key="frame" x="10" y="294" width="486" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gtb21_eye01" translatesAutoresizingMaskIntoConstraints="NO" id="pfU-Bo-ELb" userLabel="page21Eyes">
-                                <rect key="frame" x="138" y="148" width="286" height="158"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJb-D8-K9x" userLabel="page26Light">
+                                <rect key="frame" x="361" y="112" width="56" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KJb-D8-K9x" secondAttribute="height" multiplier="3:4" id="F7q-f9-We8"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPy-iS-8oK" userLabel="page26Baby">
+                                <rect key="frame" x="75" y="458" width="450.5" height="375.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rPy-iS-8oK" secondAttribute="height" multiplier="6:5" id="8wu-c9-5E2"/>
+                                </constraints>
+                            </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWF-cv-DNo" userLabel="text">
-                                <rect key="frame" x="50" y="50" width="498" height="432"/>
+                                <rect key="frame" x="564" y="352" width="498" height="432"/>
                                 <state key="normal" image="gtb26_text"/>
                                 <connections>
                                     <action selector="voButton:" destination="3by-2f-OHc" eventType="touchUpInside" id="bWZ-Kg-MAQ"/>
@@ -2793,18 +2825,48 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="97G-Gj-WdY" secondAttribute="bottom" id="3Pn-fS-IDh"/>
+                            <constraint firstAttribute="bottom" secondItem="rPy-iS-8oK" secondAttribute="bottom" id="4IK-Qy-Wl9"/>
+                            <constraint firstItem="rPy-iS-8oK" firstAttribute="centerX" secondItem="IhS-ra-8tu" secondAttribute="centerX" multiplier="0.54" id="4d6-YK-LES"/>
+                            <constraint firstItem="97G-Gj-WdY" firstAttribute="centerX" secondItem="IhS-ra-8tu" secondAttribute="centerX" multiplier="0.58" id="77e-Ry-QBn"/>
                             <constraint firstItem="fWW-XP-3S8" firstAttribute="bottom" secondItem="3Cj-95-vp5" secondAttribute="bottom" constant="20" id="AAd-Yn-EqQ"/>
+                            <constraint firstItem="fWW-XP-3S8" firstAttribute="bottom" secondItem="SWF-cv-DNo" secondAttribute="bottom" constant="50" id="C7R-Ig-alZ"/>
+                            <constraint firstItem="pfU-Bo-ELb" firstAttribute="centerX" secondItem="IhS-ra-8tu" secondAttribute="centerX" multiplier="0.445" id="FQA-gV-Fcb"/>
+                            <constraint firstItem="KJb-D8-K9x" firstAttribute="centerX" secondItem="IhS-ra-8tu" secondAttribute="centerX" multiplier="0.7" id="GNg-2F-GTb"/>
+                            <constraint firstItem="Qvm-Df-HqK" firstAttribute="centerX" secondItem="IhS-ra-8tu" secondAttribute="centerX" multiplier="0.88" id="IuL-KX-JFQ"/>
                             <constraint firstAttribute="trailing" secondItem="Xnw-UO-dJC" secondAttribute="trailing" id="JL0-hZ-uva"/>
+                            <constraint firstItem="rPy-iS-8oK" firstAttribute="height" secondItem="IhS-ra-8tu" secondAttribute="height" multiplier="0.45" id="KAd-SM-mbn"/>
                             <constraint firstAttribute="bottom" secondItem="Xnw-UO-dJC" secondAttribute="bottom" id="M5n-dG-8TH"/>
-                            <constraint firstItem="SWF-cv-DNo" firstAttribute="leading" secondItem="fWW-XP-3S8" secondAttribute="leading" constant="50" id="Maq-B0-8fd"/>
+                            <constraint firstItem="5ZT-tY-3qb" firstAttribute="height" secondItem="IhS-ra-8tu" secondAttribute="height" multiplier="0.25" id="MSQ-t1-3VK"/>
+                            <constraint firstItem="fWW-XP-3S8" firstAttribute="trailing" secondItem="SWF-cv-DNo" secondAttribute="trailing" constant="50" id="RLV-mb-C3u"/>
+                            <constraint firstItem="TyB-2M-0SG" firstAttribute="centerX" secondItem="IhS-ra-8tu" secondAttribute="centerX" multiplier="0.2" id="RhM-q7-Yd7"/>
+                            <constraint firstItem="HLT-nf-7gp" firstAttribute="top" secondItem="IhS-ra-8tu" secondAttribute="top" id="TJj-pd-eaG"/>
                             <constraint firstItem="fWW-XP-3S8" firstAttribute="trailing" secondItem="26d-9x-gHb" secondAttribute="trailing" constant="20" id="TpO-6P-B0l"/>
                             <constraint firstItem="Xnw-UO-dJC" firstAttribute="top" secondItem="IhS-ra-8tu" secondAttribute="top" id="bSr-AB-DhB"/>
+                            <constraint firstAttribute="trailing" secondItem="HLT-nf-7gp" secondAttribute="trailing" id="evP-dq-Mem"/>
                             <constraint firstItem="fWW-XP-3S8" firstAttribute="bottom" secondItem="26d-9x-gHb" secondAttribute="bottom" constant="20" id="hG5-lS-Aab"/>
                             <constraint firstItem="3Cj-95-vp5" firstAttribute="leading" secondItem="fWW-XP-3S8" secondAttribute="leading" constant="20" id="hpq-lt-V3X"/>
+                            <constraint firstItem="97G-Gj-WdY" firstAttribute="height" secondItem="IhS-ra-8tu" secondAttribute="height" multiplier="0.2" id="in4-Y6-Pci"/>
                             <constraint firstItem="Xnw-UO-dJC" firstAttribute="leading" secondItem="IhS-ra-8tu" secondAttribute="leading" id="jY1-z2-PY9"/>
-                            <constraint firstItem="SWF-cv-DNo" firstAttribute="top" secondItem="IhS-ra-8tu" secondAttribute="top" constant="50" id="pPH-Ni-mYl"/>
+                            <constraint firstItem="KJb-D8-K9x" firstAttribute="centerY" secondItem="IhS-ra-8tu" secondAttribute="centerY" multiplier="0.36" id="jxc-CR-sxW"/>
+                            <constraint firstItem="HLT-nf-7gp" firstAttribute="leading" secondItem="IhS-ra-8tu" secondAttribute="leading" id="n5y-xv-EMj"/>
+                            <constraint firstItem="pfU-Bo-ELb" firstAttribute="height" secondItem="IhS-ra-8tu" secondAttribute="height" multiplier="0.22" id="q5q-Mr-dpJ"/>
+                            <constraint firstItem="KJb-D8-K9x" firstAttribute="height" secondItem="IhS-ra-8tu" secondAttribute="height" multiplier="0.09" id="qH2-y9-Zi5"/>
+                            <constraint firstItem="Qvm-Df-HqK" firstAttribute="height" secondItem="IhS-ra-8tu" secondAttribute="height" multiplier="0.095" id="qZb-XT-T5k"/>
+                            <constraint firstItem="pfU-Bo-ELb" firstAttribute="centerY" secondItem="IhS-ra-8tu" secondAttribute="centerY" multiplier="0.64" id="qaG-Xu-vQf"/>
+                            <constraint firstItem="5ZT-tY-3qb" firstAttribute="centerX" secondItem="IhS-ra-8tu" secondAttribute="centerX" multiplier="0.375" id="s1U-qy-P3n"/>
+                            <constraint firstItem="Qvm-Df-HqK" firstAttribute="centerY" secondItem="IhS-ra-8tu" secondAttribute="centerY" multiplier="1.63" id="t3G-ZM-p8Z"/>
+                            <constraint firstItem="TyB-2M-0SG" firstAttribute="height" secondItem="IhS-ra-8tu" secondAttribute="height" multiplier="0.09" id="t3L-cQ-X8W"/>
+                            <constraint firstAttribute="bottom" secondItem="HLT-nf-7gp" secondAttribute="bottom" id="uFO-5H-NLQ"/>
+                            <constraint firstItem="5ZT-tY-3qb" firstAttribute="centerY" secondItem="IhS-ra-8tu" secondAttribute="centerY" multiplier="0.63" id="zJw-Fu-XaB"/>
+                            <constraint firstItem="TyB-2M-0SG" firstAttribute="centerY" secondItem="IhS-ra-8tu" secondAttribute="centerY" multiplier="1.7" id="zVY-xB-veo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fWW-XP-3S8"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="HLT-nf-7gp"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="blQ-vs-8CB"/>
                 </viewController>
@@ -3137,60 +3199,66 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb_lastPage_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Tk7-kt-58U">
                                 <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6l-oK-Sz9" userLabel="readToMe">
-                                <rect key="frame" x="10" y="10" width="379.5" height="108.5"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6l-oK-Sz9" userLabel="again">
+                                <rect key="frame" x="605" y="261.5" width="386" height="111"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" playsSound="YES" causesPageTurn="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="g6l-oK-Sz9" secondAttribute="height" multiplier="7:2" id="1W7-Tk-9XW"/>
+                                    <constraint firstAttribute="width" secondItem="g6l-oK-Sz9" secondAttribute="height" multiplier="331:95" id="wtp-xs-ask"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="gtb_opening_readtome"/>
+                                <state key="normal" image="gtb_lastPage_again"/>
                                 <state key="highlighted" image="gtb_opening_readtome_on.png"/>
                                 <connections>
                                     <action selector="readToMeButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="Y4v-VA-KJY"/>
+                                    <segue destination="KTH-dU-C9F" kind="unwind" unwindAction="unwindToBeginningWithUnwindSegue:" id="tcO-8B-BGE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-Ux-UPH" userLabel="myself">
-                                <rect key="frame" x="11" y="139" width="488.5" height="108.5"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uca-Cm-Q1x" userLabel="tellAFriend">
+                                <rect key="frame" x="609" y="418" width="394" height="90"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" playsSound="YES" causesPageTurn="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="sLU-Ux-UPH" secondAttribute="height" multiplier="427:95" id="KpQ-tC-ZQo"/>
+                                    <constraint firstAttribute="width" secondItem="Uca-Cm-Q1x" secondAttribute="height" multiplier="35:8" id="yR4-Nk-d57"/>
                                 </constraints>
-                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="gtb_opening_myself">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="highlighted" image="gtb_opening_myself_on.png"/>
-                                <connections>
-                                    <action selector="myselfButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="bxq-3h-jJe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uca-Cm-Q1x" userLabel="more">
-                                <rect key="frame" x="13" y="250" width="418" height="129.5"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" playsSound="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Uca-Cm-Q1x" secondAttribute="height" multiplier="365:113" id="ACC-oE-Ydh"/>
-                                </constraints>
-                                <state key="normal" image="gtb_opening_more"/>
+                                <state key="normal" image="gtb_lastPage_tell"/>
                                 <state key="highlighted" image="gtb_opening_more_on.png"/>
                                 <connections>
                                     <action selector="moreButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="0DO-FK-VGt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkS-4K-Q2q" userLabel="arrowRight">
-                                <rect key="frame" x="1041" y="770" width="51" height="44"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-Ux-UPH" userLabel="more">
+                                <rect key="frame" x="585.5" y="547" width="352" height="107"/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES" causesPageTurn="YES"/>
                                 </accessibility>
-                                <state key="normal" image="arrowright"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sLU-Ux-UPH" secondAttribute="height" multiplier="79:24" id="5Zq-ks-tan"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="gtb_lastPage_apps">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" image="gtb_opening_myself_on.png"/>
                                 <connections>
-                                    <action selector="arrowRightButton:" destination="h0Q-xY-enI" eventType="touchUpInside" id="4LK-bj-7PX"/>
+                                    <action selector="myselfButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="bxq-3h-jJe"/>
+                                    <segue destination="f4B-4P-Kgd" kind="modal" id="g8z-Iz-PWN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aI-3z-8Zm" userLabel="web">
+                                <rect key="frame" x="536.5" y="649.5" width="484" height="161"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES" causesPageTurn="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8aI-3z-8Zm" secondAttribute="height" multiplier="415:138" id="7LD-e8-JVd"/>
+                                </constraints>
+                                <state key="normal" image="gtb_lastPage_web"/>
+                                <state key="highlighted" image="gtb_opening_more_on.png"/>
+                                <connections>
+                                    <action selector="moreButton:" destination="fQS-jC-QGn" eventType="touchUpInside" id="ynn-qA-Cz5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZN-ao-BCX" userLabel="arrowLeft">
@@ -3208,15 +3276,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dYC-Yp-wvU" firstAttribute="trailing" secondItem="pkS-4K-Q2q" secondAttribute="trailing" constant="20" id="2pi-M0-G8u"/>
+                            <constraint firstItem="8aI-3z-8Zm" firstAttribute="centerY" secondItem="VOk-3J-Lho" secondAttribute="centerY" multiplier="1.75" id="3Un-6v-e8v"/>
                             <constraint firstItem="Tk7-kt-58U" firstAttribute="leading" secondItem="VOk-3J-Lho" secondAttribute="leading" id="3cl-B5-pPN"/>
+                            <constraint firstItem="Uca-Cm-Q1x" firstAttribute="height" secondItem="VOk-3J-Lho" secondAttribute="height" multiplier="0.108" id="3zt-EW-c0i"/>
+                            <constraint firstItem="8aI-3z-8Zm" firstAttribute="centerX" secondItem="VOk-3J-Lho" secondAttribute="centerX" multiplier="1.4" id="7nG-C8-rR6"/>
+                            <constraint firstItem="8aI-3z-8Zm" firstAttribute="height" secondItem="VOk-3J-Lho" secondAttribute="height" multiplier="0.193" id="BLA-Av-bC2"/>
                             <constraint firstAttribute="bottom" secondItem="Tk7-kt-58U" secondAttribute="bottom" id="J4I-vN-rmz"/>
+                            <constraint firstItem="sLU-Ux-UPH" firstAttribute="centerY" secondItem="VOk-3J-Lho" secondAttribute="centerY" multiplier="1.44" id="JP0-sl-Azf"/>
+                            <constraint firstItem="sLU-Ux-UPH" firstAttribute="centerX" secondItem="VOk-3J-Lho" secondAttribute="centerX" multiplier="1.37" id="KbH-Gd-Wap"/>
                             <constraint firstAttribute="trailing" secondItem="Tk7-kt-58U" secondAttribute="trailing" id="L9U-cQ-f37"/>
-                            <constraint firstItem="sLU-Ux-UPH" firstAttribute="width" secondItem="sLU-Ux-UPH" secondAttribute="height" multiplier="427:95" id="Lns-a1-vLJ"/>
-                            <constraint firstItem="g6l-oK-Sz9" firstAttribute="width" secondItem="g6l-oK-Sz9" secondAttribute="height" multiplier="7:2" id="NKb-2n-Iu5"/>
-                            <constraint firstItem="Uca-Cm-Q1x" firstAttribute="width" secondItem="Uca-Cm-Q1x" secondAttribute="height" multiplier="365:113" id="ZpV-us-V21"/>
+                            <constraint firstItem="Uca-Cm-Q1x" firstAttribute="centerX" secondItem="VOk-3J-Lho" secondAttribute="centerX" multiplier="1.45" id="a6x-Ye-4AN"/>
+                            <constraint firstItem="g6l-oK-Sz9" firstAttribute="centerY" secondItem="VOk-3J-Lho" secondAttribute="centerY" multiplier="0.76" id="hVB-dM-K2e"/>
                             <constraint firstItem="Tk7-kt-58U" firstAttribute="top" secondItem="VOk-3J-Lho" secondAttribute="top" id="htD-5y-cR4"/>
-                            <constraint firstItem="dYC-Yp-wvU" firstAttribute="bottom" secondItem="pkS-4K-Q2q" secondAttribute="bottom" constant="20" id="uVC-Sb-Y2m"/>
+                            <constraint firstItem="g6l-oK-Sz9" firstAttribute="centerX" secondItem="VOk-3J-Lho" secondAttribute="centerX" multiplier="1.435" id="ilE-qC-ggg"/>
+                            <constraint firstItem="g6l-oK-Sz9" firstAttribute="height" secondItem="VOk-3J-Lho" secondAttribute="height" multiplier="0.133" id="pf5-Hp-UId"/>
+                            <constraint firstItem="sLU-Ux-UPH" firstAttribute="height" secondItem="VOk-3J-Lho" secondAttribute="height" multiplier="0.129" id="qna-7B-CIx"/>
+                            <constraint firstItem="Uca-Cm-Q1x" firstAttribute="centerY" secondItem="VOk-3J-Lho" secondAttribute="centerY" multiplier="1.11" id="u3H-kT-ezP"/>
                             <constraint firstItem="CZN-ao-BCX" firstAttribute="leading" secondItem="dYC-Yp-wvU" secondAttribute="leading" constant="20" id="wSe-2U-vaJ"/>
                             <constraint firstItem="dYC-Yp-wvU" firstAttribute="bottom" secondItem="CZN-ao-BCX" secondAttribute="bottom" constant="20" id="xkf-c8-HLa"/>
                         </constraints>
@@ -3227,7 +3302,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q59-55-l9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KTH-dU-C9F" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1789" y="4857"/>
+            <point key="canvasLocation" x="1788.6690647482014" y="4856.8345323741014"/>
         </scene>
         <!--More Stories-->
         <scene sceneID="gU9-ez-RTH">
@@ -3399,6 +3474,11 @@
         <image name="gtb25_eye01" width="88" height="56"/>
         <image name="gtb25_text" width="697" height="283"/>
         <image name="gtb26_bg" width="1024" height="768"/>
+        <image name="gtb26_dropL" width="63" height="65"/>
+        <image name="gtb26_dropR" width="76" height="72"/>
+        <image name="gtb26_girl01" width="215" height="176"/>
+        <image name="gtb26_hand01" width="550" height="158"/>
+        <image name="gtb26_lightOff" width="1024" height="768"/>
         <image name="gtb26_text" width="498" height="432"/>
         <image name="gtb27_bears01" width="456" height="350"/>
         <image name="gtb27_bg01" width="1024" height="768"/>
@@ -3409,7 +3489,11 @@
         <image name="gtb28_bug01" width="72" height="74"/>
         <image name="gtb28_girl01" width="315" height="402"/>
         <image name="gtb28_text" width="658" height="269"/>
+        <image name="gtb_lastPage_again" width="331" height="95"/>
+        <image name="gtb_lastPage_apps" width="316" height="96"/>
         <image name="gtb_lastPage_bg" width="1024" height="768"/>
+        <image name="gtb_lastPage_tell" width="350" height="80"/>
+        <image name="gtb_lastPage_web" width="415" height="138"/>
         <image name="gtb_opening_bg" width="1024" height="768"/>
         <image name="gtb_opening_eye01" width="142" height="91"/>
         <image name="gtb_opening_more" width="365" height="113"/>
@@ -3425,6 +3509,7 @@
         <image name="logo0" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="g8z-Iz-PWN"/>
         <segue reference="N3v-0c-40Q"/>
     </inferredMetricsTieBreakers>
 </document>
