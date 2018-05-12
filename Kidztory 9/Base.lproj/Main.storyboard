@@ -3340,6 +3340,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjb-RH-6ZA" userLabel="page28Bug">
                                 <rect key="frame" x="651" y="190" width="65" height="66"/>
+                                <connections>
+                                    <action selector="page28BugInvisibleButton:" destination="ZKe-VC-7aq" eventType="touchUpInside" id="uHW-0R-diW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhD-Ax-uDZ" userLabel="text">
                                 <rect key="frame" x="50" y="428.5" width="658" height="269"/>
@@ -3405,8 +3408,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MDy-UD-x7n"/>
                     <connections>
-                        <outlet property="bugOutlet" destination="TC0-lj-Tf6" id="3FO-PF-G48"/>
-                        <outlet property="page28BugOutlet" destination="TC0-lj-Tf6" id="tzL-Dx-p5E"/>
+                        <outlet property="bugOutlet" destination="TC0-lj-Tf6" id="aQK-Kp-m58"/>
                         <outlet property="page28GirlOutlet" destination="51T-Ez-2Pz" id="ETk-FH-awp"/>
                     </connections>
                 </viewController>
@@ -3527,7 +3529,7 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="gtb_lastPage_again"/>
-                                <state key="highlighted" image="gtb_opening_readtome_on.png"/>
+                                <state key="highlighted" image="gtb_lastPage_again_on"/>
                                 <connections>
                                     <action selector="againButton:" destination="h0Q-xY-enI" eventType="touchUpInside" id="Fxv-8a-MQr"/>
                                     <segue destination="fQS-jC-QGn" kind="push" id="PKT-ix-6Wk"/>
@@ -3542,7 +3544,7 @@
                                     <constraint firstAttribute="width" secondItem="Uca-Cm-Q1x" secondAttribute="height" multiplier="35:8" id="yR4-Nk-d57"/>
                                 </constraints>
                                 <state key="normal" image="gtb_lastPage_tell"/>
-                                <state key="highlighted" image="gtb_opening_more_on.png"/>
+                                <state key="highlighted" image="gtb_lastPage_tell_on"/>
                                 <connections>
                                     <action selector="tellAFriendButton:" destination="h0Q-xY-enI" eventType="touchUpInside" id="zaC-UT-iAz"/>
                                 </connections>
@@ -3559,7 +3561,7 @@
                                 <state key="normal" image="gtb_lastPage_apps">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <state key="highlighted" image="gtb_opening_myself_on.png"/>
+                                <state key="highlighted" image="gtb_lastPage_apps_on"/>
                                 <connections>
                                     <action selector="moreButton:" destination="h0Q-xY-enI" eventType="touchUpInside" id="Dic-Qn-JM0"/>
                                     <segue destination="f4B-4P-Kgd" kind="modal" id="g8z-Iz-PWN"/>
@@ -3574,7 +3576,7 @@
                                     <constraint firstAttribute="width" secondItem="8aI-3z-8Zm" secondAttribute="height" multiplier="415:138" id="7LD-e8-JVd"/>
                                 </constraints>
                                 <state key="normal" image="gtb_lastPage_web"/>
-                                <state key="highlighted" image="gtb_opening_more_on.png"/>
+                                <state key="highlighted" image="gtb_lastPage_web_on"/>
                                 <connections>
                                     <action selector="webButton:" destination="h0Q-xY-enI" eventType="touchUpInside" id="5Yq-T2-BlV"/>
                                 </connections>
@@ -3808,10 +3810,14 @@
         <image name="gtb28_girl01" width="315" height="402"/>
         <image name="gtb28_text" width="658" height="269"/>
         <image name="gtb_lastPage_again" width="331" height="95"/>
+        <image name="gtb_lastPage_again_on" width="331" height="95"/>
         <image name="gtb_lastPage_apps" width="316" height="96"/>
+        <image name="gtb_lastPage_apps_on" width="316" height="96"/>
         <image name="gtb_lastPage_bg" width="1024" height="768"/>
         <image name="gtb_lastPage_tell" width="350" height="80"/>
+        <image name="gtb_lastPage_tell_on" width="350" height="80"/>
         <image name="gtb_lastPage_web" width="415" height="138"/>
+        <image name="gtb_lastPage_web_on" width="415" height="138"/>
         <image name="gtb_opening_bg" width="1024" height="768"/>
         <image name="gtb_opening_eye01" width="142" height="91"/>
         <image name="gtb_opening_more" width="365" height="113"/>
@@ -3828,7 +3834,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SyY-JV-cuf"/>
-        <segue reference="a7q-ul-Z83"/>
+        <segue reference="g8z-Iz-PWN"/>
         <segue reference="N3v-0c-40Q"/>
         <segue reference="PKT-ix-6Wk"/>
     </inferredMetricsTieBreakers>

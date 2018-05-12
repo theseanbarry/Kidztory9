@@ -423,6 +423,7 @@ class PageViewController: UIViewController {
         playSoundFX("01_Goldilocks_Normal")
     }
     @IBAction func page28BugInvisibleButton(_ sender: Any) {
+        insectBuzz(bugOutlet, open: #imageLiteral(resourceName: "gtb28_bug01"), closed: #imageLiteral(resourceName: "gtb28_bug02"))
         playSoundFX("23_Ladybird_flying")
     }
     

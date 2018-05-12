@@ -29,16 +29,17 @@ func playPageFlipSounds(_ right: Bool = true, beginning: Bool = false) {
     voSound?.stop()
     playSoundFX("ArrowVoice")
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
-        playSoundFX("SwapPage")
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
-            if beginning == true {
-                pageCounter.number = 99
-                playVOSound()
-                pageCounter.resetNumber()
-            } else {
-                if readToMe == true {playVOSound()}
-                else {return}
-            }
+        /* playSoundFX("SwapPage")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) */
+        if beginning == true {
+            pageCounter.number = 99
+            playVOSound()
+            pageCounter.resetNumber()
+        } else if pageCounter.number == 30 {
+            playVOSound()
+        } else {
+            if readToMe == true {playVOSound()}
+            else {return}
         }
     }
 }
@@ -50,7 +51,7 @@ func playVOSound() {
     guard readToMe == true else {return}
 /*    print(pageCounter.changed)
     print(voSoundPlaying)
-    guard (pageCounter.changed == true) && (voSoundPlaying == false) else {return}*/
+    guard (pageCounter.changed == true) && (voSoundPlaying == false) else {return} */
     pageCounter.resetChanged()
     guard let url = Bundle.main.url(forResource: "\(pageCounter.number)", withExtension:"m4a", subdirectory:"EnglishVO") else {return}
     do {
