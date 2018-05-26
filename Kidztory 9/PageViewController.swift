@@ -11,20 +11,6 @@ import UIKit
 import AVFoundation
 
 class PageViewController: UIViewController {
-    // title
-    @IBOutlet weak var titleEyesOutlet: UIImageView?
-    @IBAction func readToMeButton(_ sender: Any) {
-        readToMe = true
-        playPageFlipSounds(true)
-    }
-    @IBAction func myselfButton(_ sender: Any) {
-        readToMe = false
-        playPageFlipSounds(true)
-        voSound?.stop()
-    }
-    @IBAction func moreButton(_ sender: Any) {
-    }
-    
     // page 01
     @IBOutlet weak var page01GirlOutlet: UIImageView!
     @IBOutlet weak var page01EyesOutlet: UIImageView?
@@ -91,8 +77,14 @@ class PageViewController: UIViewController {
     @IBAction func page05GirlInvisibleButton(_ sender: Any) {
         playSoundFX("03_Goldilocks_Yuck")
     }
-    @IBAction func page05BowlInvisibleButton(_ sender: Any) {
+    @IBAction func page05BabyBowlInvisibleButton(_ sender: Any) {
+        playSoundFX("22c_Porridge")
+    }
+    @IBAction func page05MaBowlInvisibleButton(_ sender: Any) {
         playSoundFX("22b_Porridge")
+    }
+    @IBAction func page05PaBowlInvisibleButton(_ sender: Any) {
+        playSoundFX("22a_Porridge")
     }
     
     // page 06
@@ -101,8 +93,14 @@ class PageViewController: UIViewController {
     @IBAction func page06GirlInvisibleButton(_ sender: Any) {
         playSoundFX("04_Goldilocks_Yummy")
     }
-    @IBAction func page06BowlInvisibleButton(_ sender: Any) {
+    @IBAction func page06BabyBowlInvisibleButton(_ sender: Any) {
         playSoundFX("22_Porridge")
+    }
+    @IBAction func page06MaBowlInvisibleButton(_ sender: Any) {
+        playSoundFX("22b_Porridge")
+    }
+    @IBAction func page06PaBowlInvisibleButton(_ sender: Any) {
+        playSoundFX("22a_Porridge")
     }
     
     // page 07
@@ -444,18 +442,10 @@ class PageViewController: UIViewController {
     // all
     @IBOutlet weak var bugOutlet: UIImageView?
     
-    @IBAction func unwindToBeginning(unwindSegue: UIStoryboardSegue) {
-        readToMe = true
-        playPageFlipSounds(true, beginning: true)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
-            guard pageCounter.number == 0 else {return}
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
-                guard pageCounter.number == 0 else {return}
-                playVOSound()
-            }
-        }
-    }
     @IBAction func unwindToPreviousPage(unwindSegue: UIStoryboardSegue) {}
+    @IBAction func unwindToTitleButton(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToTitle", sender: self)
+    }
     @IBAction func voButton(_ sender: Any) {
         playVOSound()
     }
@@ -468,8 +458,6 @@ class PageViewController: UIViewController {
     
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
-        // title
-        blinkEyes(titleEyesOutlet, open: #imageLiteral(resourceName: "gtb_opening_eye01"), half: #imageLiteral(resourceName: "gtb_opening_eye02"), closed: #imageLiteral(resourceName: "gtb_opening_eye03"))
         // page 01
         blinkEyes(page01EyesOutlet, open: #imageLiteral(resourceName: "gtb01_eye01"), half: #imageLiteral(resourceName: "gtb01_eye02"), closed: #imageLiteral(resourceName: "gtb01_eye03"))
         // page 02
