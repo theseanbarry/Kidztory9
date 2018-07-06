@@ -15,12 +15,18 @@ var readToMe = true
 //page flip sound function
 struct PageCounter {
     var number = Int()
+    var previousNumber = Int()
+    var pageIsNotAnimating = Bool()
+    var canBlink:Bool = true
     var changed = Bool()
     
-    mutating func decrement() {number -= 1; changed = true}
-    mutating func increment() {number += 1; changed = true}
-    mutating func resetNumber() {number = 0; changed = true}
+    mutating func decrement() {previousNumber = number; number -= 1; pageIsNotAnimating = true; changed = true}
+    mutating func increment() {previousNumber = number; number += 1; pageIsNotAnimating = true; changed = true}
+    mutating func resetNumber() {previousNumber = number; number = 0; pageIsNotAnimating = true; changed = true}
+    mutating func resetPageIsNotAnimating() {pageIsNotAnimating = true}
     mutating func resetChanged() {changed = false}
+    mutating func blinkStop() {canBlink = false}
+    mutating func blinkStart() {canBlink = true}
 }
 
 var pageCounter = PageCounter()
@@ -51,8 +57,8 @@ func playVOSound() {
     guard readToMe == true else {return}
 /*    print(pageCounter.changed)
     print(voSoundPlaying)
-    guard (pageCounter.changed == true) && (voSoundPlaying == false) else {return} */
-    pageCounter.resetChanged()
+    guard (pageCounter.changed == true) && (voSoundPlaying == false) else {return}
+    pageCounter.resetChanged() */
     guard let url = Bundle.main.url(forResource: "\(pageCounter.number)", withExtension:"m4a", subdirectory:"EnglishVO") else {return}
     do {
         voSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.m4a.rawValue)
@@ -107,8 +113,10 @@ func insectBuzz(_ outlet:UIImageView?, open:UIImage, closed:UIImage) {
 }
 
 // stop motion finite
-func stopMotionFinite(_ outlet:UIImageView?, imageArray:[UIImage], timeInterval:Double = 0.3, count:Int = 1) {
+func stopMotionFinite(_ outlet:UIImageView?, imageArray:[UIImage], timeInterval:Double = 0.3, count:Int = 1, unloopable:Bool = false, unloopableFinished:Bool = false) {
     guard let outlet = outlet else {return}
+    guard unloopableFinished == true || unloopable == false || pageCounter.changed == true else {return}
+    pageCounter.blinkStop()
     let imageArrayCount = imageArray.count
     var list = [UIImage]()
     for i in imageArray {list.append(i)}
@@ -116,6 +124,13 @@ func stopMotionFinite(_ outlet:UIImageView?, imageArray:[UIImage], timeInterval:
     outlet.animationDuration = Double(imageArrayCount) * timeInterval
     outlet.animationRepeatCount = count
     outlet.startAnimating()
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(imageArrayCount) * timeInterval - timeInterval) {
+        pageCounter.blinkStart()
+        if unloopable == true {
+            outlet.image = list.last
+            pageCounter.resetChanged()
+        }
+    }
 }
 
 // stop motion loop
@@ -125,7 +140,7 @@ func stopMotionLoop(_ outlet:UIImageView?, imageArray:[UIImage], timeInterval:Do
     var list = [UIImage]()
     for i in imageArray {list.append(i)}
     outlet.animationImages = list
-    outlet.animationDuration = Double(imageArrayCount) * timeInterval
+    outlet.animationDuration = (Double(imageArrayCount) * timeInterval)
     outlet.startAnimating()
 }
 

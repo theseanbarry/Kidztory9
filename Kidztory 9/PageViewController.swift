@@ -18,8 +18,9 @@ class PageViewController: UIViewController {
     
     @IBAction func page01GirlInvisibleButton(_ sender: Any) {
         playSoundFX("01_Goldilocks_Normal")
-        // page01EyesConstraint.view removeConstraint:installed
-        // stopMotionSingle(page01EyesOutlet, imageArray: [])
+        page01EyesOutlet?.isHidden = true
+        stopMotionFinite(page01GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb01_girl04"), #imageLiteral(resourceName: "gtb01_girl05")], timeInterval: 0.5)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {self.page01EyesOutlet?.isHidden = false}
     }
     @IBAction func page01BugInvisibleButton(_ sender: Any) {
         playSoundFX("23_Ladybird_flying")
@@ -62,10 +63,12 @@ class PageViewController: UIViewController {
     
     // page 04
     @IBOutlet weak var page04GirlOutlet: UIImageView!
-    @IBOutlet weak var page04SmokeOutlet: UIImageView!
+    @IBOutlet weak var page04SmokeOutlet: UIImageView?
     
     @IBAction func page04GirlInvisibleButton(_ sender: Any) {
         playSoundFX("06b_Goldilocks_Ow")
+        stopMotionFinite(page04GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb04_girl01"), #imageLiteral(resourceName: "gtb04_girl02"), #imageLiteral(resourceName: "gtb04_girl03"), #imageLiteral(resourceName: "gtb04_girl04"), #imageLiteral(resourceName: "gtb04_girl09")])
+        // add blinking
     }
     @IBAction func page04BowlInvisibleButton(_ sender: Any) {
         playSoundFX("22a_Porridge")
@@ -76,6 +79,7 @@ class PageViewController: UIViewController {
     
     @IBAction func page05GirlInvisibleButton(_ sender: Any) {
         playSoundFX("03_Goldilocks_Yuck")
+        stopMotionFinite(page05GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb05_girl01"), #imageLiteral(resourceName: "gtb05_girl02"), #imageLiteral(resourceName: "gtb05_girl03"), #imageLiteral(resourceName: "gtb05_girl02")], count: 2)
     }
     @IBAction func page05BabyBowlInvisibleButton(_ sender: Any) {
         playSoundFX("22c_Porridge")
@@ -91,10 +95,17 @@ class PageViewController: UIViewController {
     @IBOutlet weak var page06GirlOutlet: UIImageView!
     
     @IBAction func page06GirlInvisibleButton(_ sender: Any) {
-        playSoundFX("04_Goldilocks_Yummy")
+        if pageCounter.changed == true {
+            playSoundFX("22_Porridge")
+                    stopMotionFinite(page06GirlOutlet, imageArray: [ #imageLiteral(resourceName: "gtb06_girl02"), #imageLiteral(resourceName: "gtb06_girl03"), #imageLiteral(resourceName: "gtb06_girl04"), #imageLiteral(resourceName: "gtb06_girl05"), #imageLiteral(resourceName: "gtb06_girl06"), #imageLiteral(resourceName: "gtb06_girl07"), #imageLiteral(resourceName: "gtb06_girl08"), #imageLiteral(resourceName: "gtb06_girl09")], unloopable:true)
+        } else {
+            playSoundFX("04_Goldilocks_Yummy")
+            stopMotionFinite(page06GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb06_girl12"), #imageLiteral(resourceName: "gtb06_girl13")], timeInterval: 0.5, count:2, unloopableFinished:true)
+        }
     }
     @IBAction func page06BabyBowlInvisibleButton(_ sender: Any) {
         playSoundFX("22_Porridge")
+        stopMotionFinite(page06GirlOutlet, imageArray: [ #imageLiteral(resourceName: "gtb06_girl02"), #imageLiteral(resourceName: "gtb06_girl03"), #imageLiteral(resourceName: "gtb06_girl04"), #imageLiteral(resourceName: "gtb06_girl05"), #imageLiteral(resourceName: "gtb06_girl06"), #imageLiteral(resourceName: "gtb06_girl07"), #imageLiteral(resourceName: "gtb06_girl08"), #imageLiteral(resourceName: "gtb06_girl09")], unloopable:true)
     }
     @IBAction func page06MaBowlInvisibleButton(_ sender: Any) {
         playSoundFX("22b_Porridge")
@@ -117,6 +128,7 @@ class PageViewController: UIViewController {
     }
     @IBAction func page07GirlInvisibleButton(_ sender: Any) {
         playSoundFX("09_Goldilocks_humming")
+        stopMotionFinite(page07GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb07_girl04"), #imageLiteral(resourceName: "gtb07_girl01")], timeInterval: 0.5)
     }
     
     // page 08
@@ -124,6 +136,7 @@ class PageViewController: UIViewController {
     
     @IBAction func page08GirlInvisibleButton(_ sender: Any) {
         playSoundFX("02_Goldilocks_Wondering")
+        stopMotionFinite(page08GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb08_girl02"), #imageLiteral(resourceName: "gtb08_girl03"), #imageLiteral(resourceName: "gtb08_girl04"),#imageLiteral(resourceName: "gtb08_girl05")], unloopable: true)
     }
     
     // page 09
@@ -132,6 +145,7 @@ class PageViewController: UIViewController {
     
     @IBAction func page09GirlInvisibleButton(_ sender: Any) {
         playSoundFX("05_Goldilocks_disappointed")
+        stopMotionFinite(page09FeetOutlet, imageArray: [#imageLiteral(resourceName: "gtb09_foot02"),#imageLiteral(resourceName: "gtb09_foot01")], timeInterval: 0.5, count: 4)
     }
     
     // page 10
@@ -140,7 +154,11 @@ class PageViewController: UIViewController {
     @IBOutlet weak var page10FeetOutlet: UIImageView!
     
     @IBAction func page10GirlInvisibleButton(_ sender: Any) {
-        playSoundFX("29_ChairBreaks_Goldilocks")
+        if pageCounter.changed == true {
+            playSoundFX("29_ChairBreaks_Goldilocks")
+            stopMotionFinite(page10BodyOutlet, imageArray: [#imageLiteral(resourceName: "gtb10_broke01"), #imageLiteral(resourceName: "gtb10_broke02"), #imageLiteral(resourceName: "gtb10_broke03")], unloopable:true)} else {
+            playSoundFX("08a_Goldilocks_Scared")
+        }
     }
     
     // page 11
@@ -164,6 +182,7 @@ class PageViewController: UIViewController {
     
     @IBAction func page12GirlInvisibleButton(_ sender: Any) {
         playSoundFX("06b_Goldilocks_Ow")
+        stopMotionFinite(page12GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb12_girl02"), #imageLiteral(resourceName: "gtb12_girl03"), #imageLiteral(resourceName: "gtb12_girl01")], timeInterval: 0.4)
     }
     @IBAction func page12BigBedInvisibleButton(_ sender: Any) {
         playSoundFX("30_Bed too hard")
@@ -181,12 +200,22 @@ class PageViewController: UIViewController {
     
     @IBAction func page13GirlInvisibleButton(_ sender: Any) {
         playSoundFX("05_Goldilocks_disappointed")
+        stopMotionFinite(page13GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb13_girl02"), #imageLiteral(resourceName: "gtb13_girl03")], timeInterval: 0.5, unloopable: true)
+        // check if this works cause of pageCounter.changed == false already, if not then change to unloopableFinished == true
+        stopMotionFinite(page13BedOutlet, imageArray: [#imageLiteral(resourceName: "gtb13_bed02"), #imageLiteral(resourceName: "gtb13_bed03")], timeInterval: 0.5, unloopable: true)
     }
     @IBAction func page13BigBedInvisibleButton(_ sender: Any) {
         playSoundFX("30_Bed too hard")
     }
     @IBAction func page13MediumBedInvisibleButton(_ sender: Any) {
+        if pageCounter.changed == true {
+            playSoundFX("05_Goldilocks_disappointed")
+            stopMotionFinite(page13GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb13_girl02"), #imageLiteral(resourceName: "gtb13_girl03")], timeInterval: 0.5, unloopable: true)
+            // check if this works cause of pageCounter.changed == false already, if not then change to unloopableFinished == true
+            stopMotionFinite(page13BedOutlet, imageArray: [#imageLiteral(resourceName: "gtb13_bed02"), #imageLiteral(resourceName: "gtb13_bed03")], timeInterval: 0.5, unloopable: true)
+        } else {
         playSoundFX("31_Bed too soft")
+        }
     }
     @IBAction func page13SmallBedInvisibleButton(_ sender: Any) {
         playSoundFX("32_Bed just right")
@@ -197,9 +226,11 @@ class PageViewController: UIViewController {
     @IBOutlet weak var page14LightOutlet: UIImageView!
     
     @IBAction func page14GirlInvisibleButton(_ sender: Any) {
+        stopMotionFinite(page14GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb14_girl02"), #imageLiteral(resourceName: "gtb14_girl03"), #imageLiteral(resourceName: "gtb14_girl04"), #imageLiteral(resourceName: "gtb14_girl05")], unloopable: true)
         playSoundFX("07c_Goldilocks_sleeping")
     }
     @IBAction func page14LightInvisibleButton(_ sender: Any) {
+        page14LightOutlet.isHidden = (page14LightOutlet.isHidden == true ? false : true)
         playSoundFX("28_Light_switch")
     }
     
@@ -213,12 +244,15 @@ class PageViewController: UIViewController {
     @IBOutlet weak var page15BabyEyesOutlet: UIImageView?
     @IBAction func page15PaBowlInvisibleButton(_ sender: Any) {
         playSoundFX("25_papa_Bowl")
+        stopMotionFinite(page15PaBowlOutlet, imageArray: [#imageLiteral(resourceName: "gtb15_paBowl02"), #imageLiteral(resourceName: "gtb15_paBowl03"), #imageLiteral(resourceName: "gtb15_paBowl04"), #imageLiteral(resourceName: "gtb15_paBowl01")], timeInterval: 0.2)
     }
     @IBAction func page15MaBowlInvisibleButton(_ sender: Any) {
         playSoundFX("26_mama_Bowl")
+        stopMotionFinite(page15MaBowlOutlet, imageArray: [#imageLiteral(resourceName: "gtb15_maBowl02"), #imageLiteral(resourceName: "gtb15_maBowl03"), #imageLiteral(resourceName: "gtb15_maBowl04"), #imageLiteral(resourceName: "gtb15_maBowl01")], timeInterval: 0.2)
     }
     @IBAction func page15BabyBowlInvisibleButton(_ sender: Any) {
         playSoundFX("27_baby_Bowl")
+        stopMotionFinite(page15BabyBowlOutlet, imageArray: [#imageLiteral(resourceName: "gtb15_babyBowl02"), #imageLiteral(resourceName: "gtb15_babyBowl03"), #imageLiteral(resourceName: "gtb15_babyBowl04"), #imageLiteral(resourceName: "gtb15_babyBowl01")], timeInterval: 0.2)
     }
     @IBAction func page15BabyInvisibleButton(_ sender: Any) {
         playSoundFX("17_BabyBear_Normal")
@@ -252,21 +286,27 @@ class PageViewController: UIViewController {
     
     @IBAction func page17BabyInvisibleButton(_ sender: Any) {
         playSoundFX("18_BabyBear_Sad")
+        stopMotionFinite(page17BabyHandOutlet, imageArray: [#imageLiteral(resourceName: "gtb17_babyHand02"), #imageLiteral(resourceName: "gtb17_babyHand01")], count: 3)
     }
     @IBAction func page17MaInvisibleButton(_ sender: Any) {
         playSoundFX("14b_MamaBear_Scared")
+        stopMotionFinite(page17MaHandOutlet, imageArray: [#imageLiteral(resourceName: "gtb17_mamaHand02"), #imageLiteral(resourceName: "gtb17_mamaHand01")], timeInterval: 0.5, count: 2)
     }
     @IBAction func page17PaInvisibleButton(_ sender: Any) {
         playSoundFX("11_PapaBear_angry")
+        stopMotionFinite(page17PaHandOutlet, imageArray: [#imageLiteral(resourceName: "gtb17_papaHand02"), #imageLiteral(resourceName: "gtb17_papaHand01")], timeInterval: 0.8, count: 2)
     }
     @IBAction func page17BabyBowlInvisibleButton(_ sender: Any) {
         playSoundFX("22c_Porridge")
+        stopMotionFinite(page17BabyHandOutlet, imageArray: [#imageLiteral(resourceName: "gtb17_babyHand02"), #imageLiteral(resourceName: "gtb17_babyHand01")], count: 3)
     }
     @IBAction func page17MaBowlInvisibleButton(_ sender: Any) {
         playSoundFX("22b_Porridge")
+        stopMotionFinite(page17MaHandOutlet, imageArray: [#imageLiteral(resourceName: "gtb17_mamaHand02"), #imageLiteral(resourceName: "gtb17_mamaHand01")], timeInterval: 0.5, count: 2)
     }
     @IBAction func page17PaBowlInvisibleButton(_ sender: Any) {
         playSoundFX("22a_Porridge")
+        stopMotionFinite(page17PaHandOutlet, imageArray: [#imageLiteral(resourceName: "gtb17_papaHand02"), #imageLiteral(resourceName: "gtb17_papaHand01")], timeInterval: 0.8, count: 2)
     }
     
     // page 18
@@ -275,6 +315,7 @@ class PageViewController: UIViewController {
     
     @IBAction func page18BabyInvisibleButton(_ sender: Any) {
         playSoundFX("18_BabyBear_Sad")
+        stopMotionFinite(page18HandOutlet, imageArray: [#imageLiteral(resourceName: "gtb18_hand02"), #imageLiteral(resourceName: "gtb18_hand01")], timeInterval: 1.5)
     }
     @IBAction func page18BowlInvisibleButton(_ sender: Any) {
         playSoundFX("22c_Porridge")
@@ -308,6 +349,7 @@ class PageViewController: UIViewController {
     
     @IBAction func page20PaInvisibleButton(_ sender: Any) {
         playSoundFX("11_PapaBear_angry")
+        stopMotionFinite(page20HandOutlet, imageArray: [#imageLiteral(resourceName: "gtb20_hand02"), #imageLiteral(resourceName: "gtb20_hand01")], timeInterval: 1.5)
     }
     @IBAction func page20ChairInvisibleButton(_ sender: Any) {
         playSoundFX("33_Big chair")
@@ -386,6 +428,7 @@ class PageViewController: UIViewController {
         playSoundFX("07_Goldilocks_sleeping")
     }
     @IBAction func page26LightInvisibleButton(_ sender: Any) {
+        page26LightOutlet.isHidden = (page26LightOutlet.isHidden == true ? false : true)
         playSoundFX("28_Light_switch")
     }
     
@@ -419,6 +462,8 @@ class PageViewController: UIViewController {
     
     @IBAction func page28GirlInvisibleButton(_ sender: Any) {
         playSoundFX("01_Goldilocks_Normal")
+        stopMotionFinite(page28GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb01_girl04"), #imageLiteral(resourceName: "gtb01_girl05")], timeInterval: 0.5)
+        
     }
     @IBAction func page28BugInvisibleButton(_ sender: Any) {
         insectBuzz(bugOutlet, open: #imageLiteral(resourceName: "gtb28_bug01"), closed: #imageLiteral(resourceName: "gtb28_bug02"))
@@ -459,19 +504,24 @@ class PageViewController: UIViewController {
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
         // page 01
+        //while pageCounter.blinkTempStop == false {
         blinkEyes(page01EyesOutlet, open: #imageLiteral(resourceName: "gtb01_eye01"), half: #imageLiteral(resourceName: "gtb01_eye02"), closed: #imageLiteral(resourceName: "gtb01_eye03"))
+        
         // page 02
         
         // page 03
         blinkEyes(page03GirlOutlet, open: #imageLiteral(resourceName: "gtb03_girl01"), half: #imageLiteral(resourceName: "gtb03_girl02"), closed: #imageLiteral(resourceName: "gtb03_girl03"))
         
         // page 04
+        stopMotionLoop(page04SmokeOutlet, imageArray: [#imageLiteral(resourceName: "gtb04_smoke01"), #imageLiteral(resourceName: "gtb04_smoke02")], timeInterval: 0.5)
         
         // page 05
         
         // page 06
+        while pageCounter.changed == false {blinkEyes(page06GirlOutlet, open: #imageLiteral(resourceName: "gtb06_girl09"), half: #imageLiteral(resourceName: "gtb06_girl10"), closed: #imageLiteral(resourceName: "gtb06_girl11"))}
         
         // page 07
+        blinkEyes(page07GirlOutlet, open: #imageLiteral(resourceName: "gtb07_girl01"), half: #imageLiteral(resourceName: "gtb07_girl02"), closed: #imageLiteral(resourceName: "gtb07_girl03"))
         
         // page 08
         
@@ -479,15 +529,21 @@ class PageViewController: UIViewController {
         blinkEyes(page09EyesOutlet, open: #imageLiteral(resourceName: "gtb09_eye01"), half: #imageLiteral(resourceName: "gtb09_eye02"), closed: #imageLiteral(resourceName: "gtb09_eye03"))
         
         // page 10
-        blinkEyes(page10EyesOutlet, open: #imageLiteral(resourceName: "gtb10_eye01"), half: #imageLiteral(resourceName: "gtb10_eye02"), closed: #imageLiteral(resourceName: "gtb10_eye03"))
+        /* while pageCounter.pageIsNotAnimating == true {
+            stopMotionLoop(page10FeetOutlet, imageArray: [#imageLiteral(resourceName: "gtb10_foot02"), #imageLiteral(resourceName: "gtb10_foot01")])
+            blinkEyes(page10EyesOutlet, open: #imageLiteral(resourceName: "gtb10_eye01"), half: #imageLiteral(resourceName: "gtb10_eye02"), closed: #imageLiteral(resourceName: "gtb10_eye03"))
+        } */
+        while pageCounter.changed == false {blinkEyes(page10EyesOutlet, open: #imageLiteral(resourceName: "gtb10_brokeEye02"), half: #imageLiteral(resourceName: "gtb10_brokeEye03"), closed: #imageLiteral(resourceName: "gtb10_brokeEye04"))}
         
         // page 11
         
         // page 12
         
         // page 13
+        while pageCounter.changed == false {blinkEyes(page13GirlOutlet, open: #imageLiteral(resourceName: "gtb13_girl03"), half: #imageLiteral(resourceName: "gtb13_girl04"), closed: #imageLiteral(resourceName: "gtb13_girl05"))}
         
         // page 14
+        while pageCounter.changed == false {stopMotionLoop(page14GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb14_girl07"), #imageLiteral(resourceName: "gtb14_girl06")], timeInterval: 1.0)}
         
         // page 15
         blinkEyes(page15PaEyesOutlet, open: #imageLiteral(resourceName: "gtb15_papa01"), half: #imageLiteral(resourceName: "gtb15_papa02"), closed: #imageLiteral(resourceName: "gtb15_papa03"))
@@ -495,6 +551,7 @@ class PageViewController: UIViewController {
         blinkEyes(page15BabyEyesOutlet, open: #imageLiteral(resourceName: "gtb15_baby01"), half: #imageLiteral(resourceName: "gtb15_baby02"), closed: #imageLiteral(resourceName: "gtb15_baby03"))
         
         // page 16
+        stopMotionLoop(page16HandOutlet, imageArray: [#imageLiteral(resourceName: "gtb16_hand02"), #imageLiteral(resourceName: "gtb16_hand01")], timeInterval: 0.6)
         blinkEyes(page16EyesOutlet, open: #imageLiteral(resourceName: "gtb16_eye01"), half: #imageLiteral(resourceName: "gtb16_eye02"), closed: #imageLiteral(resourceName: "gtb16_eye03"))
         
         // page 17
@@ -515,6 +572,7 @@ class PageViewController: UIViewController {
         
         // page 21
         blinkEyes(page21EyesOutlet, open: #imageLiteral(resourceName: "gtb21_eye01"), half: #imageLiteral(resourceName: "gtb21_eye02"), closed: #imageLiteral(resourceName: "gtb21_eye03"))
+        stopMotionLoop(page21HandOutlet, imageArray: [#imageLiteral(resourceName: "gtb21_hand02"), #imageLiteral(resourceName: "gtb21_hand01")], timeInterval: 0.4)
         
         // page 22
         
@@ -531,9 +589,11 @@ class PageViewController: UIViewController {
         // page 27
         
         // page 28
+        // while pageCounter.blinkTempStop == false {blinkEyes(page28GirlOutlet, open: #imageLiteral(resourceName: "gtb28_girl01"), half: #imageLiteral(resourceName: "gtb28_girl02"), closed: #imageLiteral(resourceName: "gtb28_girl03"))}
         
         // end
         
         // last
     }
 }
+

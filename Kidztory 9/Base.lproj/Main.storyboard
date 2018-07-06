@@ -708,7 +708,6 @@
                                 </constraints>
                                 <connections>
                                     <action selector="page05BabyBowlInvisibleButton:" destination="KoD-ho-goK" eventType="touchUpInside" id="964-Ey-cLJ"/>
-                                    <action selector="page05GirlInvisibleButton:" destination="KoD-ho-goK" eventType="touchUpInside" id="QSU-mM-Mj0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZQ-kg-3mQ" userLabel="page05MaBowl">
@@ -717,7 +716,6 @@
                                     <constraint firstAttribute="width" secondItem="QZQ-kg-3mQ" secondAttribute="height" multiplier="7:5" id="CiV-Ev-myO"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="page05GirlInvisibleButton:" destination="KoD-ho-goK" eventType="touchUpInside" id="6sZ-e2-gpf"/>
                                     <action selector="page05MaBowlInvisibleButton:" destination="KoD-ho-goK" eventType="touchUpInside" id="VuU-fz-XfB"/>
                                 </connections>
                             </button>
@@ -727,7 +725,6 @@
                                     <constraint firstAttribute="width" secondItem="nGZ-MM-Gwu" secondAttribute="height" multiplier="7:5" id="5f4-cP-u1h"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="page05GirlInvisibleButton:" destination="KoD-ho-goK" eventType="touchUpInside" id="aFw-7p-z68"/>
                                     <action selector="page05PaBowlInvisibleButton:" destination="KoD-ho-goK" eventType="touchUpInside" id="7vI-O5-vlS"/>
                                 </connections>
                             </button>
