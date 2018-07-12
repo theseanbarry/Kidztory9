@@ -1,13 +1,17 @@
 {
   "images" : [
     {
-      "idiom" : "ipad",
-      "filename" : "gtb06_girl05a~ipad.png",
+      "idiom" : "universal",
+      "filename" : "gtb06_girl05a.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

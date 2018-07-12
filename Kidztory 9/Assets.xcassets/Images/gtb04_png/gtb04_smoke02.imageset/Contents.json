@@ -1,13 +1,17 @@
 {
   "images" : [
     {
-      "idiom" : "ipad",
-      "filename" : "gtb04_smoke02~ipad.png",
+      "idiom" : "universal",
+      "filename" : "gtb04_smoke02.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

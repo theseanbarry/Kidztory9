@@ -20,7 +20,7 @@ class PageViewController: UIViewController {
         playSoundFX("01_Goldilocks_Normal")
         page01EyesOutlet?.isHidden = true
         stopMotionFinite(page01GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb01_girl04"), #imageLiteral(resourceName: "gtb01_girl05")], timeInterval: 0.5)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {self.page01EyesOutlet?.isHidden = false}
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.92) {self.page01EyesOutlet?.isHidden = false}
     }
     @IBAction func page01BugInvisibleButton(_ sender: Any) {
         playSoundFX("23_Ladybird_flying")
@@ -200,9 +200,9 @@ class PageViewController: UIViewController {
     
     @IBAction func page13GirlInvisibleButton(_ sender: Any) {
         playSoundFX("05_Goldilocks_disappointed")
-        stopMotionFinite(page13GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb13_girl02"), #imageLiteral(resourceName: "gtb13_girl03")], timeInterval: 0.5, unloopable: true)
+        stopMotionFinite(page13GirlOutlet, imageArray: [#imageLiteral(resourceName: "gtb13_girl02"), #imageLiteral(resourceName: "gtb13_girl03")], timeInterval: 1, unloopable: true)
         // check if this works cause of pageCounter.changed == false already, if not then change to unloopableFinished == true
-        stopMotionFinite(page13BedOutlet, imageArray: [#imageLiteral(resourceName: "gtb13_bed02"), #imageLiteral(resourceName: "gtb13_bed03")], timeInterval: 0.5, unloopable: true)
+        stopMotionFinite(page13BedOutlet, imageArray: [#imageLiteral(resourceName: "gtb13_bed02"), #imageLiteral(resourceName: "gtb13_bed03")], timeInterval: 1, unloopable: true)
     }
     @IBAction func page13BigBedInvisibleButton(_ sender: Any) {
         playSoundFX("30_Bed too hard")
@@ -457,7 +457,7 @@ class PageViewController: UIViewController {
         playSoundFX("08c_Goldilocks_Panting")
     }
     
-    // page 28 (remove bugoutlet)
+    // page 28
     @IBOutlet weak var page28GirlOutlet: UIImageView!
     
     @IBAction func page28GirlInvisibleButton(_ sender: Any) {
@@ -474,6 +474,7 @@ class PageViewController: UIViewController {
     @IBOutlet weak var endBowlOutlet: UIImageView!
     @IBAction func endBowlInvisibleButton(_ sender: Any) {
         playSoundFX("22_Porridge")
+        stopMotionFinite(endBowlOutlet, imageArray: [#imageLiteral(resourceName: "gtb_theEnd_food01"), #imageLiteral(resourceName: "gtb_theEnd_food02"), #imageLiteral(resourceName: "gtb_theEnd_food03"), #imageLiteral(resourceName: "gtb_theEnd_food04"), #imageLiteral(resourceName: "gtb_theEnd_food05")], unloopable: true)
     }
     
     // last

@@ -1,13 +1,17 @@
 {
   "images" : [
     {
-      "idiom" : "ipad",
-      "filename" : "gtb14_lightOff~ipad.png",
+      "idiom" : "universal",
+      "filename" : "gtb14_lightOff.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
