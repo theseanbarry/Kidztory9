@@ -1,13 +1,17 @@
 {
   "images" : [
     {
-      "idiom" : "ipad",
-      "filename" : "gtb18_hand02~ipad.png",
+      "idiom" : "universal",
+      "filename" : "gtb18_hand02.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

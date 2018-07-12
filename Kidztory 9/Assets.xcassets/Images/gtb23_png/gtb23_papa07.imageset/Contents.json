@@ -1,13 +1,16 @@
 {
   "images" : [
     {
-      "idiom" : "ipad",
-      "filename" : "gtb23_papa07~ipad.png",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

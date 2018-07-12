@@ -1,13 +1,17 @@
 {
   "images" : [
     {
-      "idiom" : "ipad",
-      "filename" : "gtb23_mama10~ipad.png",
+      "idiom" : "universal",
+      "filename" : "gtb23_mama10.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

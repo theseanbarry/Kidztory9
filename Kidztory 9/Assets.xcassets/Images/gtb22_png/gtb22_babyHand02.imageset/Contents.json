@@ -1,13 +1,17 @@
 {
   "images" : [
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "filename" : "gtb22_babyHand02~ipad.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
