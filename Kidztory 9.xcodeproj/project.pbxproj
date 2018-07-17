@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142B053820FA06E30097E1FE /* StandardButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142B053720FA06E30097E1FE /* StandardButtons.swift */; };
 		143311D61FAB948700CB9C13 /* SoundFX in Resources */ = {isa = PBXBuildFile; fileRef = 143311D31FAB948600CB9C13 /* SoundFX */; };
 		143311D71FAB948700CB9C13 /* EnglishVO in Resources */ = {isa = PBXBuildFile; fileRef = 143311D41FAB948600CB9C13 /* EnglishVO */; };
 		144D99551FAB888400A9232D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144D99541FAB888400A9232D /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142B053720FA06E30097E1FE /* StandardButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButtons.swift; sourceTree = "<group>"; };
 		143311D31FAB948600CB9C13 /* SoundFX */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SoundFX; sourceTree = "<group>"; };
 		143311D41FAB948600CB9C13 /* EnglishVO */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EnglishVO; sourceTree = "<group>"; };
 		144D99511FAB888400A9232D /* Kidztory 9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kidztory 9.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 				14AF7C1A200708B900582D23 /* PageViewController.swift */,
 				14E50CE120A7B23600A6183D /* MoreViewController.swift */,
 				14AF7C181FEDCF2D00582D23 /* StandardPageFramework.swift */,
+				142B053720FA06E30097E1FE /* StandardButtons.swift */,
 				147A69E2205B7AE10081D856 /* Main.storyboard */,
 				144D995B1FAB888400A9232D /* Assets.xcassets */,
 				143311D41FAB948600CB9C13 /* EnglishVO */,
@@ -117,7 +120,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Sean Barry";
 				TargetAttributes = {
 					144D99501FAB888400A9232D = {
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AF7C1B200708B900582D23 /* PageViewController.swift in Sources */,
+				142B053820FA06E30097E1FE /* StandardButtons.swift in Sources */,
 				144D99571FAB888400A9232D /* OpeningViewController.swift in Sources */,
 				14AF7C191FEDCF2D00582D23 /* StandardPageFramework.swift in Sources */,
 				14E50CE220A7B23600A6183D /* MoreViewController.swift in Sources */,
@@ -206,6 +210,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -213,6 +218,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -263,6 +269,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -270,6 +277,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

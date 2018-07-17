@@ -29,7 +29,7 @@ class TitleViewController: UIViewController {
         playPageFlipSounds(true, beginning: true)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
             guard pageCounter.number == 0 else {return}
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
                 guard pageCounter.number == 0 else {return}
                 playVOSound()
             }

@@ -308,10 +308,20 @@
                                     <constraint firstAttribute="width" secondItem="6Ou-kV-jYg" secondAttribute="height" multiplier="223:170" id="RCe-Xx-7rz"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tlh-Fp-2EJ" userLabel="page02Girl">
-                                <rect key="frame" x="70.5" y="645" width="161.5" height="123.5"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tlh-Fp-2EJ" userLabel="page02House">
+                                <rect key="frame" x="0.0" y="284.5" width="484" height="484"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Tlh-Fp-2EJ" secondAttribute="height" multiplier="1:1" id="eID-UL-ukZ"/>
+                                </constraints>
                                 <connections>
-                                    <action selector="page02GirlButton:" destination="nY7-3h-G49" eventType="touchUpInside" id="8Mj-7l-mkv"/>
+                                    <action selector="page02HouseButton:" destination="nY7-3h-G49" eventType="touchUpInside" id="FV5-MA-DJk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOZ-6F-ocK" userLabel="page02Girl">
+                                <rect key="frame" x="431" y="322" width="161.5" height="123.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="page02GirlButton:" destination="nY7-3h-G49" eventType="touchUpInside" id="m7s-d3-vtz"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb01_bug01" translatesAutoresizingMaskIntoConstraints="NO" id="HH8-e8-Osh" userLabel="page02Bug">
@@ -367,15 +377,15 @@
                         <constraints>
                             <constraint firstItem="O9v-MN-Dt1" firstAttribute="leading" secondItem="kU4-UU-ZeN" secondAttribute="leading" id="1cd-Du-Iqp"/>
                             <constraint firstItem="guq-xC-HQJ" firstAttribute="leading" secondItem="HH8-e8-Osh" secondAttribute="leading" id="7vV-TG-Z7i"/>
-                            <constraint firstItem="Tlh-Fp-2EJ" firstAttribute="leading" secondItem="6Ou-kV-jYg" secondAttribute="leading" id="DFU-v2-19K"/>
+                            <constraint firstItem="Tlh-Fp-2EJ" firstAttribute="height" secondItem="kU4-UU-ZeN" secondAttribute="height" multiplier="0.63" id="MdN-yE-m2O"/>
                             <constraint firstAttribute="bottom" secondItem="iMH-fy-kU0" secondAttribute="bottom" constant="20" id="OcD-ii-Rlu"/>
+                            <constraint firstItem="Tlh-Fp-2EJ" firstAttribute="leading" secondItem="kU4-UU-ZeN" secondAttribute="leading" id="P8x-1q-XX2"/>
                             <constraint firstItem="6Ou-kV-jYg" firstAttribute="centerX" secondItem="kU4-UU-ZeN" secondAttribute="centerX" multiplier="0.295" id="PCG-78-D3K"/>
                             <constraint firstItem="guq-xC-HQJ" firstAttribute="bottom" secondItem="HH8-e8-Osh" secondAttribute="bottom" id="T76-DW-GLh"/>
                             <constraint firstItem="oz8-c9-Jd7" firstAttribute="leading" secondItem="kU4-UU-ZeN" secondAttribute="leading" id="TE3-KE-SBe"/>
                             <constraint firstItem="oz8-c9-Jd7" firstAttribute="centerY" secondItem="kU4-UU-ZeN" secondAttribute="centerY" multiplier="1.2" id="THc-ma-g9a"/>
                             <constraint firstAttribute="trailing" secondItem="oz8-c9-Jd7" secondAttribute="trailing" id="UKr-gL-CW3"/>
                             <constraint firstAttribute="trailing" secondItem="iMH-fy-kU0" secondAttribute="trailing" constant="20" id="VWl-NN-avq"/>
-                            <constraint firstItem="Tlh-Fp-2EJ" firstAttribute="top" secondItem="6Ou-kV-jYg" secondAttribute="top" id="Wbb-fD-g5I"/>
                             <constraint firstAttribute="bottom" secondItem="pUs-Gb-MlG" secondAttribute="bottom" constant="20" id="YId-Nm-rX4"/>
                             <constraint firstItem="lkD-HR-gZT" firstAttribute="centerX" secondItem="kU4-UU-ZeN" secondAttribute="centerX" multiplier="1.065" id="aLZ-75-iG9"/>
                             <constraint firstAttribute="trailing" secondItem="O9v-MN-Dt1" secondAttribute="trailing" id="dZ7-IC-gyZ"/>
@@ -384,17 +394,16 @@
                             <constraint firstAttribute="bottomMargin" secondItem="6Ou-kV-jYg" secondAttribute="bottom" id="gM7-ud-YUn"/>
                             <constraint firstItem="HH8-e8-Osh" firstAttribute="centerX" secondItem="kU4-UU-ZeN" secondAttribute="centerX" multiplier="1.89" id="gky-3j-j3M"/>
                             <constraint firstItem="HH8-e8-Osh" firstAttribute="centerY" secondItem="kU4-UU-ZeN" secondAttribute="centerY" multiplier="0.81" id="hJ8-OH-t3o"/>
-                            <constraint firstItem="Tlh-Fp-2EJ" firstAttribute="trailing" secondItem="6Ou-kV-jYg" secondAttribute="trailing" id="hbv-Nv-Hkz"/>
                             <constraint firstItem="O9v-MN-Dt1" firstAttribute="top" secondItem="kU4-UU-ZeN" secondAttribute="top" id="heE-hE-Gp8"/>
                             <constraint firstItem="HH8-e8-Osh" firstAttribute="width" secondItem="HH8-e8-Osh" secondAttribute="height" multiplier="32:33" id="iQo-xc-NVm"/>
                             <constraint firstItem="lkD-HR-gZT" firstAttribute="height" secondItem="kU4-UU-ZeN" secondAttribute="height" multiplier="0.224" id="kvb-w8-dla"/>
                             <constraint firstItem="O9v-MN-Dt1" firstAttribute="bottom" secondItem="kU4-UU-ZeN" secondAttribute="bottom" id="lzG-cM-o43"/>
                             <constraint firstItem="guq-xC-HQJ" firstAttribute="top" secondItem="HH8-e8-Osh" secondAttribute="top" id="my5-sO-jKO"/>
+                            <constraint firstAttribute="bottom" secondItem="Tlh-Fp-2EJ" secondAttribute="bottom" id="obM-VS-iof"/>
                             <constraint firstItem="lkD-HR-gZT" firstAttribute="centerY" secondItem="kU4-UU-ZeN" secondAttribute="centerY" multiplier="0.39" id="tSX-jW-Ka4"/>
                             <constraint firstItem="pUs-Gb-MlG" firstAttribute="height" secondItem="kU4-UU-ZeN" secondAttribute="height" multiplier="0.115" id="u7B-cc-OSo"/>
                             <constraint firstItem="guq-xC-HQJ" firstAttribute="trailing" secondItem="HH8-e8-Osh" secondAttribute="trailing" id="ukc-q4-0Lc"/>
                             <constraint firstItem="iMH-fy-kU0" firstAttribute="height" secondItem="kU4-UU-ZeN" secondAttribute="height" multiplier="0.115" id="xhl-7E-Z3F"/>
-                            <constraint firstItem="Tlh-Fp-2EJ" firstAttribute="bottom" secondItem="6Ou-kV-jYg" secondAttribute="bottom" id="zRW-5Z-Cdu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rKs-WL-eLf"/>
                     </view>
@@ -1805,8 +1814,8 @@
                                     <segue destination="lCB-6q-rB1" kind="unwind" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="aro-iI-ZHj"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb14_lightOff" translatesAutoresizingMaskIntoConstraints="NO" id="BJn-4m-HOp" userLabel="page14Light">
-                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb_blank" translatesAutoresizingMaskIntoConstraints="NO" id="BJn-4m-HOp" userLabel="page14Light">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1836,11 +1845,6 @@
                             <constraint firstItem="svU-3x-Ffk" firstAttribute="centerX" secondItem="10J-o6-dDc" secondAttribute="centerX" multiplier="1.465" id="z5L-GF-haD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tho-wj-lD3"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="BJn-4m-HOp"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Bab-T6-GDF"/>
                     <connections>
@@ -2950,7 +2954,7 @@
                                     <action selector="page22MaInvisibleButton:" destination="tfl-RW-7rW" eventType="touchUpInside" id="KoT-pl-w6M"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb22_drop01" translatesAutoresizingMaskIntoConstraints="NO" id="B5i-d2-xnc" userLabel="page22Tear">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb_blank" translatesAutoresizingMaskIntoConstraints="NO" id="B5i-d2-xnc" userLabel="page22Tear">
                                 <rect key="frame" x="931" y="119" width="32.5" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="B5i-d2-xnc" secondAttribute="height" multiplier="8:11" id="c1p-Ls-yE3"/>
@@ -4114,7 +4118,6 @@
         <image name="gtb13_text" width="472" height="616"/>
         <image name="gtb14_bg" width="1024" height="768"/>
         <image name="gtb14_girl01" width="529" height="299"/>
-        <image name="gtb14_lightOff" width="1024" height="768"/>
         <image name="gtb14_text" width="623" height="305"/>
         <image name="gtb15_baby01" width="64" height="23"/>
         <image name="gtb15_babyBowl01" width="195" height="142"/>
@@ -4156,7 +4159,6 @@
         <image name="gtb21_text" width="648" height="289"/>
         <image name="gtb22_babyHand02" width="238" height="140"/>
         <image name="gtb22_bg" width="1024" height="768"/>
-        <image name="gtb22_drop01" width="32" height="44"/>
         <image name="gtb22_mama01" width="245" height="299"/>
         <image name="gtb22_papa01" width="384" height="356"/>
         <image name="gtb22_text" width="510" height="588"/>
@@ -4187,6 +4189,7 @@
         <image name="gtb28_bug01" width="72" height="74"/>
         <image name="gtb28_girl01" width="315" height="402"/>
         <image name="gtb28_text" width="658" height="269"/>
+        <image name="gtb_blank" width="397" height="229"/>
         <image name="gtb_lastPage_again" width="331" height="95"/>
         <image name="gtb_lastPage_again_on" width="331" height="95"/>
         <image name="gtb_lastPage_apps" width="316" height="96"/>
