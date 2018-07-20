@@ -14,7 +14,7 @@ class OpeningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pageCounter.number = 99
-        // playVOSound()
+        playVOSound()
         pageCounter.resetNumber()
         var openingList = [UIImage]()
         for i in 0...3  {
@@ -23,11 +23,11 @@ class OpeningViewController: UIViewController {
                 openingList.append(image) } else {return}
         }
         self.openingOutlet.animationImages = openingList
-        self.openingOutlet.animationDuration = 2
+        self.openingOutlet.animationDuration = 2.83
         self.openingOutlet.startAnimating()
-         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 6) {
             self.performSegue(withIdentifier: "openingSegue", sender: self)
-            // playVOSound()
+            playVOSound()
         }
     }
 }
