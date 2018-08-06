@@ -522,6 +522,56 @@ class PageViewController: UIViewController {
         playPageFlipSounds(true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // all
+            // button setup
+        var textButtonTest = UIButton()
+        var arrowLeftButtonTest = UIButton()
+        var arrowRightButtonTest = UIButton()
+        
+        textButtonTest = UIButton.init(type: .custom)
+        textButtonTest.setTitle("Goldilocks then went to lorem ipsum.", for: UIControlState.normal)
+        textButtonTest.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        textButtonTest.titleLabel?.numberOfLines = 0
+        textButtonTest.backgroundColor = UIColor.green
+        view.addSubview(textButtonTest)
+        
+        arrowLeftButtonTest = UIButton.init(type: .custom)
+        arrowLeftButtonTest.setImage(UIImage(named: "arrowleft"), for: UIControlState.normal)
+        arrowLeftButtonTest.backgroundColor = UIColor.cyan
+        view.addSubview(arrowLeftButtonTest)
+        
+        arrowRightButtonTest = UIButton.init(type: .custom)
+        arrowLeftButtonTest.setImage(UIImage(named: "arrowright"), for: UIControlState.normal)
+        arrowRightButtonTest.backgroundColor = UIColor.cyan
+        view.addSubview(arrowRightButtonTest)
+        
+            // constraints
+    textButtonTest.translatesAutoresizingMaskIntoConstraints = false
+    arrowLeftButtonTest.translatesAutoresizingMaskIntoConstraints = false
+    arrowRightButtonTest.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: textButtonTest, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.32, constant: 0).isActive = true
+        NSLayoutConstraint(item: textButtonTest, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 0.75, constant: 0).isActive = true
+    textButtonTest.widthAnchor.constraint(equalToConstant: 180).isActive = true
+    textButtonTest.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    
+    arrowLeftButtonTest.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+    arrowLeftButtonTest.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+    arrowLeftButtonTest.heightAnchor.constraint(equalTo: arrowLeftButtonTest.widthAnchor, multiplier: 51/44).isActive = true
+    if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact {
+        arrowLeftButtonTest.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.105).isActive = true
+        }
+    
+    arrowRightButtonTest.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+    arrowRightButtonTest.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+    arrowRightButtonTest.heightAnchor.constraint(equalTo: arrowRightButtonTest.widthAnchor, multiplier: 51/44).isActive = true
+    if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact {
+        arrowRightButtonTest.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.105).isActive = true
+        }
+    }
+    
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
         // page 01
@@ -618,52 +668,6 @@ class PageViewController: UIViewController {
         // end
         
         // last
-        
-        // all
-        
-        // button setup
-        var textButtonTest = UIButton()
-        var arrowLeftButtonTest = UIButton()
-        var arrowRightButtonTest = UIButton()
-        
-        textButtonTest = UIButton.init(type: .system)
-        textButtonTest.setTitle("Goldilocks then went to lorem ipsum.", for: UIControlState.normal)
-        textButtonTest.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        textButtonTest.titleLabel?.numberOfLines = 0
-        textButtonTest.backgroundColor = UIColor.green
-        view.addSubview(textButtonTest)
-        
-        arrowLeftButtonTest = UIButton.init(type: .system)
-        arrowLeftButtonTest.setTitle("<", for: UIControlState.normal)
-        arrowLeftButtonTest.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        arrowLeftButtonTest.backgroundColor = UIColor.cyan
-        view.addSubview(arrowLeftButtonTest)
-        
-        arrowRightButtonTest = UIButton.init(type: .system)
-        arrowRightButtonTest.setTitle(">", for: UIControlState.normal)
-        arrowRightButtonTest.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        arrowRightButtonTest.backgroundColor = UIColor.cyan
-        view.addSubview(arrowRightButtonTest)
-        
-        // constraints
-        textButtonTest.translatesAutoresizingMaskIntoConstraints = false
-        arrowLeftButtonTest.translatesAutoresizingMaskIntoConstraints = false
-        arrowRightButtonTest.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint(item: textButtonTest, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.32, constant: 0).isActive = true
-        NSLayoutConstraint(item: textButtonTest, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 0.75, constant: 0).isActive = true
-        textButtonTest.widthAnchor.constraint(equalToConstant: 180).isActive = true
-        textButtonTest.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        arrowLeftButtonTest.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        arrowLeftButtonTest.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
-        arrowLeftButtonTest.heightAnchor.constraint(equalTo: arrowLeftButtonTest.widthAnchor, multiplier: 0.9).isActive = true
-        arrowLeftButtonTest.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2).isActive = true
-        
-        arrowRightButtonTest.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        arrowRightButtonTest.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
-        arrowRightButtonTest.heightAnchor.constraint(equalTo: arrowRightButtonTest.widthAnchor, multiplier: 0.9).isActive = true
-        arrowRightButtonTest.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2).isActive = true
     }
 }
 
