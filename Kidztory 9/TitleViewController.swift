@@ -35,6 +35,7 @@ class TitleViewController: UIViewController {
             }
         }
     }
+    @IBAction func unwindToPreviousPage(unwindSegue: UIStoryboardSegue) {}
     
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)

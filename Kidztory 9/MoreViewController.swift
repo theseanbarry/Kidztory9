@@ -11,5 +11,7 @@ import UIKit
 import AVFoundation
 
 class MoreViewController: UIViewController {
-    @IBAction func unwindToPreviousPage(unwindSegue: UIStoryboardSegue) {}
+    @IBAction func unwindToPreviousPage(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToPreviousPage", sender: self)
+    }
 }

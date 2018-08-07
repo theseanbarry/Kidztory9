@@ -499,6 +499,7 @@ class PageViewController: UIViewController {
     
     // last
     @IBAction func againButton(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToTitle", sender: self)
     }
     @IBAction func tellAFriendButton(_ sender: Any) {
     }
@@ -509,17 +510,21 @@ class PageViewController: UIViewController {
     @IBOutlet weak var bugOutlet: UIImageView?
     
     @IBAction func unwindToPreviousPage(unwindSegue: UIStoryboardSegue) {}
-    @IBAction func unwindToTitleButton(_ sender: Any) {
-        performSegue(withIdentifier: "unwindSegueToTitle", sender: self)
-    }
+    
     @IBAction func voButton(_ sender: Any) {
         playVOSound()
     }
     @IBAction func arrowLeftButton(_ sender: Any) {
         playPageFlipSounds(false)
+        if pageCounter.number == 0 {
+            performSegue(withIdentifier: "unwindSegueToTitle", sender: self)
+        } else {
+            performSegue(withIdentifier: "unwindSegueToPreviousPage", sender: self)
+        }
     }
     @IBAction func arrowRightButton(_ sender: Any) {
         playPageFlipSounds(true)
+        performSegue(withIdentifier: "nextPageSegue", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -535,16 +540,19 @@ class PageViewController: UIViewController {
         textButtonTest.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         textButtonTest.titleLabel?.numberOfLines = 0
         textButtonTest.backgroundColor = UIColor.green
+        textButtonTest.addTarget(self, action: #selector(PageViewController.voButton), for: .touchUpInside)
         view.addSubview(textButtonTest)
         
         arrowLeftButtonTest = UIButton.init(type: .custom)
         arrowLeftButtonTest.setImage(UIImage(named: "arrowleft"), for: UIControlState.normal)
         arrowLeftButtonTest.backgroundColor = UIColor.cyan
+        arrowLeftButtonTest.addTarget(self, action: #selector(PageViewController.arrowLeftButton), for: .touchUpInside)
         view.addSubview(arrowLeftButtonTest)
         
         arrowRightButtonTest = UIButton.init(type: .custom)
-        arrowLeftButtonTest.setImage(UIImage(named: "arrowright"), for: UIControlState.normal)
+        arrowRightButtonTest.setImage(UIImage(named: "arrowright"), for: UIControlState.normal)
         arrowRightButtonTest.backgroundColor = UIColor.cyan
+        arrowRightButtonTest.addTarget(self, action: #selector(PageViewController.arrowRightButton), for: .touchUpInside)
         view.addSubview(arrowRightButtonTest)
         
             // constraints
