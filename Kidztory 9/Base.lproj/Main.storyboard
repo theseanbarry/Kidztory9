@@ -300,20 +300,6 @@
                                     <action selector="page02BugInvisibleButton:" destination="nY7-3h-G49" eventType="touchUpInside" id="sXO-eF-Sj9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMH-fy-kU0" userLabel="arrowRight">
-                                <rect key="frame" x="901.5" y="659.5" width="102.5" height="88.5"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="iMH-fy-kU0" secondAttribute="height" multiplier="51:44" id="8N7-cO-L3A"/>
-                                </constraints>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="nY7-3h-G49" eventType="touchUpInside" id="5ZF-CI-3Bc"/>
-                                    <segue destination="dir-Bn-D9f" kind="push" id="k49-Wf-Wvg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkD-HR-gZT" userLabel="text">
                                 <rect key="frame" x="111" y="63.5" width="868.5" height="172.5"/>
                                 <constraints>
@@ -330,14 +316,12 @@
                             <constraint firstItem="O9v-MN-Dt1" firstAttribute="leading" secondItem="kU4-UU-ZeN" secondAttribute="leading" id="1cd-Du-Iqp"/>
                             <constraint firstItem="guq-xC-HQJ" firstAttribute="leading" secondItem="HH8-e8-Osh" secondAttribute="leading" id="7vV-TG-Z7i"/>
                             <constraint firstItem="Tlh-Fp-2EJ" firstAttribute="height" secondItem="kU4-UU-ZeN" secondAttribute="height" multiplier="0.63" id="MdN-yE-m2O"/>
-                            <constraint firstAttribute="bottom" secondItem="iMH-fy-kU0" secondAttribute="bottom" constant="20" id="OcD-ii-Rlu"/>
                             <constraint firstItem="Tlh-Fp-2EJ" firstAttribute="leading" secondItem="kU4-UU-ZeN" secondAttribute="leading" id="P8x-1q-XX2"/>
                             <constraint firstItem="6Ou-kV-jYg" firstAttribute="centerX" secondItem="kU4-UU-ZeN" secondAttribute="centerX" multiplier="0.295" id="PCG-78-D3K"/>
                             <constraint firstItem="guq-xC-HQJ" firstAttribute="bottom" secondItem="HH8-e8-Osh" secondAttribute="bottom" id="T76-DW-GLh"/>
                             <constraint firstItem="oz8-c9-Jd7" firstAttribute="leading" secondItem="kU4-UU-ZeN" secondAttribute="leading" id="TE3-KE-SBe"/>
                             <constraint firstItem="oz8-c9-Jd7" firstAttribute="centerY" secondItem="kU4-UU-ZeN" secondAttribute="centerY" multiplier="1.2" id="THc-ma-g9a"/>
                             <constraint firstAttribute="trailing" secondItem="oz8-c9-Jd7" secondAttribute="trailing" id="UKr-gL-CW3"/>
-                            <constraint firstAttribute="trailing" secondItem="iMH-fy-kU0" secondAttribute="trailing" constant="20" id="VWl-NN-avq"/>
                             <constraint firstItem="lkD-HR-gZT" firstAttribute="centerX" secondItem="kU4-UU-ZeN" secondAttribute="centerX" multiplier="1.065" id="aLZ-75-iG9"/>
                             <constraint firstAttribute="trailing" secondItem="O9v-MN-Dt1" secondAttribute="trailing" id="dZ7-IC-gyZ"/>
                             <constraint firstItem="6Ou-kV-jYg" firstAttribute="height" secondItem="kU4-UU-ZeN" secondAttribute="height" multiplier="0.16" id="eRR-MS-p9o"/>
@@ -352,7 +336,6 @@
                             <constraint firstAttribute="bottom" secondItem="Tlh-Fp-2EJ" secondAttribute="bottom" id="obM-VS-iof"/>
                             <constraint firstItem="lkD-HR-gZT" firstAttribute="centerY" secondItem="kU4-UU-ZeN" secondAttribute="centerY" multiplier="0.39" id="tSX-jW-Ka4"/>
                             <constraint firstItem="guq-xC-HQJ" firstAttribute="trailing" secondItem="HH8-e8-Osh" secondAttribute="trailing" id="ukc-q4-0Lc"/>
-                            <constraint firstItem="iMH-fy-kU0" firstAttribute="height" secondItem="kU4-UU-ZeN" secondAttribute="height" multiplier="0.115" id="xhl-7E-Z3F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rKs-WL-eLf"/>
                     </view>
@@ -361,6 +344,7 @@
                         <outlet property="bugOutlet" destination="HH8-e8-Osh" id="Tgp-NC-TpE"/>
                         <outlet property="page02GirlOutlet" destination="6Ou-kV-jYg" id="le9-eF-Vd5"/>
                         <segue destination="b6f-a1-qc3" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="p2q-ou-nNe"/>
+                        <segue destination="dir-Bn-D9f" kind="push" identifier="nextPageSegue" id="UFK-yl-DA0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaR-KQ-nVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -447,31 +431,15 @@
                                     <action selector="voButton:" destination="dir-Bn-D9f" eventType="touchUpInside" id="mhI-8B-z9h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jfv-Bi-4d7" userLabel="arrowRight">
-                                <rect key="frame" x="952.5" y="704" width="51.5" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Jfv-Bi-4d7" secondAttribute="height" multiplier="51:44" id="hFt-Yk-Svv"/>
-                                </constraints>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="dir-Bn-D9f" eventType="touchUpInside" id="Vg7-SU-IJj"/>
-                                    <segue destination="yDF-d2-4tK" kind="push" id="LaI-VM-E6I"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MwG-cE-IDW" firstAttribute="top" secondItem="nMh-bA-uau" secondAttribute="top" id="4N0-kf-5HZ"/>
-                            <constraint firstAttribute="bottom" secondItem="Jfv-Bi-4d7" secondAttribute="bottom" constant="20" id="5Zo-D9-WF1"/>
                             <constraint firstItem="nMh-bA-uau" firstAttribute="centerX" secondItem="eWB-qS-v83" secondAttribute="centerX" multiplier="0.465" id="7JF-mW-MY0"/>
                             <constraint firstItem="BtD-1T-YFw" firstAttribute="height" secondItem="eWB-qS-v83" secondAttribute="height" multiplier="0.4" id="8jY-3l-xHc"/>
                             <constraint firstItem="ukz-ie-MQ7" firstAttribute="bottom" secondItem="jnH-pi-18P" secondAttribute="bottom" id="9o4-Ns-9c0"/>
                             <constraint firstItem="BtD-1T-YFw" firstAttribute="centerY" secondItem="eWB-qS-v83" secondAttribute="centerY" multiplier="0.8" id="ASk-7w-75j"/>
                             <constraint firstItem="ukz-ie-MQ7" firstAttribute="leading" secondItem="jnH-pi-18P" secondAttribute="leading" id="BAD-8s-83Q"/>
-                            <constraint firstAttribute="trailing" secondItem="Jfv-Bi-4d7" secondAttribute="trailing" constant="20" id="CCb-hH-Ubb"/>
                             <constraint firstItem="ukz-ie-MQ7" firstAttribute="top" secondItem="jnH-pi-18P" secondAttribute="top" id="DK0-IG-b9H"/>
                             <constraint firstItem="RRx-8I-xuu" firstAttribute="trailing" secondItem="ypv-Ck-JpQ" secondAttribute="trailing" id="DT8-Z3-pcD"/>
                             <constraint firstItem="HOp-8b-b6v" firstAttribute="top" secondItem="eWB-qS-v83" secondAttribute="top" constant="50" id="EfR-DV-jAo"/>
@@ -485,7 +453,6 @@
                             <constraint firstItem="qLe-Ab-WiZ" firstAttribute="top" secondItem="Qfe-Ph-Lsi" secondAttribute="top" id="VpC-DW-aAQ"/>
                             <constraint firstItem="jnH-pi-18P" firstAttribute="height" secondItem="eWB-qS-v83" secondAttribute="height" multiplier="0.188" id="XXS-zN-EUU"/>
                             <constraint firstItem="MwG-cE-IDW" firstAttribute="bottom" secondItem="nMh-bA-uau" secondAttribute="bottom" id="Ztg-zA-pid"/>
-                            <constraint firstItem="Jfv-Bi-4d7" firstAttribute="height" secondItem="eWB-qS-v83" secondAttribute="height" multiplier="0.105" id="ZvU-FO-5OO"/>
                             <constraint firstItem="Qfe-Ph-Lsi" firstAttribute="centerY" secondItem="eWB-qS-v83" secondAttribute="centerY" multiplier="1.555" id="bKF-Hh-jzq"/>
                             <constraint firstItem="Nlu-j7-48s" firstAttribute="leading" secondItem="eWB-qS-v83" secondAttribute="leading" id="cC7-ze-4rc"/>
                             <constraint firstItem="nMh-bA-uau" firstAttribute="centerY" secondItem="eWB-qS-v83" secondAttribute="centerY" multiplier="1.46" id="cec-7X-Xsl"/>
@@ -505,11 +472,6 @@
                             <constraint firstItem="RRx-8I-xuu" firstAttribute="leading" secondItem="ypv-Ck-JpQ" secondAttribute="leading" id="zgv-uM-Mgx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f2D-mR-Yyc"/>
-                        <variation key="heightClass=regular-widthClass=regular">
-                            <mask key="constraints">
-                                <exclude reference="ZvU-FO-5OO"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="nf5-Rt-T2x"/>
                     <connections>
@@ -517,9 +479,12 @@
                         <outlet property="page03GirlOutlet" destination="ypv-Ck-JpQ" id="fqp-hi-SFz"/>
                         <outlet property="page03MaBowlOutlet" destination="Qfe-Ph-Lsi" id="9s7-Lu-M4H"/>
                         <outlet property="page03PaBowlOutlet" destination="nMh-bA-uau" id="ngw-Xd-ceo"/>
+                        <segue destination="yDF-d2-4tK" kind="push" identifier="nextPageSegue" id="tnV-UX-wMH"/>
+                        <segue destination="Qz7-Fm-R6r" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="AhJ-ju-7na"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEN-Rz-Nly" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Qz7-Fm-R6r" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3382.03125" y="706.25"/>
         </scene>
@@ -558,17 +523,6 @@
                                     <action selector="page04BowlInvisibleButton:" destination="yDF-d2-4tK" eventType="touchUpInside" id="kw8-61-OnP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fl2-6B-gaQ" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="yDF-d2-4tK" eventType="touchUpInside" id="vvS-Jr-T1J"/>
-                                    <segue destination="KoD-ho-goK" kind="push" id="uNm-bp-FGc"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb04_smoke02" translatesAutoresizingMaskIntoConstraints="NO" id="EZE-ry-oOl" userLabel="page04Smoke">
                                 <rect key="frame" x="315.5" y="246" width="413.5" height="353"/>
                                 <constraints>
@@ -596,8 +550,6 @@
                             <constraint firstItem="EZE-ry-oOl" firstAttribute="centerY" secondItem="nV3-Zf-DYZ" secondAttribute="centerY" multiplier="1.1" id="Hqf-em-MX1"/>
                             <constraint firstItem="Qjs-HK-fFz" firstAttribute="centerX" secondItem="nV3-Zf-DYZ" secondAttribute="centerX" multiplier="0.81" id="JzR-KF-eFI"/>
                             <constraint firstAttribute="bottom" secondItem="y4J-ko-nF1" secondAttribute="bottom" id="THU-We-w1b"/>
-                            <constraint firstAttribute="bottom" secondItem="Fl2-6B-gaQ" secondAttribute="bottom" constant="20" id="UEh-UI-XO4"/>
-                            <constraint firstAttribute="trailing" secondItem="Fl2-6B-gaQ" secondAttribute="trailing" constant="20" id="aWS-OX-R2C"/>
                             <constraint firstItem="cKV-K2-hdI" firstAttribute="trailing" secondItem="juR-vb-XNB" secondAttribute="trailing" constant="50" id="arw-xT-kNN"/>
                             <constraint firstItem="EZE-ry-oOl" firstAttribute="height" secondItem="nV3-Zf-DYZ" secondAttribute="height" multiplier="0.46" id="hXi-vQ-8Py"/>
                             <constraint firstItem="y4J-ko-nF1" firstAttribute="centerX" secondItem="nV3-Zf-DYZ" secondAttribute="centerX" multiplier="1.07" id="he8-Ei-Poz"/>
@@ -615,9 +567,12 @@
                     <connections>
                         <outlet property="page04GirlOutlet" destination="Qjs-HK-fFz" id="vSK-pN-DVS"/>
                         <outlet property="page04SmokeOutlet" destination="EZE-ry-oOl" id="tNB-Ru-7fh"/>
+                        <segue destination="KoD-ho-goK" kind="push" identifier="nextPageSegue" id="3sv-BG-VHg"/>
+                        <segue destination="V7j-iM-EOf" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="PUV-Kf-7O8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0s-j7-CSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="V7j-iM-EOf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4141.7266187050363" y="706.47482014388493"/>
         </scene>
@@ -681,17 +636,6 @@
                                     <action selector="voButton:" destination="KoD-ho-goK" eventType="touchUpInside" id="8tq-mT-FPC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOW-07-ep1" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="KoD-ho-goK" eventType="touchUpInside" id="fvs-3b-1Qs"/>
-                                    <segue destination="5pl-PX-Oqn" kind="push" id="S7B-eU-hr2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -709,12 +653,10 @@
                             <constraint firstItem="nGZ-MM-Gwu" firstAttribute="centerX" secondItem="5Ct-1z-jNR" secondAttribute="centerX" multiplier="0.49" id="WV3-lV-Uk8"/>
                             <constraint firstItem="g7f-LN-Y1c" firstAttribute="centerX" secondItem="5Ct-1z-jNR" secondAttribute="centerX" multiplier="0.22" id="a57-iX-ab3"/>
                             <constraint firstItem="cU7-1A-Kjt" firstAttribute="leading" secondItem="g7f-LN-Y1c" secondAttribute="leading" id="czP-6m-PZo"/>
-                            <constraint firstAttribute="bottom" secondItem="BOW-07-ep1" secondAttribute="bottom" constant="20" id="gFL-Fr-CNS"/>
                             <constraint firstItem="cU7-1A-Kjt" firstAttribute="trailing" secondItem="g7f-LN-Y1c" secondAttribute="trailing" id="jSC-eT-sPR"/>
                             <constraint firstItem="QZQ-kg-3mQ" firstAttribute="centerY" secondItem="5Ct-1z-jNR" secondAttribute="centerY" multiplier="0.68" id="jfg-If-Gv6"/>
                             <constraint firstItem="cHa-6I-TQX" firstAttribute="leading" secondItem="5Ct-1z-jNR" secondAttribute="leading" id="jh9-S9-dHz"/>
                             <constraint firstItem="uxr-F2-aWw" firstAttribute="centerY" secondItem="5Ct-1z-jNR" secondAttribute="centerY" multiplier="1.45" id="m4e-JQ-b7Q"/>
-                            <constraint firstAttribute="trailing" secondItem="BOW-07-ep1" secondAttribute="trailing" constant="20" id="nmg-fA-dMz"/>
                             <constraint firstItem="Nqj-iv-Ugd" firstAttribute="centerX" secondItem="5Ct-1z-jNR" secondAttribute="centerX" multiplier="0.75" id="of3-di-t4P"/>
                             <constraint firstItem="g7f-LN-Y1c" firstAttribute="height" secondItem="5Ct-1z-jNR" secondAttribute="height" multiplier="0.305" id="s3Y-Lq-K3C"/>
                             <constraint firstItem="Nqj-iv-Ugd" firstAttribute="centerY" secondItem="5Ct-1z-jNR" secondAttribute="centerY" multiplier="0.4" id="sSn-oY-T2X"/>
@@ -725,9 +667,12 @@
                     <navigationItem key="navigationItem" id="2LQ-Zh-LcA"/>
                     <connections>
                         <outlet property="page05GirlOutlet" destination="g7f-LN-Y1c" id="2at-8Z-zoF"/>
+                        <segue destination="5pl-PX-Oqn" kind="push" identifier="nextPageSegue" id="rLG-kE-zwG"/>
+                        <segue destination="thr-mJ-LOC" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="PfK-Cc-vak"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KJ-Wo-Pcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="thr-mJ-LOC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4907.9136690647483" y="706.47482014388493"/>
         </scene>
@@ -791,21 +736,9 @@
                                     <action selector="voButton:" destination="5pl-PX-Oqn" eventType="touchUpInside" id="q72-az-vzX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bla-j4-zIl" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="5pl-PX-Oqn" eventType="touchUpInside" id="o0U-fw-Ubh"/>
-                                    <segue destination="mGw-vz-WTr" kind="push" id="j7C-EC-hze"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Bla-j4-zIl" secondAttribute="trailing" constant="20" id="5OE-Ub-lk7"/>
                             <constraint firstItem="IqX-bL-f9x" firstAttribute="leading" secondItem="FON-La-xKM" secondAttribute="leading" id="MTP-KL-FFW"/>
                             <constraint firstItem="PBe-ex-wqt" firstAttribute="centerY" secondItem="FON-La-xKM" secondAttribute="centerY" multiplier="1.515" id="QTn-ni-i4L"/>
                             <constraint firstItem="IqX-bL-f9x" firstAttribute="top" secondItem="FON-La-xKM" secondAttribute="top" id="S4s-Hr-4dX"/>
@@ -816,7 +749,6 @@
                             <constraint firstItem="afU-5D-cXL" firstAttribute="trailing" secondItem="GoU-Ls-yZs" secondAttribute="trailing" id="Zu0-OI-Su3"/>
                             <constraint firstItem="PBe-ex-wqt" firstAttribute="centerX" secondItem="FON-La-xKM" secondAttribute="centerX" multiplier="0.92" id="bYz-ve-Nls"/>
                             <constraint firstItem="PBe-ex-wqt" firstAttribute="height" secondItem="FON-La-xKM" secondAttribute="height" multiplier="0.07" id="bm3-Sf-TEt"/>
-                            <constraint firstAttribute="bottom" secondItem="Bla-j4-zIl" secondAttribute="bottom" constant="20" id="c58-MF-WNE"/>
                             <constraint firstAttribute="bottom" secondItem="IqX-bL-f9x" secondAttribute="bottom" id="fmb-U3-3Ia"/>
                             <constraint firstItem="Z4m-jA-52g" firstAttribute="height" secondItem="FON-La-xKM" secondAttribute="height" multiplier="0.13" id="g8u-0o-tmQ"/>
                             <constraint firstItem="afU-5D-cXL" firstAttribute="leading" secondItem="GoU-Ls-yZs" secondAttribute="leading" id="gRP-Fz-fNg"/>
@@ -835,9 +767,12 @@
                     <navigationItem key="navigationItem" id="Ldb-CH-c5A"/>
                     <connections>
                         <outlet property="page06GirlOutlet" destination="GoU-Ls-yZs" id="i6u-8C-IOl"/>
+                        <segue destination="mGw-vz-WTr" kind="push" identifier="nextPageSegue" id="30V-Gw-Adc"/>
+                        <segue destination="5VU-wh-gDU" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="lZu-h0-Llw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAZ-Sn-8Qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5VU-wh-gDU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4907.9136690647483" y="1515.8273381294964"/>
         </scene>
@@ -904,17 +839,6 @@
                                     <action selector="voButton:" destination="mGw-vz-WTr" eventType="touchUpInside" id="VKA-FC-vBe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqM-Us-iNZ" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="mGw-vz-WTr" eventType="touchUpInside" id="sGW-q7-sJv"/>
-                                    <segue destination="PIc-EU-DcE" kind="push" id="3Zw-8W-3MC"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -926,7 +850,6 @@
                             <constraint firstItem="AlG-Pp-VV6" firstAttribute="trailing" secondItem="hOG-Qd-vNI" secondAttribute="trailing" id="LGi-GP-jVM"/>
                             <constraint firstItem="hOG-Qd-vNI" firstAttribute="centerY" secondItem="Irf-uX-bty" secondAttribute="centerY" multiplier="0.942" id="LQt-0F-YZU"/>
                             <constraint firstItem="Sh7-Yn-xJC" firstAttribute="leading" secondItem="qeu-Qt-l4s" secondAttribute="leading" constant="50" id="NQN-eY-Hwp"/>
-                            <constraint firstAttribute="trailing" secondItem="QqM-Us-iNZ" secondAttribute="trailing" constant="20" id="OiN-yS-xnV"/>
                             <constraint firstItem="hOG-Qd-vNI" firstAttribute="centerX" secondItem="Irf-uX-bty" secondAttribute="centerX" multiplier="0.841" id="RA4-5K-VTD"/>
                             <constraint firstItem="hOG-Qd-vNI" firstAttribute="height" secondItem="Irf-uX-bty" secondAttribute="height" multiplier="0.16" id="RrS-xr-TEX"/>
                             <constraint firstItem="Sh7-Yn-xJC" firstAttribute="top" secondItem="Irf-uX-bty" secondAttribute="top" constant="50" id="WR6-zC-pBJ"/>
@@ -940,16 +863,18 @@
                             <constraint firstAttribute="trailing" secondItem="vIH-D2-ndr" secondAttribute="trailing" id="o9B-JX-KDc"/>
                             <constraint firstItem="LK1-6A-WDy" firstAttribute="height" secondItem="Irf-uX-bty" secondAttribute="height" multiplier="0.63" id="oYE-UA-sx1"/>
                             <constraint firstItem="t12-Ay-rBE" firstAttribute="centerY" secondItem="Irf-uX-bty" secondAttribute="centerY" multiplier="1.53" id="p4E-F8-wDF"/>
-                            <constraint firstAttribute="bottom" secondItem="QqM-Us-iNZ" secondAttribute="bottom" constant="20" id="y0x-0M-I4m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qeu-Qt-l4s"/>
                     </view>
                     <navigationItem key="navigationItem" id="neG-3T-skg"/>
                     <connections>
                         <outlet property="page07GirlOutlet" destination="hOG-Qd-vNI" id="FUY-nS-rIL"/>
+                        <segue destination="PIc-EU-DcE" kind="push" identifier="nextPageSegue" id="MCw-Xd-h3Q"/>
+                        <segue destination="rh0-DW-vuC" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="Cqy-lG-7vV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qba-ZV-eQw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rh0-DW-vuC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4141.7266187050363" y="1515.8273381294964"/>
         </scene>
@@ -986,17 +911,6 @@
                                     <action selector="voButton:" destination="PIc-EU-DcE" eventType="touchUpInside" id="5p6-Sq-Gs5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMr-wN-55Z" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="PIc-EU-DcE" eventType="touchUpInside" id="qNm-mt-PyT"/>
-                                    <segue destination="V3M-At-Lun" kind="push" id="uBy-0V-bnE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1006,12 +920,10 @@
                             <constraint firstAttribute="trailing" secondItem="UGt-Oe-zHH" secondAttribute="trailing" id="EoW-Eb-8sZ"/>
                             <constraint firstItem="Q4R-pI-RRw" firstAttribute="top" secondItem="CKY-cb-JSz" secondAttribute="top" id="HS0-Za-ijN"/>
                             <constraint firstItem="Q4R-pI-RRw" firstAttribute="height" secondItem="CKY-cb-JSz" secondAttribute="height" multiplier="0.75" id="NZV-p0-UBl"/>
-                            <constraint firstAttribute="bottom" secondItem="LMr-wN-55Z" secondAttribute="bottom" constant="20" id="XCS-gw-LVP"/>
                             <constraint firstItem="JJQ-HZ-3hI" firstAttribute="centerY" secondItem="CKY-cb-JSz" secondAttribute="centerY" multiplier="0.9" id="ZVZ-Kx-tex"/>
                             <constraint firstItem="g3t-N1-i8b" firstAttribute="leading" secondItem="Q4R-pI-RRw" secondAttribute="leading" id="a1C-ZK-Ys9"/>
                             <constraint firstAttribute="bottom" secondItem="UGt-Oe-zHH" secondAttribute="bottom" id="ber-sy-QnM"/>
                             <constraint firstItem="g3t-N1-i8b" firstAttribute="top" secondItem="Q4R-pI-RRw" secondAttribute="top" id="bsN-Z0-tlW"/>
-                            <constraint firstAttribute="trailing" secondItem="LMr-wN-55Z" secondAttribute="trailing" constant="20" id="kM0-wH-7qP"/>
                             <constraint firstItem="g3t-N1-i8b" firstAttribute="bottom" secondItem="Q4R-pI-RRw" secondAttribute="bottom" id="pAu-rU-XwY"/>
                             <constraint firstItem="UGt-Oe-zHH" firstAttribute="top" secondItem="CKY-cb-JSz" secondAttribute="top" id="rQi-PW-zQ8"/>
                             <constraint firstItem="Q4R-pI-RRw" firstAttribute="centerX" secondItem="CKY-cb-JSz" secondAttribute="centerX" multiplier="0.45" id="x2G-FB-Qon"/>
@@ -1021,9 +933,12 @@
                     <navigationItem key="navigationItem" id="yga-lj-S36"/>
                     <connections>
                         <outlet property="page08GirlOutlet" destination="Q4R-pI-RRw" id="DHe-cR-e9J"/>
+                        <segue destination="V3M-At-Lun" kind="push" identifier="nextPageSegue" id="a3D-u7-ZHp"/>
+                        <segue destination="cIm-7A-IIs" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="lsM-YT-idM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvU-vM-obT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cIm-7A-IIs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3382.5539568345325" y="1515.8273381294964"/>
         </scene>
@@ -1066,23 +981,11 @@
                                     <action selector="voButton:" destination="V3M-At-Lun" eventType="touchUpInside" id="3Bi-RK-l7S"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEj-Cg-NSV" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="V3M-At-Lun" eventType="touchUpInside" id="bid-bO-HYu"/>
-                                    <segue destination="r4B-Qj-ktC" kind="push" id="Za9-qm-SjS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QZO-ip-h5q" firstAttribute="height" secondItem="kbN-wE-Q8n" secondAttribute="height" multiplier="0.071" id="0V7-eL-5Bm"/>
                             <constraint firstAttribute="bottomMargin" secondItem="VuQ-hU-YsG" secondAttribute="bottom" constant="50" id="1UV-Fw-wOI"/>
-                            <constraint firstAttribute="bottom" secondItem="uEj-Cg-NSV" secondAttribute="bottom" constant="20" id="2N4-TQ-5p7"/>
                             <constraint firstItem="QZO-ip-h5q" firstAttribute="centerX" secondItem="kbN-wE-Q8n" secondAttribute="centerX" multiplier="0.485" id="446-mj-RaC"/>
                             <constraint firstItem="wMp-av-pel" firstAttribute="centerY" secondItem="kbN-wE-Q8n" secondAttribute="centerY" multiplier="1.015" id="7Il-bR-fEO"/>
                             <constraint firstAttribute="bottom" secondItem="SSD-1K-Xsd" secondAttribute="bottom" id="7tw-0t-McB"/>
@@ -1096,7 +999,6 @@
                             <constraint firstItem="SSD-1K-Xsd" firstAttribute="top" secondItem="kbN-wE-Q8n" secondAttribute="top" id="Zgp-an-Lxy"/>
                             <constraint firstItem="SSD-1K-Xsd" firstAttribute="leading" secondItem="kbN-wE-Q8n" secondAttribute="leading" id="fCd-q1-bOj"/>
                             <constraint firstItem="wMp-av-pel" firstAttribute="centerX" secondItem="kbN-wE-Q8n" secondAttribute="centerX" multiplier="0.405" id="jop-DJ-Bqe"/>
-                            <constraint firstAttribute="trailing" secondItem="uEj-Cg-NSV" secondAttribute="trailing" constant="20" id="rtx-W1-QkL"/>
                             <constraint firstItem="Nej-Q6-tpL" firstAttribute="centerX" secondItem="kbN-wE-Q8n" secondAttribute="centerX" multiplier="0.46" id="xSO-tx-PvW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dGG-cS-tz0"/>
@@ -1105,9 +1007,12 @@
                     <connections>
                         <outlet property="page09EyesOutlet" destination="QZO-ip-h5q" id="Amn-IF-dQW"/>
                         <outlet property="page09FeetOutlet" destination="wMp-av-pel" id="81y-0R-Fll"/>
+                        <segue destination="r4B-Qj-ktC" kind="push" identifier="nextPageSegue" id="E1s-p7-QYH"/>
+                        <segue destination="Xus-im-BND" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="zsU-MY-V2n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5r-hd-Cg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Xus-im-BND" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2599.6402877697842" y="1515.8273381294964"/>
         </scene>
@@ -1160,17 +1065,6 @@
                                     <action selector="voButton:" destination="r4B-Qj-ktC" eventType="touchUpInside" id="zdR-1j-sz1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eut-s5-TU0" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="r4B-Qj-ktC" eventType="touchUpInside" id="JXj-E7-oap"/>
-                                    <segue destination="zf8-Ev-aAt" kind="push" id="LNr-b1-aBY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1183,7 +1077,6 @@
                             <constraint firstItem="WCq-nV-AZB" firstAttribute="height" secondItem="cgG-6R-jyc" secondAttribute="height" multiplier="0.14" id="LR6-5j-fFU"/>
                             <constraint firstItem="lpj-5b-1DN" firstAttribute="top" secondItem="ksM-iv-Jev" secondAttribute="top" id="SID-ak-4mV"/>
                             <constraint firstItem="EOx-xL-Ddl" firstAttribute="top" secondItem="cgG-6R-jyc" secondAttribute="top" constant="75" id="Tjt-jF-qg1"/>
-                            <constraint firstAttribute="bottom" secondItem="Eut-s5-TU0" secondAttribute="bottom" constant="20" id="XWI-E0-j31"/>
                             <constraint firstItem="n7m-sG-Sl4" firstAttribute="top" secondItem="cgG-6R-jyc" secondAttribute="top" id="ZXe-3A-taL"/>
                             <constraint firstItem="PXG-y7-hfA" firstAttribute="centerY" secondItem="cgG-6R-jyc" secondAttribute="centerY" multiplier="1.235" id="cHO-JU-YcX"/>
                             <constraint firstItem="2d9-c5-hzT" firstAttribute="top" secondItem="cgG-6R-jyc" secondAttribute="top" id="fsd-QD-WLf"/>
@@ -1192,7 +1085,6 @@
                             <constraint firstItem="ksM-iv-Jev" firstAttribute="leading" secondItem="cgG-6R-jyc" secondAttribute="leading" id="hoP-Ui-mwe"/>
                             <constraint firstItem="WCq-nV-AZB" firstAttribute="centerX" secondItem="cgG-6R-jyc" secondAttribute="centerX" multiplier="0.32" id="kVf-GG-p2k"/>
                             <constraint firstItem="n7m-sG-Sl4" firstAttribute="leading" secondItem="cgG-6R-jyc" secondAttribute="leading" id="mEh-L2-UR0"/>
-                            <constraint firstAttribute="trailing" secondItem="Eut-s5-TU0" secondAttribute="trailing" constant="20" id="qif-QS-E80"/>
                             <constraint firstItem="WCq-nV-AZB" firstAttribute="centerY" secondItem="cgG-6R-jyc" secondAttribute="centerY" multiplier="0.405" id="sM6-83-1aA"/>
                             <constraint firstItem="PXG-y7-hfA" firstAttribute="height" secondItem="cgG-6R-jyc" secondAttribute="height" multiplier="0.4" id="tE0-r8-SUH"/>
                             <constraint firstItem="2d9-c5-hzT" firstAttribute="height" secondItem="cgG-6R-jyc" secondAttribute="height" multiplier="0.695" id="uPe-uK-p3B"/>
@@ -1207,9 +1099,12 @@
                         <outlet property="page10BodyOutlet" destination="ksM-iv-Jev" id="7aq-HV-wNc"/>
                         <outlet property="page10EyesOutlet" destination="WCq-nV-AZB" id="rWp-lC-jW5"/>
                         <outlet property="page10FeetOutlet" destination="PXG-y7-hfA" id="roj-CP-fSc"/>
+                        <segue destination="zf8-Ev-aAt" kind="push" identifier="nextPageSegue" id="qg1-Mg-9AN"/>
+                        <segue destination="HNo-Pi-tXd" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="S78-x2-3r6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4C-z3-cVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HNo-Pi-tXd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1788.6690647482014" y="1515.8273381294964"/>
         </scene>
@@ -1247,27 +1142,14 @@
                                     <action selector="voButton:" destination="zf8-Ev-aAt" eventType="touchUpInside" id="ehi-Xb-PfE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBM-aj-B6x" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="zf8-Ev-aAt" eventType="touchUpInside" id="Xdq-9o-bWa"/>
-                                    <segue destination="91i-zE-jEU" kind="push" id="Png-H5-ZVm"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gBK-P4-9rs" firstAttribute="leading" secondItem="QbN-H9-NDb" secondAttribute="leading" id="2MV-Xe-kvk"/>
                             <constraint firstItem="Zbm-pi-HaI" firstAttribute="leading" secondItem="AgL-GV-8Wd" secondAttribute="leading" constant="50" id="4Wq-sx-xxa"/>
                             <constraint firstAttribute="bottom" secondItem="gBK-P4-9rs" secondAttribute="bottom" id="AQs-nD-g14"/>
-                            <constraint firstAttribute="bottom" secondItem="CBM-aj-B6x" secondAttribute="bottom" constant="20" id="GPG-nF-o63"/>
                             <constraint firstAttribute="trailing" secondItem="gBK-P4-9rs" secondAttribute="trailing" id="kyO-tt-WQB"/>
                             <constraint firstItem="gBK-P4-9rs" firstAttribute="top" secondItem="QbN-H9-NDb" secondAttribute="top" id="onl-cc-l7f"/>
-                            <constraint firstAttribute="trailing" secondItem="CBM-aj-B6x" secondAttribute="trailing" constant="20" id="tHV-S3-dwY"/>
                             <constraint firstItem="Zbm-pi-HaI" firstAttribute="top" secondItem="QbN-H9-NDb" secondAttribute="top" id="ujW-If-jjl"/>
                             <constraint firstItem="gBK-P4-9rs" firstAttribute="width" secondItem="QbN-H9-NDb" secondAttribute="width" id="zQW-7i-pq9"/>
                         </constraints>
@@ -1281,9 +1163,12 @@
                     <navigationItem key="navigationItem" id="2IW-9L-ifv"/>
                     <connections>
                         <outlet property="page11ScrollingBackgroundOutlet" destination="gBK-P4-9rs" id="nes-U4-Thd"/>
+                        <segue destination="91i-zE-jEU" kind="push" identifier="nextPageSegue" id="xAI-cl-xRh"/>
+                        <segue destination="wAQ-Su-Lbz" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="mCe-98-gcO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3h7-fO-oh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wAQ-Su-Lbz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1789" y="2355"/>
         </scene>
@@ -1347,17 +1232,6 @@
                                     <action selector="voButton:" destination="91i-zE-jEU" eventType="touchUpInside" id="usT-Gq-fCc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHX-Ef-gfI" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="91i-zE-jEU" eventType="touchUpInside" id="Pqw-ei-Pcn"/>
-                                    <segue destination="SEz-c4-3VA" kind="push" id="YwB-0c-nSo"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1365,7 +1239,6 @@
                             <constraint firstAttribute="bottom" secondItem="sEv-P7-rJ1" secondAttribute="bottom" id="0UU-VT-Nc3"/>
                             <constraint firstItem="mKw-9T-MET" firstAttribute="bottom" secondItem="DUO-qz-OnT" secondAttribute="bottom" constant="50" id="7yR-B6-VbD"/>
                             <constraint firstItem="y9i-8Y-wzb" firstAttribute="height" secondItem="UVT-l5-1nZ" secondAttribute="height" multiplier="0.54" id="9oh-GG-nRE"/>
-                            <constraint firstAttribute="trailing" secondItem="mHX-Ef-gfI" secondAttribute="trailing" constant="20" id="ATU-Ya-mQe"/>
                             <constraint firstItem="9lt-Ql-tbu" firstAttribute="centerY" secondItem="UVT-l5-1nZ" secondAttribute="centerY" multiplier="0.725" id="KCc-sP-19u"/>
                             <constraint firstItem="cOb-Wt-cGf" firstAttribute="centerX" secondItem="UVT-l5-1nZ" secondAttribute="centerX" multiplier="1.58" id="Kiv-u5-ovB"/>
                             <constraint firstItem="bdd-Gf-BN6" firstAttribute="trailing" secondItem="cOb-Wt-cGf" secondAttribute="trailing" id="Mkt-VF-rct"/>
@@ -1380,7 +1253,6 @@
                             <constraint firstItem="Aie-Wd-0je" firstAttribute="centerY" secondItem="UVT-l5-1nZ" secondAttribute="centerY" multiplier="0.7" id="k8g-Ja-5Ry"/>
                             <constraint firstItem="y9i-8Y-wzb" firstAttribute="centerY" secondItem="UVT-l5-1nZ" secondAttribute="centerY" multiplier="0.67" id="n5l-St-B04"/>
                             <constraint firstItem="bdd-Gf-BN6" firstAttribute="bottom" secondItem="cOb-Wt-cGf" secondAttribute="bottom" id="tzS-QL-2Vs"/>
-                            <constraint firstAttribute="bottom" secondItem="mHX-Ef-gfI" secondAttribute="bottom" constant="20" id="vqk-7y-6mQ"/>
                             <constraint firstItem="cOb-Wt-cGf" firstAttribute="height" secondItem="UVT-l5-1nZ" secondAttribute="height" multiplier="0.25" id="wbB-aE-QmC"/>
                             <constraint firstItem="9lt-Ql-tbu" firstAttribute="height" secondItem="UVT-l5-1nZ" secondAttribute="height" multiplier="0.37" id="wi2-JX-S0I"/>
                             <constraint firstItem="DUO-qz-OnT" firstAttribute="leading" secondItem="mKw-9T-MET" secondAttribute="leading" constant="50" id="yXw-Ba-FtU"/>
@@ -1391,9 +1263,12 @@
                     <navigationItem key="navigationItem" id="n16-w9-Ukt"/>
                     <connections>
                         <outlet property="page12GirlOutlet" destination="cOb-Wt-cGf" id="IiX-Oe-zac"/>
+                        <segue destination="SEz-c4-3VA" kind="push" identifier="nextPageSegue" id="BHP-td-WMr"/>
+                        <segue destination="VvE-jO-cuk" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="yf9-ei-Yly"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lo3-SP-qvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VvE-jO-cuk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2600" y="2355"/>
         </scene>
@@ -1469,24 +1344,12 @@
                                     <action selector="voButton:" destination="SEz-c4-3VA" eventType="touchUpInside" id="26z-Fb-eA8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2J-t4-Udj" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="SEz-c4-3VA" eventType="touchUpInside" id="M3W-tY-JMn"/>
-                                    <segue destination="kRH-fd-2PT" kind="push" id="t1E-FH-5x5"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="x5X-ai-uQM" firstAttribute="centerY" secondItem="Nuk-lW-Jyc" secondAttribute="centerY" multiplier="1.46" id="1A1-Rz-pro"/>
                             <constraint firstAttribute="bottom" secondItem="V9V-wm-Gr8" secondAttribute="bottom" id="1Sp-wD-fuu"/>
                             <constraint firstItem="ZmK-JS-ycb" firstAttribute="leading" secondItem="5jY-Ex-wLF" secondAttribute="leading" constant="50" id="2zA-Wu-rjM"/>
-                            <constraint firstAttribute="bottom" secondItem="a2J-t4-Udj" secondAttribute="bottom" constant="20" id="6xo-rL-Qby"/>
                             <constraint firstItem="EfO-Ei-QKX" firstAttribute="centerY" secondItem="Nuk-lW-Jyc" secondAttribute="centerY" multiplier="1.4" id="B3R-bR-chg"/>
                             <constraint firstItem="vdN-Pk-R88" firstAttribute="leading" secondItem="x5X-ai-uQM" secondAttribute="leading" id="BKE-ry-uYV"/>
                             <constraint firstItem="ZmK-JS-ycb" firstAttribute="centerY" secondItem="Nuk-lW-Jyc" secondAttribute="centerY" multiplier="0.98" id="CHi-jW-JnJ"/>
@@ -1507,7 +1370,6 @@
                             <constraint firstItem="IpZ-5b-zU2" firstAttribute="height" secondItem="Nuk-lW-Jyc" secondAttribute="height" multiplier="0.37" id="ofW-t8-YKC"/>
                             <constraint firstAttribute="trailing" secondItem="IpZ-5b-zU2" secondAttribute="trailing" id="ogc-no-aNJ"/>
                             <constraint firstItem="x5X-ai-uQM" firstAttribute="centerX" secondItem="Nuk-lW-Jyc" secondAttribute="centerX" multiplier="1.42" id="qBg-3F-J6x"/>
-                            <constraint firstAttribute="trailing" secondItem="a2J-t4-Udj" secondAttribute="trailing" constant="20" id="re3-uJ-npt"/>
                             <constraint firstAttribute="trailing" secondItem="3Cp-do-smr" secondAttribute="trailing" id="s6d-Cr-NtF"/>
                             <constraint firstItem="vdN-Pk-R88" firstAttribute="top" secondItem="x5X-ai-uQM" secondAttribute="top" id="uLT-1I-mS1"/>
                             <constraint firstItem="V9V-wm-Gr8" firstAttribute="centerX" secondItem="Nuk-lW-Jyc" secondAttribute="centerX" multiplier="1.44" id="ub8-se-cwl"/>
@@ -1520,9 +1382,12 @@
                     <connections>
                         <outlet property="page13BedOutlet" destination="V9V-wm-Gr8" id="ctU-PH-WCK"/>
                         <outlet property="page13GirlOutlet" destination="x5X-ai-uQM" id="pg1-Sg-Sse"/>
+                        <segue destination="kRH-fd-2PT" kind="push" identifier="nextPageSegue" id="rvX-Eq-Fe2"/>
+                        <segue destination="r5Z-OY-8LJ" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="O5M-2E-17K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UmK-Fl-NPO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="r5Z-OY-8LJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3383" y="2355"/>
         </scene>
@@ -1571,17 +1436,6 @@
                                     <action selector="voButton:" destination="kRH-fd-2PT" eventType="touchUpInside" id="2lS-ec-ZNc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kd0-3n-KmE" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="kRH-fd-2PT" eventType="touchUpInside" id="K4d-pp-Gmy"/>
-                                    <segue destination="Gfo-TX-lkp" kind="push" id="jmq-9T-j8W"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gtb_blank" translatesAutoresizingMaskIntoConstraints="NO" id="BJn-4m-HOp" userLabel="page14Light">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
@@ -1589,7 +1443,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="F6y-4h-mlS" firstAttribute="top" secondItem="10J-o6-dDc" secondAttribute="top" constant="50" id="3RE-jp-SIx"/>
-                            <constraint firstAttribute="trailing" secondItem="kd0-3n-KmE" secondAttribute="trailing" constant="20" id="6yV-ih-ZhQ"/>
                             <constraint firstAttribute="bottom" secondItem="Jv7-p4-QUX" secondAttribute="bottom" id="9kX-MP-3rQ"/>
                             <constraint firstItem="ylD-lm-600" firstAttribute="centerX" secondItem="10J-o6-dDc" secondAttribute="centerX" multiplier="0.744" id="Gbt-RN-o1r"/>
                             <constraint firstItem="F6y-4h-mlS" firstAttribute="leading" secondItem="Tho-wj-lD3" secondAttribute="leading" constant="50" id="HrH-Gu-88H"/>
@@ -1600,7 +1453,6 @@
                             <constraint firstItem="HNF-cd-JyF" firstAttribute="bottom" secondItem="ylD-lm-600" secondAttribute="bottom" id="Oz8-FL-RVv"/>
                             <constraint firstItem="BJn-4m-HOp" firstAttribute="leading" secondItem="Jv7-p4-QUX" secondAttribute="leading" id="XIV-Wg-WNG"/>
                             <constraint firstItem="HNF-cd-JyF" firstAttribute="trailing" secondItem="ylD-lm-600" secondAttribute="trailing" id="aGL-Sb-962"/>
-                            <constraint firstAttribute="bottom" secondItem="kd0-3n-KmE" secondAttribute="bottom" constant="20" id="bbZ-wX-zBL"/>
                             <constraint firstItem="Jv7-p4-QUX" firstAttribute="top" secondItem="10J-o6-dDc" secondAttribute="top" id="c7b-tn-VPN"/>
                             <constraint firstItem="BJn-4m-HOp" firstAttribute="trailing" secondItem="Jv7-p4-QUX" secondAttribute="trailing" id="d2g-Q8-jVv"/>
                             <constraint firstItem="svU-3x-Ffk" firstAttribute="centerY" secondItem="10J-o6-dDc" secondAttribute="centerY" multiplier="1.13" id="hRD-S0-ocG"/>
@@ -1616,9 +1468,12 @@
                     <connections>
                         <outlet property="page14GirlOutlet" destination="ylD-lm-600" id="yEQ-ta-Lhr"/>
                         <outlet property="page14LightOutlet" destination="BJn-4m-HOp" id="Vf9-Tj-son"/>
+                        <segue destination="Gfo-TX-lkp" kind="push" identifier="nextPageSegue" id="ds2-mj-AXr"/>
+                        <segue destination="lCB-6q-rB1" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="Ft5-Fa-Iyn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osp-JV-MbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lCB-6q-rB1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4142" y="2355"/>
         </scene>
@@ -1733,17 +1588,6 @@
                                     <action selector="page15MaInvisibleButton:" destination="Gfo-TX-lkp" eventType="touchUpInside" id="D4W-nr-oyQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcG-d8-dcx" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="Gfo-TX-lkp" eventType="touchUpInside" id="Anj-jT-DLo"/>
-                                    <segue destination="Skq-3n-4GL" kind="push" id="ohI-ru-7Ze"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1759,7 +1603,6 @@
                             <constraint firstItem="31K-V5-g8e" firstAttribute="centerY" secondItem="tYg-CZ-OAH" secondAttribute="centerY" multiplier="0.78" id="CSh-oq-L1W"/>
                             <constraint firstItem="N9L-Hg-Htk" firstAttribute="height" secondItem="tYg-CZ-OAH" secondAttribute="height" multiplier="0.15" id="CYV-Z5-3w9"/>
                             <constraint firstItem="gI6-Rl-0DT" firstAttribute="height" secondItem="tYg-CZ-OAH" secondAttribute="height" multiplier="0.35" id="Etj-zP-1hn"/>
-                            <constraint firstAttribute="trailing" secondItem="AcG-d8-dcx" secondAttribute="trailing" constant="20" id="GAj-b3-j6G"/>
                             <constraint firstItem="gJu-oi-nfB" firstAttribute="centerX" secondItem="tYg-CZ-OAH" secondAttribute="centerX" multiplier="1.54" id="HyJ-vX-Tje"/>
                             <constraint firstItem="N9L-Hg-Htk" firstAttribute="centerX" secondItem="tYg-CZ-OAH" secondAttribute="centerX" multiplier="1.2" id="IqF-xS-5IP"/>
                             <constraint firstItem="kRf-C4-qy1" firstAttribute="height" secondItem="tYg-CZ-OAH" secondAttribute="height" multiplier="0.05" id="J1f-2A-pvP"/>
@@ -1794,7 +1637,6 @@
                             <constraint firstItem="zaE-zc-D2o" firstAttribute="height" secondItem="tYg-CZ-OAH" secondAttribute="height" multiplier="0.58" id="tY3-Dj-yl5"/>
                             <constraint firstItem="J2F-TL-3p3" firstAttribute="leading" secondItem="gI6-Rl-0DT" secondAttribute="leading" id="udk-V1-vZV"/>
                             <constraint firstItem="wuo-tX-Nxa" firstAttribute="height" secondItem="tYg-CZ-OAH" secondAttribute="height" multiplier="0.24" id="vsv-Z0-dKN"/>
-                            <constraint firstAttribute="bottom" secondItem="AcG-d8-dcx" secondAttribute="bottom" constant="20" id="wEf-lt-pHj"/>
                             <constraint firstItem="LTh-7p-MWb" firstAttribute="centerY" secondItem="tYg-CZ-OAH" secondAttribute="centerY" multiplier="1.05" id="yjI-aj-CfX"/>
                             <constraint firstItem="oee-Nj-Gu4" firstAttribute="centerX" secondItem="tYg-CZ-OAH" secondAttribute="centerX" multiplier="1.525" id="zHF-hI-XW9"/>
                         </constraints>
@@ -1809,9 +1651,12 @@
                         <outlet property="page15MaEyesOutlet" destination="31K-V5-g8e" id="KTy-AW-IpT"/>
                         <outlet property="page15PaBowlOutlet" destination="gI6-Rl-0DT" id="SBt-gL-K5r"/>
                         <outlet property="page15PaEyesOutlet" destination="kRf-C4-qy1" id="2T2-pP-Fr6"/>
+                        <segue destination="Skq-3n-4GL" kind="push" identifier="nextPageSegue" id="F9g-Se-8ws"/>
+                        <segue destination="GcU-7n-RCt" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="5S4-6M-wzI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbD-bk-JIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GcU-7n-RCt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4908" y="2356"/>
         </scene>
@@ -1866,17 +1711,6 @@
                                     <action selector="voButton:" destination="Skq-3n-4GL" eventType="touchUpInside" id="kUp-ZY-Xif"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-fl-SgP" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="Skq-3n-4GL" eventType="touchUpInside" id="QEb-EH-vTV"/>
-                                    <segue destination="Nfw-ke-h8H" kind="push" id="Ll6-sd-i3z"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1894,10 +1728,8 @@
                             <constraint firstItem="v6X-uN-koq" firstAttribute="top" secondItem="r87-Zu-poh" secondAttribute="top" constant="50" id="dvY-Sa-OtJ"/>
                             <constraint firstAttribute="trailing" secondItem="lJ1-ge-wop" secondAttribute="trailing" id="fMW-fb-Zts"/>
                             <constraint firstItem="ns0-Cz-5yo" firstAttribute="height" secondItem="r87-Zu-poh" secondAttribute="height" multiplier="0.38" id="h0N-XE-WKs"/>
-                            <constraint firstAttribute="trailing" secondItem="fIf-fl-SgP" secondAttribute="trailing" constant="20" id="hrc-iQ-E2J"/>
                             <constraint firstItem="lJ1-ge-wop" firstAttribute="height" secondItem="r87-Zu-poh" secondAttribute="height" multiplier="0.9" id="mgI-g7-Me8"/>
                             <constraint firstAttribute="bottom" secondItem="Nag-v5-FK4" secondAttribute="bottom" id="moK-Im-gtY"/>
-                            <constraint firstAttribute="bottom" secondItem="fIf-fl-SgP" secondAttribute="bottom" constant="20" id="nAS-8T-yix"/>
                             <constraint firstItem="cWt-Im-rY4" firstAttribute="height" secondItem="r87-Zu-poh" secondAttribute="height" multiplier="0.45" id="o4j-Zn-0po"/>
                             <constraint firstItem="cWt-Im-rY4" firstAttribute="centerX" secondItem="r87-Zu-poh" secondAttribute="centerX" multiplier="0.68" id="tAW-4F-qyS"/>
                         </constraints>
@@ -1907,9 +1739,12 @@
                     <connections>
                         <outlet property="page16EyesOutlet" destination="xMC-mu-kav" id="ICa-bb-Frh"/>
                         <outlet property="page16HandOutlet" destination="cWt-Im-rY4" id="mAr-w4-OB4"/>
+                        <segue destination="Nfw-ke-h8H" kind="push" identifier="nextPageSegue" id="W7M-z7-y2g"/>
+                        <segue destination="GoR-Sh-Vxb" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="qvJ-cW-Ti4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3UO-Y1-fif" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GoR-Sh-Vxb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4907.9136690647483" y="3203.5971223021584"/>
         </scene>
@@ -2024,22 +1859,10 @@
                                     <action selector="voButton:" destination="Nfw-ke-h8H" eventType="touchUpInside" id="fe0-Ce-P49"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udE-Nt-Cji" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="Nfw-ke-h8H" eventType="touchUpInside" id="SUA-pY-QTm"/>
-                                    <segue destination="GoD-lM-f46" kind="push" id="rrI-9B-A3G"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Xy1-kj-HiC" firstAttribute="centerY" secondItem="FTc-MC-kWQ" secondAttribute="centerY" multiplier="1.4" id="1lD-Da-KdP"/>
-                            <constraint firstAttribute="bottom" secondItem="udE-Nt-Cji" secondAttribute="bottom" constant="20" id="2pt-Co-b1I"/>
                             <constraint firstItem="Gbw-vq-nRi" firstAttribute="centerX" secondItem="FTc-MC-kWQ" secondAttribute="centerX" multiplier="0.9" id="30X-FY-Y3r"/>
                             <constraint firstItem="Gbw-vq-nRi" firstAttribute="centerY" secondItem="FTc-MC-kWQ" secondAttribute="centerY" multiplier="0.48" id="3I0-2h-V1h"/>
                             <constraint firstAttribute="bottom" secondItem="dUA-PG-Uhd" secondAttribute="bottom" id="DN0-XB-k6q"/>
@@ -2053,7 +1876,6 @@
                             <constraint firstItem="Idt-87-g17" firstAttribute="height" secondItem="FTc-MC-kWQ" secondAttribute="height" multiplier="0.78" id="NiU-SX-seg"/>
                             <constraint firstItem="NCr-qy-VjV" firstAttribute="bottom" secondItem="IK2-cb-4as" secondAttribute="bottom" constant="50" id="P0C-WM-I5K"/>
                             <constraint firstItem="Pia-KL-qwx" firstAttribute="centerX" secondItem="FTc-MC-kWQ" secondAttribute="centerX" multiplier="1.37" id="P6Z-In-kP9"/>
-                            <constraint firstAttribute="trailing" secondItem="udE-Nt-Cji" secondAttribute="trailing" constant="20" id="PI4-wP-384"/>
                             <constraint firstItem="t9p-iD-ivl" firstAttribute="centerY" secondItem="FTc-MC-kWQ" secondAttribute="centerY" multiplier="0.49" id="PcR-Z4-7gG"/>
                             <constraint firstItem="dPi-ci-I4b" firstAttribute="centerX" secondItem="FTc-MC-kWQ" secondAttribute="centerX" multiplier="0.815" id="TLF-Wx-BTV"/>
                             <constraint firstItem="53q-Gg-qSj" firstAttribute="centerX" secondItem="FTc-MC-kWQ" secondAttribute="centerX" multiplier="0.2" id="Tby-zL-zg5"/>
@@ -2093,9 +1915,12 @@
                         <outlet property="page17MaHandOutlet" destination="Xy1-kj-HiC" id="7Jf-VA-QZL"/>
                         <outlet property="page17PaEyesOutlet" destination="dPi-ci-I4b" id="5OR-sg-Xtz"/>
                         <outlet property="page17PaHandOutlet" destination="Gbw-vq-nRi" id="W0D-3j-U3I"/>
+                        <segue destination="GoD-lM-f46" kind="push" identifier="nextPageSegue" id="asc-Lj-bQ2"/>
+                        <segue destination="1bv-XG-AMG" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="RPd-Ud-7rj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojR-yx-hrb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1bv-XG-AMG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4142" y="3204"/>
         </scene>
@@ -2150,17 +1975,6 @@
                                     <action selector="voButton:" destination="GoD-lM-f46" eventType="touchUpInside" id="qzv-ji-Xzg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="we9-jg-PhF" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="GoD-lM-f46" eventType="touchUpInside" id="wnj-np-YlJ"/>
-                                    <segue destination="jzK-hI-ke5" kind="push" id="NYd-Nt-jzM"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2175,10 +1989,8 @@
                             <constraint firstItem="CGu-ey-n0e" firstAttribute="centerY" secondItem="m8G-k9-xL8" secondAttribute="centerY" multiplier="1.55" id="Qsz-Nv-mZ8"/>
                             <constraint firstItem="mVH-KB-BWv" firstAttribute="leading" secondItem="m8G-k9-xL8" secondAttribute="leading" id="USR-5d-JKF"/>
                             <constraint firstAttribute="bottom" secondItem="mVH-KB-BWv" secondAttribute="bottom" id="Z4W-h1-lvl"/>
-                            <constraint firstAttribute="trailing" secondItem="we9-jg-PhF" secondAttribute="trailing" constant="20" id="cId-GM-pWM"/>
                             <constraint firstAttribute="trailing" secondItem="mVH-KB-BWv" secondAttribute="trailing" id="cwy-QS-74r"/>
                             <constraint firstItem="mVH-KB-BWv" firstAttribute="top" secondItem="m8G-k9-xL8" secondAttribute="top" id="fAr-5S-1No"/>
-                            <constraint firstAttribute="bottom" secondItem="we9-jg-PhF" secondAttribute="bottom" constant="20" id="fxt-k5-mt6"/>
                             <constraint firstItem="UzJ-fH-J3n" firstAttribute="centerX" secondItem="m8G-k9-xL8" secondAttribute="centerX" multiplier="0.7" id="gcM-XK-KHL"/>
                             <constraint firstItem="Huh-mb-2jt" firstAttribute="centerY" secondItem="m8G-k9-xL8" secondAttribute="centerY" multiplier="1.37" id="oWz-9n-DZ4"/>
                             <constraint firstItem="5yz-xi-2aq" firstAttribute="trailing" secondItem="7wy-w9-ZFM" secondAttribute="trailing" constant="50" id="qqc-tQ-6Lg"/>
@@ -2191,9 +2003,12 @@
                     <connections>
                         <outlet property="page18EyesOutlet" destination="Huh-mb-2jt" id="b7v-qA-9Xq"/>
                         <outlet property="page18HandOutlet" destination="ePw-o9-qkp" id="qxI-El-HnT"/>
+                        <segue destination="jzK-hI-ke5" kind="push" identifier="nextPageSegue" id="u5t-mo-KQG"/>
+                        <segue destination="ulG-mx-JAQ" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="h0d-Fn-8Kc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tM-03-p5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ulG-mx-JAQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3382.5539568345325" y="3203.5971223021584"/>
         </scene>
@@ -2278,17 +2093,6 @@
                                     <action selector="voButton:" destination="jzK-hI-ke5" eventType="touchUpInside" id="eYd-KK-6AQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZq-Fu-1ip" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="jzK-hI-ke5" eventType="touchUpInside" id="bPQ-6w-5DV"/>
-                                    <segue destination="dZr-2x-gbd" kind="push" id="qXW-QX-5h6"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2311,7 +2115,6 @@
                             <constraint firstItem="tLL-8q-KeB" firstAttribute="width" secondItem="tLL-8q-KeB" secondAttribute="height" multiplier="9:11" id="ctV-le-FJc"/>
                             <constraint firstItem="b7C-Dc-S8F" firstAttribute="centerX" secondItem="iAZ-hE-Rzv" secondAttribute="centerX" multiplier="0.2" id="dkh-a9-kLI"/>
                             <constraint firstItem="QHR-Ua-tzN" firstAttribute="centerX" secondItem="iAZ-hE-Rzv" secondAttribute="centerX" multiplier="0.505" id="eT5-A4-h1d"/>
-                            <constraint firstAttribute="trailing" secondItem="RZq-Fu-1ip" secondAttribute="trailing" constant="20" id="emg-sv-nek"/>
                             <constraint firstItem="tLL-8q-KeB" firstAttribute="centerX" secondItem="iAZ-hE-Rzv" secondAttribute="centerX" multiplier="0.97" id="hJk-y1-99L"/>
                             <constraint firstItem="Saa-GU-t3I" firstAttribute="centerX" secondItem="iAZ-hE-Rzv" secondAttribute="centerX" multiplier="0.2" id="jPL-le-bLg"/>
                             <constraint firstItem="loP-DT-gVy" firstAttribute="height" secondItem="iAZ-hE-Rzv" secondAttribute="height" multiplier="0.4" id="l0z-9E-DZ6"/>
@@ -2324,7 +2127,6 @@
                             <constraint firstAttribute="trailing" secondItem="veF-aL-GpB" secondAttribute="trailing" id="vPC-4b-852"/>
                             <constraint firstItem="QHR-Ua-tzN" firstAttribute="height" secondItem="iAZ-hE-Rzv" secondAttribute="height" multiplier="0.05" id="vbc-CL-MUU"/>
                             <constraint firstItem="yk3-Ob-UiL" firstAttribute="bottom" secondItem="tLL-8q-KeB" secondAttribute="bottom" id="wJd-1f-7Wj"/>
-                            <constraint firstAttribute="bottom" secondItem="RZq-Fu-1ip" secondAttribute="bottom" constant="20" id="wgW-A0-2z3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yk3-Ob-UiL"/>
                     </view>
@@ -2333,9 +2135,12 @@
                         <outlet property="page19BabyEyesOutlet" destination="wUe-M5-Z0P" id="23O-dT-Yip"/>
                         <outlet property="page19MaEyesOutlet" destination="QHR-Ua-tzN" id="eJZ-E7-Oa1"/>
                         <outlet property="page19PaEyesOutlet" destination="Saa-GU-t3I" id="XG1-hz-tuF"/>
+                        <segue destination="dZr-2x-gbd" kind="push" identifier="nextPageSegue" id="Uho-3s-M7O"/>
+                        <segue destination="iRV-Hn-81p" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="gaB-xa-c1r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3H-XS-d2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iRV-Hn-81p" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2600" y="3204"/>
         </scene>
@@ -2405,17 +2210,6 @@
                                     <action selector="voButton:" destination="dZr-2x-gbd" eventType="touchUpInside" id="Tp8-yK-UBG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIT-fx-Cji" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="dZr-2x-gbd" eventType="touchUpInside" id="CMv-63-7hy"/>
-                                    <segue destination="Ayo-Ji-x30" kind="push" id="bBG-Gu-uJN"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2426,7 +2220,6 @@
                             <constraint firstAttribute="trailing" secondItem="aBn-P0-WPk" secondAttribute="trailing" id="6xj-Yl-2CS"/>
                             <constraint firstItem="cLY-R1-PFP" firstAttribute="height" secondItem="6Eo-us-p8B" secondAttribute="height" multiplier="0.1" id="8UJ-5C-Bym"/>
                             <constraint firstItem="udt-Zb-W8w" firstAttribute="centerY" secondItem="6Eo-us-p8B" secondAttribute="centerY" id="8aG-zC-FiJ"/>
-                            <constraint firstAttribute="trailing" secondItem="NIT-fx-Cji" secondAttribute="trailing" constant="20" id="94x-0N-tMj"/>
                             <constraint firstItem="gbM-MI-6f6" firstAttribute="leading" secondItem="z6w-eW-txZ" secondAttribute="leading" constant="50" id="9ce-fJ-ki0"/>
                             <constraint firstItem="pNJ-9p-HGI" firstAttribute="centerY" secondItem="6Eo-us-p8B" secondAttribute="centerY" multiplier="0.54" id="EX6-43-rnV"/>
                             <constraint firstItem="LVc-L1-NPw" firstAttribute="centerX" secondItem="6Eo-us-p8B" secondAttribute="centerX" multiplier="1.36" id="Kc6-YJ-vpX"/>
@@ -2436,7 +2229,6 @@
                             <constraint firstItem="LVc-L1-NPw" firstAttribute="centerY" secondItem="6Eo-us-p8B" secondAttribute="centerY" multiplier="1.5" id="WtX-Xk-2gv"/>
                             <constraint firstItem="LVc-L1-NPw" firstAttribute="width" secondItem="LVc-L1-NPw" secondAttribute="height" multiplier="11:8" id="X7p-ay-HdM"/>
                             <constraint firstItem="udt-Zb-W8w" firstAttribute="height" secondItem="6Eo-us-p8B" secondAttribute="height" multiplier="0.89" id="Zdu-FM-bRQ"/>
-                            <constraint firstAttribute="bottom" secondItem="NIT-fx-Cji" secondAttribute="bottom" constant="20" id="b5k-Ne-JRQ"/>
                             <constraint firstAttribute="bottom" secondItem="aBn-P0-WPk" secondAttribute="bottom" id="h01-Tq-BZf"/>
                             <constraint firstItem="aBn-P0-WPk" firstAttribute="leading" secondItem="6Eo-us-p8B" secondAttribute="leading" id="iEP-Bo-D0E"/>
                             <constraint firstItem="5A3-XL-WUX" firstAttribute="height" secondItem="6Eo-us-p8B" secondAttribute="height" multiplier="0.35" id="pnS-g3-p4m"/>
@@ -2453,9 +2245,12 @@
                     <connections>
                         <outlet property="page20EyesOutlet" destination="cLY-R1-PFP" id="w1L-B2-hgo"/>
                         <outlet property="page20HandOutlet" destination="k74-og-kBs" id="XS5-7f-qxM"/>
+                        <segue destination="Ayo-Ji-x30" kind="push" identifier="nextPageSegue" id="gnv-mb-LfN"/>
+                        <segue destination="XGk-XE-hDh" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="qDE-4D-qXr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4SO-Hk-f9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XGk-XE-hDh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1788.6690647482014" y="3203.5971223021584"/>
         </scene>
@@ -2511,17 +2306,6 @@
                                     <action selector="voButton:" destination="Ayo-Ji-x30" eventType="touchUpInside" id="Zyw-ka-HSI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8l-Jm-qrP" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="Ayo-Ji-x30" eventType="touchUpInside" id="xvB-fD-mUM"/>
-                                    <segue destination="tfl-RW-7rW" kind="push" id="2D6-ps-apk"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2536,8 +2320,6 @@
                             <constraint firstAttribute="trailing" secondItem="1lm-8u-YEZ" secondAttribute="trailing" id="N9V-W6-QaA"/>
                             <constraint firstAttribute="bottom" secondItem="1lm-8u-YEZ" secondAttribute="bottom" id="QyA-1X-49Y"/>
                             <constraint firstItem="M4i-g4-4uH" firstAttribute="centerX" secondItem="2kP-qI-ISA" secondAttribute="centerX" multiplier="1.5" id="VtS-R1-2fB"/>
-                            <constraint firstAttribute="trailing" secondItem="k8l-Jm-qrP" secondAttribute="trailing" constant="20" id="fme-kd-n6O"/>
-                            <constraint firstAttribute="bottom" secondItem="k8l-Jm-qrP" secondAttribute="bottom" constant="20" id="gov-gc-LOE"/>
                             <constraint firstItem="18s-uH-Tlu" firstAttribute="centerX" secondItem="2kP-qI-ISA" secondAttribute="centerX" multiplier="1.55" id="ltB-gl-KwH"/>
                             <constraint firstItem="1lm-8u-YEZ" firstAttribute="leading" secondItem="2kP-qI-ISA" secondAttribute="leading" id="o1z-SI-ncR"/>
                             <constraint firstAttribute="bottom" secondItem="M4i-g4-4uH" secondAttribute="bottom" id="pzF-3O-Rtc"/>
@@ -2552,9 +2334,12 @@
                     <connections>
                         <outlet property="page21EyesOutlet" destination="18s-uH-Tlu" id="wYA-Z4-A4G"/>
                         <outlet property="page21HandOutlet" destination="M4i-g4-4uH" id="NNw-Nr-V2L"/>
+                        <segue destination="tfl-RW-7rW" kind="push" identifier="nextPageSegue" id="zLd-Fh-fIL"/>
+                        <segue destination="FzU-vg-xQb" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="KTt-kd-61b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qL-fw-81w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FzU-vg-xQb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1789" y="4027"/>
         </scene>
@@ -2630,17 +2415,6 @@
                                     <action selector="voButton:" destination="tfl-RW-7rW" eventType="touchUpInside" id="0u0-CW-e5s"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hO-ds-p72" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="tfl-RW-7rW" eventType="touchUpInside" id="v0s-Wa-y72"/>
-                                    <segue destination="JH1-AW-aat" kind="push" id="ofT-xk-CGw"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2648,9 +2422,7 @@
                             <constraint firstItem="Svl-29-XPT" firstAttribute="height" secondItem="rGr-yL-gtc" secondAttribute="height" multiplier="0.37" id="79t-xr-8Im"/>
                             <constraint firstAttribute="bottom" secondItem="63A-IE-Llp" secondAttribute="bottom" id="8SL-lX-Rdc"/>
                             <constraint firstItem="fbm-yy-kjW" firstAttribute="top" secondItem="63A-IE-Llp" secondAttribute="top" id="8lo-FL-pT0"/>
-                            <constraint firstAttribute="bottom" secondItem="4hO-ds-p72" secondAttribute="bottom" constant="20" id="AWx-WG-6FH"/>
                             <constraint firstAttribute="bottom" secondItem="mMm-it-ryM" secondAttribute="bottom" id="CQq-3s-a1L"/>
-                            <constraint firstAttribute="trailing" secondItem="4hO-ds-p72" secondAttribute="trailing" constant="20" id="Cyg-vA-JUe"/>
                             <constraint firstItem="l7m-yq-T60" firstAttribute="height" secondItem="rGr-yL-gtc" secondAttribute="height" multiplier="0.16" id="DAe-qN-exG"/>
                             <constraint firstItem="5WC-E4-ZjH" firstAttribute="top" secondItem="Svl-29-XPT" secondAttribute="top" id="DHN-E8-3tz"/>
                             <constraint firstItem="TS7-ns-THx" firstAttribute="centerX" secondItem="rGr-yL-gtc" secondAttribute="centerX" multiplier="1.745" id="DW3-E4-Gs7"/>
@@ -2688,9 +2460,12 @@
                         <outlet property="page22MaOutlet" destination="Svl-29-XPT" id="QPV-uO-N9O"/>
                         <outlet property="page22PaOutlet" destination="63A-IE-Llp" id="pbZ-hX-GgC"/>
                         <outlet property="page22TearOutlet" destination="B5i-d2-xnc" id="efY-sn-dDy"/>
+                        <segue destination="JH1-AW-aat" kind="push" identifier="nextPageSegue" id="nj9-Io-zdM"/>
+                        <segue destination="Ld9-7k-dQY" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="Lxl-7S-RZ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LU4-oK-DHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ld9-7k-dQY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2600" y="4027"/>
         </scene>
@@ -2736,17 +2511,6 @@
                                     <action selector="voButton:" destination="JH1-AW-aat" eventType="touchUpInside" id="TCg-Tz-0wd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCs-Du-cDS" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="JH1-AW-aat" eventType="touchUpInside" id="Ypo-qU-ewA"/>
-                                    <segue destination="6pN-6i-I06" kind="push" id="gnt-8B-M2a"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2756,12 +2520,10 @@
                             <constraint firstItem="uD0-be-OkO" firstAttribute="centerX" secondItem="fHO-Qa-wI3" secondAttribute="centerX" multiplier="1.48" id="Kqa-ml-vFx"/>
                             <constraint firstItem="QaP-xp-mNd" firstAttribute="leading" secondItem="fHO-Qa-wI3" secondAttribute="leading" id="Lh2-xa-rxl"/>
                             <constraint firstItem="uD0-be-OkO" firstAttribute="top" secondItem="fHO-Qa-wI3" secondAttribute="top" constant="50" id="PRB-6G-brc"/>
-                            <constraint firstAttribute="bottom" secondItem="uCs-Du-cDS" secondAttribute="bottom" constant="20" id="PaR-5q-wLH"/>
                             <constraint firstItem="rKX-25-2Px" firstAttribute="top" secondItem="fHO-Qa-wI3" secondAttribute="top" id="Ren-al-s1h"/>
                             <constraint firstItem="nuk-FY-Mhh" firstAttribute="centerX" secondItem="fHO-Qa-wI3" secondAttribute="centerX" multiplier="0.47" id="WMB-qv-lka"/>
                             <constraint firstAttribute="trailing" secondItem="rKX-25-2Px" secondAttribute="trailing" id="XqM-9y-yV7"/>
                             <constraint firstAttribute="bottomMargin" secondItem="nuk-FY-Mhh" secondAttribute="bottom" id="baG-7h-7Qr"/>
-                            <constraint firstAttribute="trailing" secondItem="uCs-Du-cDS" secondAttribute="trailing" constant="20" id="dUq-mp-AFs"/>
                             <constraint firstAttribute="bottom" secondItem="2hz-cv-A9G" secondAttribute="bottom" id="ggF-RO-7yB"/>
                             <constraint firstItem="QaP-xp-mNd" firstAttribute="top" secondItem="fHO-Qa-wI3" secondAttribute="top" id="gkD-k0-N7A"/>
                             <constraint firstAttribute="bottom" secondItem="rKX-25-2Px" secondAttribute="bottom" id="jiG-he-Zwy"/>
@@ -2774,9 +2536,12 @@
                     <connections>
                         <outlet property="page23MaOutlet" destination="QaP-xp-mNd" id="YSW-tz-1dZ"/>
                         <outlet property="page23PaOutlet" destination="2hz-cv-A9G" id="F19-aP-avU"/>
+                        <segue destination="6pN-6i-I06" kind="push" identifier="nextPageSegue" id="O8b-20-GRb"/>
+                        <segue destination="tEj-47-Ykc" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="wy5-JF-FjP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxk-bj-SIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tEj-47-Ykc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3383" y="4027"/>
         </scene>
@@ -2837,17 +2602,6 @@
                                     <action selector="voButton:" destination="6pN-6i-I06" eventType="touchUpInside" id="VKL-Em-R7g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPG-t5-R4m" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="6pN-6i-I06" eventType="touchUpInside" id="pZv-hd-3kY"/>
-                                    <segue destination="OJv-Wg-Jak" kind="push" id="Kfk-vB-Jvl"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2855,7 +2609,6 @@
                             <constraint firstItem="5w4-Jx-BRe" firstAttribute="leading" secondItem="7Tw-el-p4x" secondAttribute="leading" id="226-ng-NC5"/>
                             <constraint firstAttribute="trailing" secondItem="5w4-Jx-BRe" secondAttribute="trailing" id="7tS-nu-CLb"/>
                             <constraint firstAttribute="bottom" secondItem="ePl-CF-wWR" secondAttribute="bottom" id="Izy-V5-dQW"/>
-                            <constraint firstAttribute="bottom" secondItem="WPG-t5-R4m" secondAttribute="bottom" constant="20" id="Jvu-77-Bz5"/>
                             <constraint firstItem="7np-fH-NmE" firstAttribute="leading" secondItem="7Tw-el-p4x" secondAttribute="leading" id="MlH-dH-d6I"/>
                             <constraint firstItem="ePl-CF-wWR" firstAttribute="height" secondItem="7Tw-el-p4x" secondAttribute="height" multiplier="0.3" id="NQG-on-FMI"/>
                             <constraint firstItem="Gt9-Wm-l1O" firstAttribute="centerX" secondItem="7Tw-el-p4x" secondAttribute="centerX" multiplier="1.56" id="OEj-hh-PIt"/>
@@ -2865,7 +2618,6 @@
                             <constraint firstItem="eEy-tD-lxK" firstAttribute="height" secondItem="7Tw-el-p4x" secondAttribute="height" multiplier="0.185" id="Sg4-Sg-TcK"/>
                             <constraint firstItem="6Zf-Dc-HGV" firstAttribute="centerY" secondItem="7Tw-el-p4x" secondAttribute="centerY" multiplier="0.45" id="d2J-US-T7G"/>
                             <constraint firstItem="6Zf-Dc-HGV" firstAttribute="centerX" secondItem="7Tw-el-p4x" secondAttribute="centerX" multiplier="1.58" id="fAi-KU-cwZ"/>
-                            <constraint firstAttribute="trailing" secondItem="WPG-t5-R4m" secondAttribute="trailing" constant="20" id="hIr-ft-RHG"/>
                             <constraint firstItem="ePl-CF-wWR" firstAttribute="top" secondItem="7np-fH-NmE" secondAttribute="bottom" id="m6Q-iL-7Jq"/>
                             <constraint firstItem="eEy-tD-lxK" firstAttribute="centerX" secondItem="7Tw-el-p4x" secondAttribute="centerX" multiplier="1.555" id="mgF-W7-HDc"/>
                             <constraint firstItem="Gt9-Wm-l1O" firstAttribute="height" secondItem="7Tw-el-p4x" secondAttribute="height" multiplier="0.53" id="nRv-Yp-cYl"/>
@@ -2882,9 +2634,12 @@
                     <connections>
                         <outlet property="page24EyesOutlet" destination="6Zf-Dc-HGV" id="Njj-LQ-Op1"/>
                         <outlet property="page24HandOutlet" destination="eEy-tD-lxK" id="XRd-iH-7eK"/>
+                        <segue destination="OJv-Wg-Jak" kind="push" identifier="nextPageSegue" id="Trw-2i-7FD"/>
+                        <segue destination="8uT-sF-5A6" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="epj-Em-hnw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jn-eu-cYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8uT-sF-5A6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4142" y="4027"/>
         </scene>
@@ -2942,24 +2697,12 @@
                                     <action selector="voButton:" destination="OJv-Wg-Jak" eventType="touchUpInside" id="mAA-AM-IyE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap4-3V-p6t" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="OJv-Wg-Jak" eventType="touchUpInside" id="mmp-WF-3rE"/>
-                                    <segue destination="3by-2f-OHc" kind="push" id="sm2-WD-WZH"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uFG-d3-pXr" firstAttribute="leading" secondItem="h9b-yV-0wn" secondAttribute="leading" id="0Gr-w4-q5E"/>
                             <constraint firstItem="pYR-pF-9RA" firstAttribute="leading" secondItem="uFG-d3-pXr" secondAttribute="trailing" id="2dj-Ng-dGE"/>
                             <constraint firstItem="Khm-lw-wvi" firstAttribute="centerX" secondItem="h9b-yV-0wn" secondAttribute="centerX" multiplier="1.54" id="4Ga-n0-ghN"/>
-                            <constraint firstAttribute="bottom" secondItem="ap4-3V-p6t" secondAttribute="bottom" constant="20" id="AAl-gu-8Ap"/>
                             <constraint firstItem="VGy-5e-FQt" firstAttribute="centerX" secondItem="h9b-yV-0wn" secondAttribute="centerX" multiplier="1.62" id="Idk-Hd-EUS"/>
                             <constraint firstItem="vUY-z8-0Nb" firstAttribute="centerY" secondItem="h9b-yV-0wn" secondAttribute="centerY" multiplier="1.165" id="Iyk-zd-Ggd"/>
                             <constraint firstItem="1yf-BV-gRi" firstAttribute="top" secondItem="h9b-yV-0wn" secondAttribute="top" constant="50" id="K0o-qh-FA6"/>
@@ -2979,7 +2722,6 @@
                             <constraint firstItem="Khm-lw-wvi" firstAttribute="centerY" secondItem="h9b-yV-0wn" secondAttribute="centerY" multiplier="0.855" id="vYf-lD-XCx"/>
                             <constraint firstItem="1yf-BV-gRi" firstAttribute="leading" secondItem="SHL-nL-uay" secondAttribute="leading" constant="50" id="xA6-3N-H5k"/>
                             <constraint firstItem="s21-Qv-eOY" firstAttribute="top" secondItem="h9b-yV-0wn" secondAttribute="top" id="yMg-rc-UJ7"/>
-                            <constraint firstAttribute="trailing" secondItem="ap4-3V-p6t" secondAttribute="trailing" constant="20" id="yYg-fO-sdV"/>
                             <constraint firstItem="vUY-z8-0Nb" firstAttribute="height" secondItem="h9b-yV-0wn" secondAttribute="height" multiplier="0.49" id="zZN-gt-yLo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SHL-nL-uay"/>
@@ -2988,9 +2730,12 @@
                     <connections>
                         <outlet property="page25EyesOutlet" destination="Khm-lw-wvi" id="PWZ-hZ-a10"/>
                         <outlet property="page25HandOutlet" destination="VGy-5e-FQt" id="nzH-rO-F9R"/>
+                        <segue destination="3by-2f-OHc" kind="push" identifier="nextPageSegue" id="G47-bo-QpL"/>
+                        <segue destination="uKl-2G-HeI" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="e6A-Sz-SQZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npY-qQ-ijp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uKl-2G-HeI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4907.9136690647483" y="4026.6187050359713"/>
         </scene>
@@ -3069,17 +2814,6 @@
                                     <action selector="voButton:" destination="3by-2f-OHc" eventType="touchUpInside" id="bWZ-Kg-MAQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26d-9x-gHb" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="3by-2f-OHc" eventType="touchUpInside" id="cJA-i6-MOT"/>
-                                    <segue destination="GvA-PZ-7cS" kind="push" id="bQs-sG-a6J"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -3098,10 +2832,8 @@
                             <constraint firstItem="fWW-XP-3S8" firstAttribute="trailing" secondItem="SWF-cv-DNo" secondAttribute="trailing" constant="50" id="RLV-mb-C3u"/>
                             <constraint firstItem="TyB-2M-0SG" firstAttribute="centerX" secondItem="IhS-ra-8tu" secondAttribute="centerX" multiplier="0.2" id="RhM-q7-Yd7"/>
                             <constraint firstItem="HLT-nf-7gp" firstAttribute="top" secondItem="IhS-ra-8tu" secondAttribute="top" id="TJj-pd-eaG"/>
-                            <constraint firstAttribute="trailing" secondItem="26d-9x-gHb" secondAttribute="trailing" constant="20" id="TpO-6P-B0l"/>
                             <constraint firstItem="Xnw-UO-dJC" firstAttribute="top" secondItem="IhS-ra-8tu" secondAttribute="top" id="bSr-AB-DhB"/>
                             <constraint firstAttribute="trailing" secondItem="HLT-nf-7gp" secondAttribute="trailing" id="evP-dq-Mem"/>
-                            <constraint firstAttribute="bottom" secondItem="26d-9x-gHb" secondAttribute="bottom" constant="20" id="hG5-lS-Aab"/>
                             <constraint firstItem="97G-Gj-WdY" firstAttribute="height" secondItem="IhS-ra-8tu" secondAttribute="height" multiplier="0.2" id="in4-Y6-Pci"/>
                             <constraint firstItem="Xnw-UO-dJC" firstAttribute="leading" secondItem="IhS-ra-8tu" secondAttribute="leading" id="jY1-z2-PY9"/>
                             <constraint firstItem="KJb-D8-K9x" firstAttribute="centerY" secondItem="IhS-ra-8tu" secondAttribute="centerY" multiplier="0.36" id="jxc-CR-sxW"/>
@@ -3131,9 +2863,12 @@
                         <outlet property="page26LightOutlet" destination="HLT-nf-7gp" id="zUB-L0-6Pg"/>
                         <outlet property="page26TearLOutlet" destination="TyB-2M-0SG" id="Qhh-qc-yhP"/>
                         <outlet property="page26TearROutlet" destination="Qvm-Df-HqK" id="0fU-U2-pLS"/>
+                        <segue destination="GvA-PZ-7cS" kind="push" identifier="nextPageSegue" id="BiD-W8-QNa"/>
+                        <segue destination="HIT-A8-2Rs" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="BJX-gI-g97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWg-Nf-Mms" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HIT-A8-2Rs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4908" y="4857"/>
         </scene>
@@ -3212,17 +2947,6 @@
                                     <action selector="voButton:" destination="GvA-PZ-7cS" eventType="touchUpInside" id="FH3-IO-RBq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzd-dm-AlJ" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="GvA-PZ-7cS" eventType="touchUpInside" id="BOQ-Cx-HHn"/>
-                                    <segue destination="ZKe-VC-7aq" kind="push" id="oF1-5J-cL0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -3232,9 +2956,7 @@
                             <constraint firstAttribute="trailing" secondItem="uhM-3C-3PB" secondAttribute="trailing" constant="50" id="A9k-9t-bir"/>
                             <constraint firstItem="vt1-49-kuq" firstAttribute="height" secondItem="Rc3-Qg-QhE" secondAttribute="height" multiplier="0.37" id="Bha-tW-ick"/>
                             <constraint firstItem="uhM-3C-3PB" firstAttribute="centerY" secondItem="Rc3-Qg-QhE" secondAttribute="centerY" multiplier="1.48" id="Bo0-JW-0Xl"/>
-                            <constraint firstAttribute="trailing" secondItem="Gzd-dm-AlJ" secondAttribute="trailing" constant="20" id="EuF-3C-yYL"/>
                             <constraint firstItem="vt1-49-kuq" firstAttribute="centerY" secondItem="Rc3-Qg-QhE" secondAttribute="centerY" multiplier="0.455" id="Gdl-mK-7QM"/>
-                            <constraint firstAttribute="bottom" secondItem="Gzd-dm-AlJ" secondAttribute="bottom" constant="20" id="H9F-ya-loq"/>
                             <constraint firstItem="Fea-u2-0oB" firstAttribute="centerY" secondItem="Rc3-Qg-QhE" secondAttribute="centerY" multiplier="0.68" id="P5F-sj-qP2"/>
                             <constraint firstItem="hB9-IV-uqp" firstAttribute="height" secondItem="Rc3-Qg-QhE" secondAttribute="height" multiplier="0.21" id="Pyu-Bg-JN4"/>
                             <constraint firstItem="8xe-p8-ciY" firstAttribute="centerX" secondItem="Rc3-Qg-QhE" secondAttribute="centerX" multiplier="0.4" id="RKl-Dm-WwK"/>
@@ -3264,9 +2986,12 @@
                         <outlet property="page27BearsOutlet" destination="MKs-6E-Chk" id="RMl-RH-F31"/>
                         <outlet property="page27DuvetOutlet" destination="VMp-4s-NCT" id="FYS-MQ-AHx"/>
                         <outlet property="page27GirlJumpOutlet" destination="lK6-Vv-hnF" id="9dg-3l-53O"/>
+                        <segue destination="ZKe-VC-7aq" kind="push" identifier="nextPageSegue" id="Bv5-XR-0YQ"/>
+                        <segue destination="oZ3-2o-FON" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="Uqg-VX-2DM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Dc-mq-jn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oZ3-2o-FON" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4142" y="4857"/>
         </scene>
@@ -3318,17 +3043,6 @@
                                     <action selector="voButton:" destination="ZKe-VC-7aq" eventType="touchUpInside" id="ypJ-QE-i4e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGk-M9-2zz" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="ZKe-VC-7aq" eventType="touchUpInside" id="zDM-c2-uDi"/>
-                                    <segue destination="KUs-dT-ZvL" kind="push" id="SyY-JV-cuf"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -3346,11 +3060,9 @@
                             <constraint firstItem="51T-Ez-2Pz" firstAttribute="centerY" secondItem="y7e-Pk-hwz" secondAttribute="centerY" multiplier="0.81" id="Xlp-30-m2s"/>
                             <constraint firstItem="tDX-8v-MU0" firstAttribute="trailing" secondItem="51T-Ez-2Pz" secondAttribute="trailing" constant="-20" id="fwD-9Y-EKo"/>
                             <constraint firstItem="tDX-8v-MU0" firstAttribute="leading" secondItem="51T-Ez-2Pz" secondAttribute="leading" constant="20" id="izg-sG-Re5"/>
-                            <constraint firstAttribute="trailing" secondItem="kGk-M9-2zz" secondAttribute="trailing" constant="20" id="j8O-0N-lbd"/>
                             <constraint firstItem="TC0-lj-Tf6" firstAttribute="height" secondItem="y7e-Pk-hwz" secondAttribute="height" multiplier="0.06" id="kWY-r3-Ym5"/>
                             <constraint firstItem="vhD-Ax-uDZ" firstAttribute="centerY" secondItem="y7e-Pk-hwz" secondAttribute="centerY" multiplier="1.35" id="kyR-ee-qTn"/>
                             <constraint firstItem="vjb-RH-6ZA" firstAttribute="top" secondItem="TC0-lj-Tf6" secondAttribute="top" constant="-8" id="lrK-dW-i1s"/>
-                            <constraint firstAttribute="bottom" secondItem="kGk-M9-2zz" secondAttribute="bottom" constant="20" id="ooq-a0-Prk"/>
                             <constraint firstItem="vjb-RH-6ZA" firstAttribute="bottom" secondItem="TC0-lj-Tf6" secondAttribute="bottom" constant="8" id="pVI-wx-hkA"/>
                             <constraint firstItem="vjb-RH-6ZA" firstAttribute="leading" secondItem="TC0-lj-Tf6" secondAttribute="leading" constant="-8" id="wwX-X1-VY8"/>
                         </constraints>
@@ -3360,9 +3072,12 @@
                     <connections>
                         <outlet property="bugOutlet" destination="TC0-lj-Tf6" id="aQK-Kp-m58"/>
                         <outlet property="page28GirlOutlet" destination="51T-Ez-2Pz" id="ETk-FH-awp"/>
+                        <segue destination="KUs-dT-ZvL" kind="push" identifier="nextPageSegue" id="2v2-xO-VZi"/>
+                        <segue destination="u5n-ab-gXO" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="4VM-ha-zXx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ni-iy-YuX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="u5n-ab-gXO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3383" y="4857"/>
         </scene>
@@ -3402,22 +3117,9 @@
                                     <action selector="endBowlInvisibleButton:" destination="KUs-dT-ZvL" eventType="touchUpInside" id="1bP-Tt-jWp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGl-Zx-hIo" userLabel="arrowRight">
-                                <rect key="frame" x="953" y="704" width="51" height="44"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" image="arrowright"/>
-                                <connections>
-                                    <action selector="arrowRightButton:" destination="KUs-dT-ZvL" eventType="touchUpInside" id="Gtf-f0-BNJ"/>
-                                    <segue destination="h0Q-xY-enI" kind="push" id="GsL-UU-aBS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="jGl-Zx-hIo" secondAttribute="bottom" constant="20" id="4Hb-fW-xnI"/>
-                            <constraint firstAttribute="trailing" secondItem="jGl-Zx-hIo" secondAttribute="trailing" constant="20" id="6bW-f9-Bqv"/>
                             <constraint firstItem="UaV-Zc-Veo" firstAttribute="centerY" secondItem="ztV-Pp-Wsn" secondAttribute="centerY" multiplier="0.95" id="CRb-rY-RwD"/>
                             <constraint firstItem="Qfa-E3-9Tz" firstAttribute="top" secondItem="ztV-Pp-Wsn" secondAttribute="top" id="DQT-Aw-LMl"/>
                             <constraint firstItem="HsC-5V-y6I" firstAttribute="height" secondItem="ztV-Pp-Wsn" secondAttribute="height" multiplier="0.518" id="Gcd-71-aCc"/>
@@ -3436,9 +3138,12 @@
                     <navigationItem key="navigationItem" id="hEm-kJ-i4z"/>
                     <connections>
                         <outlet property="endBowlOutlet" destination="HsC-5V-y6I" id="aYd-WP-D8O"/>
+                        <segue destination="h0Q-xY-enI" kind="push" identifier="nextPageSegue" id="RpY-Ck-MNj"/>
+                        <segue destination="Loy-kN-rPn" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="NEC-LC-Gtg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWa-5f-1nf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Loy-kN-rPn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2600" y="4857"/>
         </scene>
@@ -3538,6 +3243,9 @@
                         <viewLayoutGuide key="safeArea" id="dYC-Yp-wvU"/>
                     </view>
                     <navigationItem key="navigationItem" id="pt6-Rj-jMg"/>
+                    <connections>
+                        <segue destination="KTH-dU-C9F" kind="unwind" identifier="unwindSegueToPreviousPage" unwindAction="unwindToPreviousPageWithUnwindSegue:" id="jOj-vw-sXc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q59-55-l9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KTH-dU-C9F" userLabel="Exit" sceneMemberID="exit"/>
@@ -3589,7 +3297,6 @@
     </scenes>
     <resources>
         <image name="arrowleft" width="51" height="44"/>
-        <image name="arrowright" width="51" height="44"/>
         <image name="gtb01_bg" width="1024" height="768"/>
         <image name="gtb01_bug01" width="64" height="66"/>
         <image name="gtb01_eye01" width="252" height="109"/>
@@ -3740,7 +3447,7 @@
         <image name="logo0" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g8z-Iz-PWN"/>
+        <segue reference="a7q-ul-Z83"/>
         <segue reference="GBu-zN-Fby"/>
     </inferredMetricsTieBreakers>
 </document>

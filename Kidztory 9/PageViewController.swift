@@ -545,13 +545,11 @@ class PageViewController: UIViewController {
         
         arrowLeftButtonTest = UIButton.init(type: .custom)
         arrowLeftButtonTest.setImage(UIImage(named: "arrowleft"), for: UIControlState.normal)
-        arrowLeftButtonTest.backgroundColor = UIColor.cyan
         arrowLeftButtonTest.addTarget(self, action: #selector(PageViewController.arrowLeftButton), for: .touchUpInside)
         view.addSubview(arrowLeftButtonTest)
         
         arrowRightButtonTest = UIButton.init(type: .custom)
         arrowRightButtonTest.setImage(UIImage(named: "arrowright"), for: UIControlState.normal)
-        arrowRightButtonTest.backgroundColor = UIColor.cyan
         arrowRightButtonTest.addTarget(self, action: #selector(PageViewController.arrowRightButton), for: .touchUpInside)
         view.addSubview(arrowRightButtonTest)
         
@@ -567,14 +565,14 @@ class PageViewController: UIViewController {
     
     arrowLeftButtonTest.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
     arrowLeftButtonTest.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
-    arrowLeftButtonTest.heightAnchor.constraint(equalTo: arrowLeftButtonTest.widthAnchor, multiplier: 51/44).isActive = true
+    arrowLeftButtonTest.heightAnchor.constraint(equalTo: arrowLeftButtonTest.widthAnchor, multiplier: 44/51).isActive = true
     if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact {
         arrowLeftButtonTest.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.105).isActive = true
         }
     
     arrowRightButtonTest.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
     arrowRightButtonTest.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
-    arrowRightButtonTest.heightAnchor.constraint(equalTo: arrowRightButtonTest.widthAnchor, multiplier: 51/44).isActive = true
+    arrowRightButtonTest.heightAnchor.constraint(equalTo: arrowRightButtonTest.widthAnchor, multiplier: 44/51).isActive = true
     if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact {
         arrowRightButtonTest.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.105).isActive = true
         }
