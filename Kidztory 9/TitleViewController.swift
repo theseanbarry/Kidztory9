@@ -77,36 +77,13 @@ class TitleViewController: UIViewController {
         view.addSubview(moreButtonTest)
         
         // constraints
-        titleEyesViewTest.translatesAutoresizingMaskIntoConstraints = false
-        readToMeButtonTest.translatesAutoresizingMaskIntoConstraints = false
-        myselfButtonTest.translatesAutoresizingMaskIntoConstraints = false
-        moreButtonTest.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint(item: titleEyesViewTest, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 0.795, constant: 0).isActive = true
-        titleEyesViewTest.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: (-(view.frame.width)*0.3217505571*0.07)).isActive = true
-        titleEyesViewTest.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1).isActive = true
-        titleEyesViewTest.heightAnchor.constraint(equalTo: titleEyesViewTest.widthAnchor, multiplier: 50/71).isActive = true
-        
-        NSLayoutConstraint(item: readToMeButtonTest, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.44, constant: 0).isActive = true
-        readToMeButtonTest.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: (-(view.frame.width)*0.3217505571*0.15)).isActive = true
-        readToMeButtonTest.heightAnchor.constraint(equalTo: readToMeButtonTest.widthAnchor, multiplier: 2/7).isActive = true
-
-        NSLayoutConstraint(item: myselfButtonTest, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.54, constant: 0).isActive = true
-        myselfButtonTest.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: ((view.frame.width)*0.3217505571*0.16)).isActive = true
-        myselfButtonTest.heightAnchor.constraint(equalTo: myselfButtonTest.widthAnchor, multiplier: 95/427).isActive = true
-
-        NSLayoutConstraint(item: moreButtonTest, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.48, constant: 0).isActive = true
-        moreButtonTest.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: ((view.frame.width)*0.3217505571*0.45)).isActive = true
-        moreButtonTest.heightAnchor.constraint(equalTo: moreButtonTest.widthAnchor, multiplier: 113/365).isActive = true
-        
-        if self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact {
-            readToMeButtonTest.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.0887).isActive = true
-            myselfButtonTest.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.0887).isActive = true
-            moreButtonTest.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1034).isActive = true
-        } else {
-            readToMeButtonTest.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1386).isActive = true
-            myselfButtonTest.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1386).isActive = true
-            moreButtonTest.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1654).isActive = true
-        }
+        subviewConstraintsPosition(view, titleEyesViewTest, centerX: 0.795, centerY: -0.07)
+        subviewConstraintsPosition(view, readToMeButtonTest, centerX: 1.44, centerY: -0.15)
+        subviewConstraintsPosition(view, myselfButtonTest, centerX: 1.54, centerY: 0.16)
+        subviewConstraintsPosition(view, moreButtonTest, centerX: 1.48, centerY: 0.45)
+        subviewConstraintsSize(view, titleEyesViewTest, #imageLiteral(resourceName: "gtb_opening_eye01"))
+        subviewConstraintsSize(view, readToMeButtonTest, #imageLiteral(resourceName: "gtb_opening_readtome"))
+        subviewConstraintsSize(view, myselfButtonTest, #imageLiteral(resourceName: "gtb_opening_myself"))
+        subviewConstraintsSize(view, moreButtonTest, #imageLiteral(resourceName: "gtb_opening_more"))
     }
 }
