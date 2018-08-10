@@ -532,8 +532,8 @@ class PageViewController: UIViewController {
         // all
             // button setup
         var textButtonTest = UIButton()
-        var arrowLeftButtonTest = UIButton()
-        var arrowRightButtonTest = UIButton()
+        var arrowLeftButton = UIButton()
+        var arrowRightButton = UIButton()
         
         textButtonTest = UIButton.init(type: .custom)
         textButtonTest.setTitle("Goldilocks then went to lorem ipsum.", for: UIControlState.normal)
@@ -543,38 +543,38 @@ class PageViewController: UIViewController {
         textButtonTest.addTarget(self, action: #selector(PageViewController.voButton), for: .touchUpInside)
         view.addSubview(textButtonTest)
         
-        arrowLeftButtonTest = UIButton.init(type: .custom)
-        arrowLeftButtonTest.setImage(UIImage(named: "arrowleft"), for: UIControlState.normal)
-        arrowLeftButtonTest.addTarget(self, action: #selector(PageViewController.arrowLeftButton), for: .touchUpInside)
-        view.addSubview(arrowLeftButtonTest)
+        arrowLeftButton = UIButton.init(type: .custom)
+        arrowLeftButton.setImage(UIImage(named: "arrowleft"), for: UIControlState.normal)
+        arrowLeftButton.addTarget(self, action: #selector(PageViewController.arrowLeftButton), for: .touchUpInside)
+        view.addSubview(arrowLeftButton)
         
-        arrowRightButtonTest = UIButton.init(type: .custom)
-        arrowRightButtonTest.setImage(UIImage(named: "arrowright"), for: UIControlState.normal)
-        arrowRightButtonTest.addTarget(self, action: #selector(PageViewController.arrowRightButton), for: .touchUpInside)
-        view.addSubview(arrowRightButtonTest)
+        arrowRightButton = UIButton.init(type: .custom)
+        arrowRightButton.setImage(UIImage(named: "arrowright"), for: UIControlState.normal)
+        arrowRightButton.addTarget(self, action: #selector(PageViewController.arrowRightButton), for: .touchUpInside)
+        view.addSubview(arrowRightButton)
         
             // constraints
-    textButtonTest.translatesAutoresizingMaskIntoConstraints = false
-    arrowLeftButtonTest.translatesAutoresizingMaskIntoConstraints = false
-    arrowRightButtonTest.translatesAutoresizingMaskIntoConstraints = false
+        textButtonTest.translatesAutoresizingMaskIntoConstraints = false
+        arrowLeftButton.translatesAutoresizingMaskIntoConstraints = false
+        arrowRightButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint(item: textButtonTest, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.32, constant: 0).isActive = true
-        NSLayoutConstraint(item: textButtonTest, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 0.75, constant: 0).isActive = true
-    textButtonTest.widthAnchor.constraint(equalToConstant: 180).isActive = true
-    textButtonTest.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    
-    arrowLeftButtonTest.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-    arrowLeftButtonTest.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
-    arrowLeftButtonTest.heightAnchor.constraint(equalTo: arrowLeftButtonTest.widthAnchor, multiplier: 44/51).isActive = true
-    if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact {
-        arrowLeftButtonTest.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.105).isActive = true
-        }
-    
-    arrowRightButtonTest.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-    arrowRightButtonTest.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
-    arrowRightButtonTest.heightAnchor.constraint(equalTo: arrowRightButtonTest.widthAnchor, multiplier: 44/51).isActive = true
-    if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact {
-        arrowRightButtonTest.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.105).isActive = true
+            NSLayoutConstraint(item: textButtonTest, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.32, constant: 0).isActive = true
+            NSLayoutConstraint(item: textButtonTest, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 0.75, constant: 0).isActive = true
+        textButtonTest.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        textButtonTest.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        arrowLeftButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        arrowLeftButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        arrowLeftButton.heightAnchor.constraint(equalTo: arrowLeftButton.widthAnchor, multiplier: 44/51).isActive = true
+        if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact {
+            arrowLeftButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.105).isActive = true
+            }
+        
+        arrowRightButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        arrowRightButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        arrowRightButton.heightAnchor.constraint(equalTo: arrowRightButton.widthAnchor, multiplier: 44/51).isActive = true
+        if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact && self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact {
+            arrowRightButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.105).isActive = true
         }
     }
     

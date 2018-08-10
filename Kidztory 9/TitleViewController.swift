@@ -37,6 +37,21 @@ class TitleViewController: UIViewController {
     }
     @IBAction func unwindToPreviousPage(unwindSegue: UIStoryboardSegue) {}
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        /* var titleEyesViewTest = UIImageView()
+        
+            // button setup
+        titleEyesViewTest = UIImageView.init(image: #imageLiteral(resourceName: "gtb_opening_eye01"))
+        view.addSubview(titleEyesViewTest)
+        
+            // constraints
+        titleEyesViewTest.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: titleEyesViewTest, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 0.795, constant: 0).isActive = true
+        titleEyesViewTest.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1).isActive = true
+        titleEyesViewTest.heightAnchor.constraint(equalTo: titleEyesViewTest.widthAnchor, multiplier: 50/71).isActive = true */
+    }
+    
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
         blinkEyes(titleEyesOutlet, open: #imageLiteral(resourceName: "gtb_opening_eye01"), half: #imageLiteral(resourceName: "gtb_opening_eye02"), closed: #imageLiteral(resourceName: "gtb_opening_eye03"))
