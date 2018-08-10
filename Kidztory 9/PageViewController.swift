@@ -531,17 +531,17 @@ class PageViewController: UIViewController {
         super.viewWillAppear(animated)
         // all
             // button setup
-        var textButtonTest = UIButton()
+        // var textButtonTest = UIButton()
         var arrowLeftButton = UIButton()
         var arrowRightButton = UIButton()
         
-        textButtonTest = UIButton.init(type: .custom)
+        /* textButtonTest = UIButton.init(type: .custom)
         textButtonTest.setTitle("Goldilocks then went to lorem ipsum.", for: UIControlState.normal)
         textButtonTest.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         textButtonTest.titleLabel?.numberOfLines = 0
         textButtonTest.backgroundColor = UIColor.green
         textButtonTest.addTarget(self, action: #selector(PageViewController.voButton), for: .touchUpInside)
-        view.addSubview(textButtonTest)
+        view.addSubview(textButtonTest) */
         
         arrowLeftButton = UIButton.init(type: .custom)
         arrowLeftButton.setImage(UIImage(named: "arrowleft"), for: UIControlState.normal)
@@ -554,14 +554,14 @@ class PageViewController: UIViewController {
         view.addSubview(arrowRightButton)
         
             // constraints
-        textButtonTest.translatesAutoresizingMaskIntoConstraints = false
+        // textButtonTest.translatesAutoresizingMaskIntoConstraints = false
         arrowLeftButton.translatesAutoresizingMaskIntoConstraints = false
         arrowRightButton.translatesAutoresizingMaskIntoConstraints = false
         
-            NSLayoutConstraint(item: textButtonTest, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.32, constant: 0).isActive = true
+            /* NSLayoutConstraint(item: textButtonTest, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.32, constant: 0).isActive = true
             NSLayoutConstraint(item: textButtonTest, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 0.75, constant: 0).isActive = true
         textButtonTest.widthAnchor.constraint(equalToConstant: 180).isActive = true
-        textButtonTest.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        textButtonTest.heightAnchor.constraint(equalToConstant: 50).isActive = true */
         
         arrowLeftButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         arrowLeftButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
