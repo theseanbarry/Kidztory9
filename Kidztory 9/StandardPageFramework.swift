@@ -31,9 +31,9 @@ struct PageCounter {
 
 var pageCounter = PageCounter()
 func playPageFlipSounds(_ right: Bool = true, beginning: Bool = false) {
-    right == true ? pageCounter.increment() : pageCounter.decrement()
     voSound?.stop()
     playSoundFX("ArrowVoice")
+    right == true ? pageCounter.increment() : pageCounter.decrement()
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
         /* playSoundFX("SwapPage")
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) */
@@ -148,7 +148,7 @@ func stopMotionLoop(_ outlet:UIImageView?, imageArray:[UIImage], timeInterval:Do
 enum subviewOrientationEnum {
     case topLeft, topCenter, topRight, centerLeft, centerRight, bottomLeft, bottomCenter, bottomRight
 }
-func subviewConstraintsPositionOrtho(_ view: UIView, _ subview: UIView, _ orientation: subviewOrientationEnum) {
+func subviewPositionOrtho(_ view: UIView, _ subview: UIView, _ orientation: subviewOrientationEnum) {
     subview.translatesAutoresizingMaskIntoConstraints = false
     switch orientation {
         case .topLeft:
@@ -177,35 +177,38 @@ func subviewConstraintsPositionOrtho(_ view: UIView, _ subview: UIView, _ orient
             subview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
     }
 }
-    func subviewConstraintsPosition(_ view: UIView, _ subview: UIView, centerX: Double? = nil, centerY: Double? = nil, top: Int? = nil, leading: Int? = nil, trailing: Int? = nil, bottom: Int? = nil) {
-        subview.translatesAutoresizingMaskIntoConstraints = false
-        if let centerX = centerX {
-            NSLayoutConstraint(item: subview, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: CGFloat(centerX), constant: 0).isActive = true
-        }
-        if let centerY = centerY {
-            subview.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: ((view.frame.width)*0.3217505571*CGFloat(centerY))).isActive = true
-        }
-        if let top = top {
-            subview.topAnchor.constraint(equalTo: view.topAnchor, constant: CGFloat(top)).isActive = true
-        }
-        if let leading = leading {
-            subview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: CGFloat(leading)).isActive = true
-        }
-        if let trailing = trailing {
-            subview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: CGFloat(trailing)).isActive = true
-        }
-        if let bottom = bottom {
-            subview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: CGFloat(bottom)).isActive = true
-        }
+func subviewPosition(_ view: UIView, _ subview: UIView, centerX: Double? = nil, centerY: Double? = nil, top: Int? = nil, leading: Int? = nil, trailing: Int? = nil, bottom: Int? = nil) {
+    subview.translatesAutoresizingMaskIntoConstraints = false
+    if let centerX = centerX {
+        NSLayoutConstraint(item: subview, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: CGFloat(centerX), constant: 0).isActive = true
     }
-    func subviewConstraintsSize(_ view: UIView, _ subview: UIView,_ image: UIImage) {
-        subview.translatesAutoresizingMaskIntoConstraints = false
-        subview.heightAnchor.constraint(equalTo:subview.widthAnchor, multiplier: (image.size.height / image.size.width)).isActive = true
-        if view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact {
-            subview.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: (image.size.height)/CGFloat(834/0.84)).isActive = true
-        } else {
-            subview.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: (image.size.height)/CGFloat(834)).isActive = true
-        }
+    if let centerY = centerY {
+        subview.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: ((view.frame.width)*0.3217505571*CGFloat(centerY))).isActive = true
+    }
+    if let top = top {
+        subview.topAnchor.constraint(equalTo: view.topAnchor, constant: CGFloat(top)).isActive = true
+    }
+    if let leading = leading {
+        subview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: CGFloat(leading)).isActive = true
+    }
+    if let trailing = trailing {
+        subview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: CGFloat(-trailing)).isActive = true
+    }
+    if let bottom = bottom {
+        subview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: CGFloat(-bottom)).isActive = true
+    }
+}
+func subviewSize(_ view: UIView, _ subview: UIView,_ image: UIImage) {
+    subview.translatesAutoresizingMaskIntoConstraints = false
+    subview.heightAnchor.constraint(equalTo:subview.widthAnchor, multiplier: (image.size.height / image.size.width)).isActive = true
+    if view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact {
+        subview.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: (image.size.height)/CGFloat(834/0.84)).isActive = true
+    } else {
+        subview.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: (image.size.height)/CGFloat(834)).isActive = true
+    }
+}
+func subviewAspect(_ subview: UIView, _ image: UIImage) {
+    subview.heightAnchor.constraint(equalTo:subview.widthAnchor, multiplier: (image.size.height / image.size.width)).isActive = true
 }
 
  // fluid movement(object, curve equation, duration)

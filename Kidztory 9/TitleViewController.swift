@@ -77,13 +77,13 @@ class TitleViewController: UIViewController {
         view.addSubview(moreButtonTest)
         
         // constraints
-        subviewConstraintsPosition(view, titleEyesViewTest, centerX: 0.795, centerY: -0.07)
-        subviewConstraintsPosition(view, readToMeButtonTest, centerX: 1.44, centerY: -0.15)
-        subviewConstraintsPosition(view, myselfButtonTest, centerX: 1.54, centerY: 0.16)
-        subviewConstraintsPosition(view, moreButtonTest, centerX: 1.48, centerY: 0.45)
-        subviewConstraintsSize(view, titleEyesViewTest, #imageLiteral(resourceName: "gtb_opening_eye01"))
-        subviewConstraintsSize(view, readToMeButtonTest, #imageLiteral(resourceName: "gtb_opening_readtome"))
-        subviewConstraintsSize(view, myselfButtonTest, #imageLiteral(resourceName: "gtb_opening_myself"))
-        subviewConstraintsSize(view, moreButtonTest, #imageLiteral(resourceName: "gtb_opening_more"))
+        subviewPosition(view, titleEyesViewTest, centerX: 0.795, centerY: -0.07)
+        subviewPosition(view, readToMeButtonTest, centerX: 1.44, centerY: -0.15)
+        subviewPosition(view, myselfButtonTest, centerX: 1.54, centerY: 0.16)
+        subviewPosition(view, moreButtonTest, centerX: 1.48, centerY: 0.45)
+        subviewSize(view, titleEyesViewTest, #imageLiteral(resourceName: "gtb_opening_eye01"))
+        subviewSize(view, readToMeButtonTest, #imageLiteral(resourceName: "gtb_opening_readtome"))
+        subviewSize(view, myselfButtonTest, #imageLiteral(resourceName: "gtb_opening_myself"))
+        subviewSize(view, moreButtonTest, #imageLiteral(resourceName: "gtb_opening_more"))
     }
 }
